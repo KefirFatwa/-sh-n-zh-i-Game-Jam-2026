@@ -1,0 +1,65 @@
+[
+	{
+		"label": "Pregunta Prueba",
+		"opciones": [
+			{
+				"label": "Respuesta 1",
+				"correcta": false
+			},
+			{
+				"label": "Respuesta 2",
+				"correcta": true
+			},
+			{
+				"label": "Respuesta 3",
+				"correcta": false
+			},
+			{
+				"label": "Respuesta 4",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "Pregunta 2",
+		"opciones": [
+			{
+				"label": "Respuesta 1",
+				"correcta": false
+			},
+			{
+				"label": "Respuesta 2",
+				"correcta": true
+			},
+			{
+				"label": "Respuesta 3",
+				"correcta": false
+			},
+			{
+				"label": "Respuesta 4",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "Pregunta 3",
+		"opciones": [
+			{
+				"label": "Respuesta 1",
+				"correcta": false
+			},
+			{
+				"label": "Respuesta 2",
+				"correcta": true
+			},
+			{
+				"label": "Respuesta 3",
+				"correcta": false
+			},
+			{
+				"label": "Respuesta 4",
+				"correcta": false
+			}
+		]
+	}
+]
