@@ -34,6 +34,7 @@ func set_questions(preguntas: Array):
 	preguntaLabel.text = pregunta["label"]
 
 	var opciones = pregunta["opciones"]
+	opciones.shuffle()
 	button.text = opciones[0]["label"]
 	button2.text = opciones[1]["label"]
 	button3.text = opciones[2]["label"]
@@ -51,6 +52,8 @@ func handle_on_click(button: Button):
 		print("Escogiste la opción correcta")
 	else:
 		print("Te equivocaste!")
+	
+	disable_all_buttons()
 
 
 func _on_button_pressed() -> void:
@@ -67,3 +70,9 @@ func _on_button_3_pressed() -> void:
 
 func _on_button_4_pressed() -> void:
 	handle_on_click(button4)
+	
+func disable_all_buttons():
+	button.disabled = true
+	button2.disabled = true
+	button3.disabled = true
+	button4.disabled = true

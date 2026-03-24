@@ -1,64 +1,127 @@
 [
 	{
-		"label": "Pregunta Prueba",
+		"label": "¿Cuál es la mejor salsa para comer tamales?",
 		"opciones": [
 			{
-				"label": "Respuesta 1",
+				"label": "Chimichurri",
 				"correcta": false
 			},
 			{
-				"label": "Respuesta 2",
+				"label": "Salsa inglesa con tamarindo",
 				"correcta": true
 			},
 			{
-				"label": "Respuesta 3",
+				"label": "Chipotle",
 				"correcta": false
 			},
 			{
-				"label": "Respuesta 4",
+				"label": "Pico de gallo",
 				"correcta": false
 			}
 		]
 	},
 	{
-		"label": "Pregunta 2",
+		"label": "¿Cuál de estas frutas NO es común en el trópico centroamericano?",
 		"opciones": [
 			{
-				"label": "Respuesta 1",
+				"label": "Banano",
 				"correcta": false
 			},
 			{
-				"label": "Respuesta 2",
+				"label": "Papaya",
+				"correcta": false
+			},
+			{
+				"label": "Durián",
 				"correcta": true
 			},
 			{
-				"label": "Respuesta 3",
-				"correcta": false
-			},
-			{
-				"label": "Respuesta 4",
+				"label": "Mango",
 				"correcta": false
 			}
 		]
 	},
 	{
-		"label": "Pregunta 3",
+		"label": "¿Cuál es el método ideal para mantener caliente el pollo frito?",
 		"opciones": [
 			{
-				"label": "Respuesta 1",
-				"correcta": false
-			},
-			{
-				"label": "Respuesta 2",
+				"label": "Bombillo de luz",
 				"correcta": true
 			},
 			{
-				"label": "Respuesta 3",
+				"label": "Estufa de gas",
 				"correcta": false
 			},
 			{
-				"label": "Respuesta 4",
+				"label": "Horno de leña",
 				"correcta": false
+			},
+			{
+				"label": "Sartén de inducción",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "Hay dos países sudamericanos cuyos nombres provienen de:",
+		"opciones": [
+			{
+				"label": "Juanito Mora",
+				"correcta": false
+			},
+			{
+				"label": "Napoleón Bonaparte",
+				"correcta": false
+			},
+			{
+				"label": "Américo Vespucio",
+				"correcta": false
+			},
+			{
+				"label": "Simón Bolívar",
+				"correcta": true
+			}
+		]
+	},
+	{
+		"label": "El primer país que abolió la esclavitud, y lo hizo a través de la revolución armada, fue:",
+		"opciones": [
+			{
+				"label": "Brasil",
+				"correcta": false
+			},
+			{
+				"label": "Colombia",
+				"correcta": false
+			},
+			{
+				"label": "Haití",
+				"correcta": true
+			},
+			{
+				"label": "Panamá",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿En qué país se come más rico?",
+		"opciones": [
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			},
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			},
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			},
+			{
+				"label": "Costa Rica",
+				"correcta": true
 			}
 		]
 	}
