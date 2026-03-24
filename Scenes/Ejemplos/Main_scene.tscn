@@ -1,88 +1,396 @@
-[gd_scene format=3 uid="uid://b177rnnlsv3ai"]
+[gd_scene load_steps=26 format=3 uid="uid://b177rnnlsv3ai"]
+
+[ext_resource type="Script" uid="uid://b72hkdcgde8pf" path="res://Scenes/Main_scene/scene_manager.gd" id="1_6ejmp"]
+[ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="2_evy7w"]
+[ext_resource type="Script" uid="uid://2q4tsql3185p" path="res://Scenes/Main_scene/mini_games_manager.gd" id="3_x6ed6"]
+[ext_resource type="Shader" uid="uid://7xawikrqpkve" path="res://Shaders/blur_shader.gdshader" id="4_vljgw"]
+[ext_resource type="Texture2D" uid="uid://bdh40fb34i2jo" path="res://Assets/UI_Temporal_Tony/Phone_Normal.png" id="5_pf2du"]
+[ext_resource type="Texture2D" uid="uid://bqlp1ji3ptqjb" path="res://Assets/UI_Temporal_Tony/Phone_Pressed.png" id="6_wl8wx"]
+[ext_resource type="Texture2D" uid="uid://b0lnsptcmd6gw" path="res://Assets/UI_Temporal_Tony/Phone_Hover.png" id="7_ej4oj"]
+[ext_resource type="Texture2D" uid="uid://cphp5oio1p7v4" path="res://Assets/UI_Temporal_Tony/PC_Normal.png" id="8_7k381"]
+[ext_resource type="Texture2D" uid="uid://cb5r46fq7onxp" path="res://Assets/UI_Temporal_Tony/PC_Pressed.png" id="9_d2j03"]
+[ext_resource type="Texture2D" uid="uid://u2ehixrxmbc0" path="res://Assets/UI_Temporal_Tony/PC_Hover.png" id="10_5frnu"]
+[ext_resource type="Texture2D" uid="uid://dj0iykdfa0jvv" path="res://Assets/UI_Temporal_Tony/Door_Normal.png" id="11_fd4pn"]
+[ext_resource type="Texture2D" uid="uid://dg1t625xtqjs7" path="res://Assets/UI_Temporal_Tony/Door_Pressed.png" id="12_lx611"]
+[ext_resource type="Texture2D" uid="uid://v16a3wioyinp" path="res://Assets/UI_Temporal_Tony/Door_Hover.png" id="13_y22r5"]
+[ext_resource type="Texture2D" uid="uid://ckpehbrcwyx5" path="res://Assets/UI_Temporal_Tony/Room_Normal.png" id="14_fd4pn"]
+[ext_resource type="Texture2D" uid="uid://bcrolys6pgbt4" path="res://Assets/UI_Temporal_Tony/Cook_Normal.png" id="14_m7uap"]
+[ext_resource type="Texture2D" uid="uid://6h34bosp8pf3" path="res://Assets/UI_Temporal_Tony/Room_Pressed.png" id="15_lx611"]
+[ext_resource type="Texture2D" uid="uid://dwqn5h80ugr5f" path="res://Assets/UI_Temporal_Tony/Cook_Pressed.png" id="15_rgufk"]
+[ext_resource type="Texture2D" uid="uid://djrpmmigqm6lw" path="res://Assets/UI_Temporal_Tony/Cook_Hover.png" id="16_k0lso"]
+[ext_resource type="Texture2D" uid="uid://w5dx24sy6chg" path="res://Assets/UI_Temporal_Tony/Room_Hover.png" id="16_y22r5"]
+
+[sub_resource type="Gradient" id="Gradient_7k381"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d2j03"]
+gradient = SubResource("Gradient_7k381")
+fill_from = Vector2(0.5854701, 0.0042735045)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hwyus"]
+b = Vector2(-0.18618202, 124.8)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_brkqs"]
+b = Vector2(0.09309387, 125.653336)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vljgw"]
+b = Vector2(-0.18618202, 124.8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrgqc"]
+shader = ExtResource("4_vljgw")
+shader_parameter/samples = 0
+shader_parameter/lod = 1
+shader_parameter/tint_color = Color(0, 0, 0, 0)
 
 [node name="Main_scene" type="Node"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Background_transistion" type="Sprite2D" parent="."]
+position = Vector2(-966, 569)
+scale = Vector2(31.09375, 21.0625)
+texture = SubResource("GradientTexture2D_d2j03")
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Background_transistion_2" type="Sprite2D" parent="."]
+position = Vector2(-2390.9998, 563)
+scale = Vector2(31.09375, 21.0625)
+texture = SubResource("GradientTexture2D_d2j03")
+flip_h = true
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("1_6ejmp")
+
+[node name="BackgroundElements" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="PlaceHolder_BG_Main_scene" type="ColorRect" parent="BackgroundElements"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimalContainer" type="Sprite2D" parent="."]
+position = Vector2(1165, 416)
+scale = Vector2(10.74219, 4.6875)
+texture = ExtResource("2_evy7w")
+
+[node name="WallsContainer" type="StaticBody2D" parent="AnimalContainer"]
+
+[node name="LeftWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+position = Vector2(-64.27925, -59.093334)
+shape = SubResource("SegmentShape2D_hwyus")
+
+[node name="RghtWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+position = Vector2(64.09308, -59.093334)
+shape = SubResource("SegmentShape2D_brkqs")
+
+[node name="UpWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+position = Vector2(61.95199, -61.65333)
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_vljgw")
+
+[node name="DownWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+position = Vector2(62.882896, 61.65334)
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_hwyus")
+
+[node name="UIElements" type="CanvasLayer" parent="."]
+
+[node name="MiniGamesManager" type="Node" parent="UIElements"]
+script = ExtResource("3_x6ed6")
+
+[node name="BlurBackground" type="ColorRect" parent="UIElements"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yrgqc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.6392157)
+
+[node name="Telefono" type="Control" parent="UIElements"]
+unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -950.0
+offset_top = 1062.0
+offset_right = -376.0
+offset_bottom = 1795.1101
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Mascota" type="Control" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 0
-offset_left = 24.0
-offset_top = 5.0
-offset_right = 1122.0
-offset_bottom = 514.0
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/Mascota"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/Mascota/PanelContainer"]
-layout_mode = 2
+rotation = -1.0471976
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "Hormigas/ Tamagochi"
+size_flags_vertical = 4
+metadata/_edit_group_ = true
 
-[node name="Control2" type="Control" parent="CanvasLayer/Control"]
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Telefono"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="close_phone" type="Button" parent="UIElements/Telefono"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
+[node name="Label" type="Label" parent="UIElements/Telefono"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = 64.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Esta es el celular"
+
+[node name="Computadora" type="Control" parent="UIElements"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2052.9998
+offset_top = 938.0
+offset_right = 3014.2715
+offset_bottom = 1671.1102
+rotation = 0.34906584
+pivot_offset = Vector2(960, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Computadora"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="close_Pc" type="Button" parent="UIElements/Computadora"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
+[node name="Label" type="Label" parent="UIElements/Computadora"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = 64.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Esta es el celular"
+
+[node name="Cocina" type="Control" parent="UIElements"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -717.0
+offset_top = 631.0
+offset_right = 739.0
+offset_bottom = 1379.8899
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Cocina"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="close_cook" type="Button" parent="UIElements/Cocina"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
+[node name="Label2" type="Label" parent="UIElements/Cocina"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -27.5
+offset_right = 160.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Esta es la cocina"
+
+[node name="Interactables_buttons" type="Control" parent="UIElements"]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Telefono" type="PanelContainer" parent="CanvasLayer/Control/Control2"]
-layout_mode = 0
-offset_left = -520.0
-offset_top = 18.0
-offset_right = -116.0
-offset_bottom = 568.0
+[node name="Phone_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 780.0
+offset_right = 448.0
+offset_bottom = 934.0
+grow_vertical = 0
+pivot_offset = Vector2(180, 75)
+texture_normal = ExtResource("5_pf2du")
+texture_pressed = ExtResource("6_wl8wx")
+texture_hover = ExtResource("7_ej4oj")
+stretch_mode = 6
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Control2/Telefono"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Celular"
+[node name="PC_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1520.0
+offset_top = 780.0
+offset_right = 1874.0
+offset_bottom = 934.0
+grow_vertical = 0
+pivot_offset = Vector2(175, 85)
+texture_normal = ExtResource("8_7k381")
+texture_pressed = ExtResource("9_d2j03")
+texture_hover = ExtResource("10_5frnu")
+stretch_mode = 6
 
-[node name="Comida" type="PanelContainer" parent="CanvasLayer/Control/Control2"]
-layout_mode = 0
-offset_left = 162.0
-offset_top = 700.0
-offset_right = 1023.0
-offset_bottom = 1062.0
+[node name="Door_Interaction_button2" type="TextureButton" parent="UIElements/Interactables_buttons"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 86.0
+offset_top = 21.0
+offset_right = 440.0
+offset_bottom = 175.0
+grow_vertical = 0
+texture_normal = ExtResource("11_fd4pn")
+texture_pressed = ExtResource("12_lx611")
+texture_hover = ExtResource("13_y22r5")
+stretch_mode = 6
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Control2/Comida"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Comida"
+[node name="Room_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1512.0
+offset_top = 7.0
+offset_right = 1866.0
+offset_bottom = 161.0
+grow_vertical = 0
+texture_normal = ExtResource("14_fd4pn")
+texture_pressed = ExtResource("15_lx611")
+texture_hover = ExtResource("16_y22r5")
+stretch_mode = 6
 
-[node name="Computadora" type="PanelContainer" parent="CanvasLayer/Control/Control2"]
-layout_mode = 0
-offset_left = 1241.0
-offset_top = 675.0
-offset_right = 1569.0
-offset_bottom = 1045.0
+[node name="Cook_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 763.0
+offset_top = 786.0
+offset_right = 1117.0
+offset_bottom = 940.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("14_m7uap")
+texture_pressed = ExtResource("15_rgufk")
+texture_hover = ExtResource("16_k0lso")
+stretch_mode = 6
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Control2/Computadora"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Televisor"
+[node name="MainCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+anchor_mode = 0
 
-[node name="Puerta" type="PanelContainer" parent="CanvasLayer/Control/Control2"]
-layout_mode = 0
-offset_left = 1519.0
-offset_top = 8.0
-offset_right = 1923.0
-offset_bottom = 558.0
+[node name="Puerta_ejemplo" type="Sprite2D" parent="."]
+position = Vector2(-4724, 503)
+scale = Vector2(3.0624988, 5.625)
+texture = ExtResource("2_evy7w")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Control2/Puerta"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Puerta"
+[node name="Label" type="Label" parent="Puerta_ejemplo"]
+offset_left = -20.244907
+offset_top = -65.066666
+offset_right = 31.755093
+offset_bottom = -42.066666
+text = "Door"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 903.0
+offset_top = 17.0
+offset_right = 1237.0
+offset_bottom = 72.0
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 40
+text = "Tamagochi Scene"
