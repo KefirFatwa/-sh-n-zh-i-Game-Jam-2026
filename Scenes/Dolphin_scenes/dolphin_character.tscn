@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjprapupicomq"]
+
+[ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="1_albks"]
+[ext_resource type="Script" uid="uid://ctjijpdmogt64" path="res://Scenes/Dolphin_scenes/dolphin_character.gd" id="1_va7nk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_va7nk"]
+radius = 74.96666
+
+[node name="Dolphin_Character" type="CharacterBody2D"]
+script = ExtResource("1_va7nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_albks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_va7nk")
