@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://e2u337n1g5u4"]
+
+[ext_resource type="Script" path="res://Scenes/Ejemplos/sustento.gd" id="1_y05s1"]
+[ext_resource type="Texture2D" uid="uid://blenbw0q7f7an" path="res://Assets/temporal_mandarina/poio.png" id="2_1eq8y"]
+
+[node name="Sustento" type="Control" unique_id=1031412597]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y05s1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=377774066]
+position = Vector2(942, 517)
+scale = Vector2(1.9626985, 1.7336036)
+texture = ExtResource("2_1eq8y")
