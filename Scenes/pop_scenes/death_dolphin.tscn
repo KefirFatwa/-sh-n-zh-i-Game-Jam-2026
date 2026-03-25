@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ygfg5kd2guvj"]
+
+[ext_resource type="Script" uid="uid://c7adnfvq2cpo6" path="res://Scenes/pop_scenes/death_dolphin.gd" id="1_ra26q"]
+[ext_resource type="Texture2D" uid="uid://cv4g3gumvp0mc" path="res://Assets/Tamagochi_screen/delfintamagotchi.png" id="2_emsfc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jwxc"]
+size = Vector2(140, 140)
+
+[node name="Death_Dolphin" type="CharacterBody2D" unique_id=63484098]
+collision_layer = 0
+script = ExtResource("1_ra26q")
+gravity = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=31555960]
+shape = SubResource("RectangleShape2D_0jwxc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=283642874]
+modulate = Color(0.6901961, 0.9882353, 0.33333334, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_emsfc")
+flip_v = true

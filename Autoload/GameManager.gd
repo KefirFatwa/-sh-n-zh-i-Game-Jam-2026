@@ -1,9 +1,12 @@
 extends Node
 
 var gameManager = true
-var love_per_hit = 20
+var love_per_hit = 5
 var damage_per_hit = 1
 
+
+var max_food_container: int = 30
+var current_food_container :int = 0
 
 var correct_quiz_answers = 0
 var shits_numbers : int = 0

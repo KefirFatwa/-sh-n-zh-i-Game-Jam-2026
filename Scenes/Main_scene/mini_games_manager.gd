@@ -12,6 +12,7 @@ class_name MiniGamesManager
 @onready var door_interaction_button: TextureButton = %Door_Interaction_button2
 @onready var cook_interaction_button: TextureButton = %Cook_Interaction_button
 @onready var room_interaction_button: TextureButton = %Room_Interaction_button
+@onready var ui_player: TextureRect =%UIPlayer
 
 #referencia al contenedor de los botones
 @onready var interactables_buttons: Control = $"../Interactables_buttons"

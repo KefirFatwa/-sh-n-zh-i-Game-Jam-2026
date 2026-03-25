@@ -5,7 +5,7 @@ class_name LoveManager
 var max_love = 100
 var current_love
 
-var lonelines_frequency = 50
+@export var lonelines_frequency = 1
 
 var is_sad = false
 
@@ -24,4 +24,5 @@ func _input(event: InputEvent) -> void:
 	if dolphin_character.is_pettable:
 		if event.is_action_pressed("interaction_left_click"):
 			current_love += GameManager.love_per_hit
-			print(current_love)
+			current_love = clamp(current_love, 0 , max_love)
+		

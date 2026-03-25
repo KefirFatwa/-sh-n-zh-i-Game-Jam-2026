@@ -2,13 +2,13 @@ extends Node
 class_name GeneralManager
 
 #general data (could be replaced with resources)
-var max_food = 10
-var max_clean = 3
+var max_food = 100
+@export var max_shit_available = 10
 var max_love = 10
 
 var current_food
 var current_love
-var current_clean
+var current_shits
 
 #status for die
 var is_dirt :bool = false
@@ -27,7 +27,7 @@ signal start_death_state
 func _ready() -> void:
 	GameManager.shit_count.connect(_on_to_much_shit)
 	current_food = max_food
-	current_clean = max_clean
+	current_shits = max_shit_available
 	current_love = max_love
 
 
@@ -38,11 +38,11 @@ func _process(delta: float) -> void:
 
 func _on_to_much_shit(count_shit: int)->void:
 	
-	if current_clean <= count_shit:
+	if current_shits <= count_shit:
 		is_dirt = true
 	else:
 		is_dirt = false
-	if is_ready_to_die() and love_status_manager.is_sad:
+	if is_ready_to_die():
 		start_death_state.emit()
 func is_ready_to_die()->bool:
-	return is_dirt and is_hungry and is_sad
+	return is_dirt and is_hungry and love_status_manager.is_sad

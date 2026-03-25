@@ -8,6 +8,7 @@ const max_jump_strengh :float = 500
 var gravity_velocity = Vector2.ZERO
 @export var GRAVITY_STRENGHT = 200
 var gravity_dir = Vector2.DOWN
+var jump_multiplier: float = 1.0
 
 @onready var state_machine: StateMachine = $StateMachine
 @onready var status_state: Label = $Status_state
@@ -15,6 +16,10 @@ var gravity_dir = Vector2.DOWN
 @onready var down_raycast: RayCast2D = %Down_raycast
 @onready var right_raycast: RayCast2D = %Right_raycast
 @onready var left_raycast: RayCast2D = %Left_raycast
+
+@onready var general_manager: GeneralManager = $General_Manager
+
+@export var dealth_dolphin_scene : PackedScene
 
 var is_pettable = false
 
@@ -30,6 +35,14 @@ func _ready() -> void:
 		is_pettable = true)
 	mouse_exited.connect(func():
 		is_pettable = false)
+	general_manager.start_death_state.connect(death_dolphin)
+		
+func death_dolphin():
+	var death_body = dealth_dolphin_scene.instantiate()
+	death_body.position = position
+	get_tree().get_first_node_in_group("death_bodies").add_child(death_body)
+	queue_free()
+
 
 func _input(event: InputEvent)-> void:
 	state_machine.process_input(event)

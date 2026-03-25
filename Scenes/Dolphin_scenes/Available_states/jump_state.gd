@@ -3,7 +3,10 @@ class_name JumpState
 
 @onready var falling_state: FallingState = %FallingState
 
-@export var gravity_blend := 4.0
+@export var gravity_blend :float= 2.5
+@export var max_speed :float= 220.0
+@export var floatiness :float= 0.6 
+@export var side_drift :float= 80.0  
 
 var vel: Vector2
 var bounce_cd := 0.0
@@ -11,44 +14,50 @@ var bounce_cd := 0.0
 func enter():
 	super()
 	
-	var dir = -parent.gravity_dir.normalized()
-	var force = parent.get_random_jump_strenght()
-	var side = randi_range(-200, 200)
+	var up_dir = -parent.gravity_dir.normalized()
+	var base_force = parent.get_random_jump_strenght()
+	var force = base_force * parent.jump_multiplier
 	
-	vel = dir * force
+	var side = randf_range(-80, 80)
+	
+	vel = up_dir * force
 	vel.x += side
 	
-	
-	if vel.x != 0:
+	if abs(vel.x) > 5:
 		parent.scale.x = sign(vel.x)
 	
 	parent.velocity = vel
 	bounce_cd = 0.0
 
+	parent.jump_multiplier = 1.0
+
 
 func process_physics(delta: float) -> State:
 	bounce_cd -= delta
 	
+
 	var wall = parent.get_wall()
 	if wall != Vector2.ZERO and bounce_cd <= 0.0:
-		vel = vel.bounce(wall)
+		vel = vel.slide(wall) * 0.6 
 		parent.velocity = vel
 		
 		if abs(vel.x) > 5:
 			parent.scale.x = sign(vel.x)
 		
-		bounce_cd = 0.1
+		bounce_cd = 0.2
 	
+
+	var gravity_force = parent.GRAVITY_STRENGHT
+	if vel.dot(parent.gravity_dir) < 0:
+		gravity_force *= floatiness
 	
-	vel += parent.gravity_dir.normalized() * parent.GRAVITY_STRENGHT * delta
-	
-	var capped = vel.limit_length(300)
-	parent.velocity = parent.velocity.lerp(capped, gravity_blend * delta)
+	vel += parent.gravity_dir.normalized() * gravity_force * delta
+	var target = vel.limit_length(max_speed)
+	parent.velocity = parent.velocity.lerp(target, gravity_blend * delta)
 	
 	parent.move_and_slide()
 	
-	
-	if parent.velocity.dot(parent.gravity_dir) > 0:
+	if vel.dot(parent.gravity_dir) > 20:
 		return falling_state
 	
 	return null

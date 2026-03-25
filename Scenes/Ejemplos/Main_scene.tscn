@@ -1,33 +1,52 @@
 [gd_scene format=3 uid="uid://b177rnnlsv3ai"]
 
 [ext_resource type="Script" uid="uid://b72hkdcgde8pf" path="res://Scenes/Main_scene/scene_manager.gd" id="1_6ejmp"]
+[ext_resource type="Texture2D" uid="uid://c55bbmpqosg3e" path="res://Assets/Background/pared2.png" id="1_k0lso"]
+[ext_resource type="Texture2D" uid="uid://di2cokbiae7h7" path="res://Assets/Background/pared1.png" id="2_cyg67"]
 [ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="2_evy7w"]
 [ext_resource type="PackedScene" uid="uid://bjprapupicomq" path="res://Scenes/Dolphin_scenes/dolphin_character.tscn" id="2_lx611"]
+[ext_resource type="PackedScene" uid="uid://bx4w2dyk2n8a0" path="res://Scenes/pop_scenes/fish_food.tscn" id="2_rgufk"]
+[ext_resource type="Texture2D" uid="uid://b7auahvacgddf" path="res://Assets/Background/suelo.png" id="3_cche8"]
 [ext_resource type="Script" uid="uid://2q4tsql3185p" path="res://Scenes/Main_scene/mini_games_manager.gd" id="3_x6ed6"]
+[ext_resource type="Texture2D" uid="uid://dr16qc1wjf0d2" path="res://Assets/Background/mesa.png" id="4_ddw3p"]
 [ext_resource type="Shader" uid="uid://7xawikrqpkve" path="res://Shaders/blur_shader.gdshader" id="4_vljgw"]
-[ext_resource type="Texture2D" uid="uid://bdh40fb34i2jo" path="res://Assets/UI_Temporal_Tony/Phone_Normal.png" id="5_pf2du"]
-[ext_resource type="Texture2D" uid="uid://bqlp1ji3ptqjb" path="res://Assets/UI_Temporal_Tony/Phone_Pressed.png" id="6_wl8wx"]
+[ext_resource type="Texture2D" uid="uid://m2epjqblyc0c" path="res://Assets/Tamagochi_screen/pantallatamagotchi.png" id="5_3bcjv"]
+[ext_resource type="Texture2D" uid="uid://0sh7qt7j30u" path="res://Assets/Tamagochi_screen/suelokawaii.png" id="6_ogl74"]
 [ext_resource type="Script" uid="uid://c1fmwd6v3nrhr" path="res://Scenes/Computadora/computadoraManager.gd" id="6_y22r5"]
-[ext_resource type="Texture2D" uid="uid://b0lnsptcmd6gw" path="res://Assets/UI_Temporal_Tony/Phone_Hover.png" id="7_ej4oj"]
+[ext_resource type="Texture2D" uid="uid://drsojik4enwiq" path="res://Assets/Tamagochi_screen/bordepantallatamagotchi.png" id="7_bsixg"]
 [ext_resource type="PackedScene" uid="uid://ijaymot7rg0q" path="res://Scenes/Computadora/TriviaPopup/question_container.tscn" id="7_m7uap"]
-[ext_resource type="Texture2D" uid="uid://cphp5oio1p7v4" path="res://Assets/UI_Temporal_Tony/PC_Normal.png" id="8_7k381"]
-[ext_resource type="Texture2D" uid="uid://cb5r46fq7onxp" path="res://Assets/UI_Temporal_Tony/PC_Pressed.png" id="9_d2j03"]
-[ext_resource type="Texture2D" uid="uid://u2ehixrxmbc0" path="res://Assets/UI_Temporal_Tony/PC_Hover.png" id="10_5frnu"]
 [ext_resource type="Texture2D" uid="uid://dj0iykdfa0jvv" path="res://Assets/UI_Temporal_Tony/Door_Normal.png" id="11_fd4pn"]
 [ext_resource type="Texture2D" uid="uid://dg1t625xtqjs7" path="res://Assets/UI_Temporal_Tony/Door_Pressed.png" id="12_lx611"]
+[ext_resource type="Texture2D" uid="uid://bcar4tgm06eks" path="res://Assets/Buttons/botonprogreso.png" id="13_eu1g5"]
 [ext_resource type="Texture2D" uid="uid://v16a3wioyinp" path="res://Assets/UI_Temporal_Tony/Door_Hover.png" id="13_y22r5"]
 [ext_resource type="Texture2D" uid="uid://ckpehbrcwyx5" path="res://Assets/UI_Temporal_Tony/Room_Normal.png" id="14_fd4pn"]
 [ext_resource type="Texture2D" uid="uid://bcrolys6pgbt4" path="res://Assets/UI_Temporal_Tony/Cook_Normal.png" id="14_m7uap"]
+[ext_resource type="Texture2D" uid="uid://d4doebl1adrgv" path="res://Assets/Buttons/botoncel.png" id="15_ca1ee"]
 [ext_resource type="Texture2D" uid="uid://6h34bosp8pf3" path="res://Assets/UI_Temporal_Tony/Room_Pressed.png" id="15_lx611"]
 [ext_resource type="Texture2D" uid="uid://dwqn5h80ugr5f" path="res://Assets/UI_Temporal_Tony/Cook_Pressed.png" id="15_rgufk"]
+[ext_resource type="Texture2D" uid="uid://b36fwarexsil2" path="res://Assets/Buttons/botonpc.png" id="16_eu1g5"]
 [ext_resource type="Texture2D" uid="uid://djrpmmigqm6lw" path="res://Assets/UI_Temporal_Tony/Cook_Hover.png" id="16_k0lso"]
 [ext_resource type="Texture2D" uid="uid://w5dx24sy6chg" path="res://Assets/UI_Temporal_Tony/Room_Hover.png" id="16_y22r5"]
 
 [sub_resource type="Gradient" id="Gradient_7k381"]
+offsets = PackedFloat32Array(0, 0.9942029)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.9882353, 0.7254902, 0.50980395)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vsrrq"]
+gradient = SubResource("Gradient_7k381")
+fill_from = Vector2(0.52991456, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d2j03"]
 gradient = SubResource("Gradient_7k381")
-fill_from = Vector2(0.5854701, 0.0042735045)
+fill_from = Vector2(0.52991456, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w2x36"]
+gradient = SubResource("Gradient_7k381")
+fill_from = Vector2(0.52991456, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j0i8m"]
+gradient = SubResource("Gradient_7k381")
+fill_from = Vector2(0.52991456, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hwyus"]
 b = Vector2(-0.18618202, 124.8)
@@ -46,72 +65,105 @@ shader_parameter/tint_color = Color(0, 0, 0, 0)
 
 [node name="Main_scene" type="Node" unique_id=123212929]
 
-[node name="Background_transistion" type="Sprite2D" parent="." unique_id=4291387]
+[node name="Background" type="Node" parent="." unique_id=255842808]
+
+[node name="Background_transistion" type="Sprite2D" parent="Background" unique_id=4291387]
 position = Vector2(-966, 569)
 scale = Vector2(31.09375, 21.0625)
-texture = SubResource("GradientTexture2D_d2j03")
+texture = SubResource("GradientTexture2D_vsrrq")
 
-[node name="Background_transistion_2" type="Sprite2D" parent="." unique_id=1437450400]
+[node name="Background_transistion_2" type="Sprite2D" parent="Background" unique_id=1437450400]
 position = Vector2(-2390.9998, 563)
 scale = Vector2(31.09375, 21.0625)
 texture = SubResource("GradientTexture2D_d2j03")
 flip_h = true
 
+[node name="FondoPrincipal" type="Sprite2D" parent="Background" unique_id=1256459270]
+scale = Vector2(0.59962404, 0.53815657)
+texture = ExtResource("1_k0lso")
+centered = false
+
+[node name="FondoPuerta" type="Sprite2D" parent="Background" unique_id=2142624548]
+position = Vector2(-5248, 0)
+scale = Vector2(0.59962404, 0.53815657)
+texture = ExtResource("2_cyg67")
+centered = false
+
+[node name="Suelo" type="Sprite2D" parent="Background" unique_id=1317769967]
+position = Vector2(-1602.5, 1096)
+scale = Vector2(2.2775047, 1)
+texture = ExtResource("3_cche8")
+
+[node name="Mesita" type="Sprite2D" parent="Background" unique_id=1183288452]
+position = Vector2(1142, 849)
+texture = ExtResource("4_ddw3p")
+
+[node name="Background_transistion2" type="Sprite2D" parent="Background" unique_id=2116591251]
+position = Vector2(-966, 569)
+scale = Vector2(31.09375, 21.0625)
+texture = SubResource("GradientTexture2D_w2x36")
+
+[node name="Background_transistion_3" type="Sprite2D" parent="Background" unique_id=1010635360]
+position = Vector2(-2390.9998, 563)
+scale = Vector2(31.09375, 21.0625)
+texture = SubResource("GradientTexture2D_j0i8m")
+flip_h = true
+
+[node name="BackgroundTamagochi" type="Sprite2D" parent="Background" unique_id=121829556]
+position = Vector2(1174.75, 411.5)
+scale = Vector2(0.78439367, 0.67582417)
+texture = ExtResource("5_3bcjv")
+
+[node name="BackgroundTamagochi3" type="Sprite2D" parent="Background/BackgroundTamagochi" unique_id=329491343]
+position = Vector2(-14.979736, 227.13013)
+texture = ExtResource("6_ogl74")
+
+[node name="BackgroundTamagochi2" type="Sprite2D" parent="Background/BackgroundTamagochi" unique_id=1974857926]
+texture = ExtResource("7_bsixg")
+
 [node name="SceneManager" type="Node" parent="." unique_id=801590715]
 script = ExtResource("1_6ejmp")
+food_scene = ExtResource("2_rgufk")
 
-[node name="BackgroundElements" type="CanvasLayer" parent="." unique_id=21085379]
-layer = -1
+[node name="pop_deposit" type="Node2D" parent="." unique_id=1450660244 groups=["pop_container"]]
 
-[node name="PlaceHolder_BG_Main_scene" type="ColorRect" parent="BackgroundElements" unique_id=1860836871]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="Dolphin_container" type="Node" parent="." unique_id=1578912930]
 
-[node name="Dolphin_Character" parent="." unique_id=332873896 instance=ExtResource("2_lx611")]
+[node name="Dolphin_Character" parent="Dolphin_container" unique_id=332873896 instance=ExtResource("2_lx611")]
 position = Vector2(1164, 530)
 
-[node name="Dolphin_Character3" parent="." unique_id=668548660 instance=ExtResource("2_lx611")]
+[node name="Dolphin_Character3" parent="Dolphin_container" unique_id=668548660 instance=ExtResource("2_lx611")]
 position = Vector2(1535, 326)
-
-[node name="Dolphin_Character2" parent="." unique_id=1171152767 instance=ExtResource("2_lx611")]
-position = Vector2(667, 423.00003)
-rotation = -3.1415925
-scale = Vector2(1, -1)
 
 [node name="dolphin_container" type="Node2D" parent="." unique_id=900561917]
 position = Vector2(1165, 416)
 scale = Vector2(10.74219, 4.6875)
 
-[node name="AnimalContainer" type="Sprite2D" parent="." unique_id=751729684]
-self_modulate = Color(0.12941177, 0.38039216, 1, 0.3254902)
+[node name="food_container" type="Node2D" parent="." unique_id=962476179]
+unique_name_in_owner = true
+position = Vector2(1100, 189.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="death_bodies" type="Node2D" parent="." unique_id=56621602 groups=["death_bodies"]]
+
+[node name="WallsContainer" type="StaticBody2D" parent="." unique_id=1027465704]
 position = Vector2(1165, 416)
 scale = Vector2(10.74219, 4.6875)
-texture = ExtResource("2_evy7w")
 
-[node name="pop_deposit" type="Node2D" parent="AnimalContainer" unique_id=1450660244 groups=["pop_container"]]
-position = Vector2(-108.45088, -88.746666)
-scale = Vector2(0.093090884, 0.21333334)
-
-[node name="WallsContainer" type="StaticBody2D" parent="AnimalContainer" unique_id=1027465704]
-
-[node name="LeftWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=506906189]
+[node name="LeftWall" type="CollisionShape2D" parent="WallsContainer" unique_id=506906189]
 position = Vector2(-64.27925, -59.093334)
 shape = SubResource("SegmentShape2D_hwyus")
 
-[node name="RghtWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=780745582]
+[node name="RghtWall" type="CollisionShape2D" parent="WallsContainer" unique_id=780745582]
 position = Vector2(64.09308, -59.093334)
 shape = SubResource("SegmentShape2D_brkqs")
 
-[node name="UpWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=1215985866]
+[node name="UpWall" type="CollisionShape2D" parent="WallsContainer" unique_id=1215985866]
 position = Vector2(61.95199, -61.65333)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_vljgw")
 
-[node name="DownWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=1076708945]
+[node name="DownWall" type="CollisionShape2D" parent="WallsContainer" unique_id=1076708945]
 position = Vector2(62.882896, 61.65334)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_hwyus")
@@ -299,22 +351,32 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="UIPlayer" type="TextureRect" parent="UIElements/Interactables_buttons" unique_id=663793917]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 114.0
+offset_top = 276.0
+offset_right = 394.0
+offset_bottom = 704.0
+texture = ExtResource("13_eu1g5")
+expand_mode = 1
+
 [node name="Phone_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1329366065]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 94.0
-offset_top = 780.0
-offset_right = 448.0
-offset_bottom = 934.0
+offset_left = 126.0
+offset_top = 649.0
+offset_right = 374.0
+offset_bottom = 1040.0
 grow_vertical = 0
 pivot_offset = Vector2(180, 75)
-texture_normal = ExtResource("5_pf2du")
-texture_pressed = ExtResource("6_wl8wx")
-texture_hover = ExtResource("7_ej4oj")
-stretch_mode = 6
+texture_normal = ExtResource("15_ca1ee")
+texture_pressed = ExtResource("15_ca1ee")
+texture_hover = ExtResource("15_ca1ee")
+stretch_mode = 3
 
 [node name="PC_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1740680259]
 unique_name_in_owner = true
@@ -322,16 +384,16 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1520.0
-offset_top = 780.0
-offset_right = 1874.0
-offset_bottom = 934.0
+offset_left = 1502.0
+offset_top = 712.0
+offset_right = 1871.0
+offset_bottom = 1014.0
 grow_vertical = 0
 pivot_offset = Vector2(175, 85)
-texture_normal = ExtResource("8_7k381")
-texture_pressed = ExtResource("9_d2j03")
-texture_hover = ExtResource("10_5frnu")
-stretch_mode = 6
+texture_normal = ExtResource("16_eu1g5")
+texture_pressed = ExtResource("16_eu1g5")
+texture_hover = ExtResource("16_eu1g5")
+stretch_mode = 5
 
 [node name="Door_Interaction_button2" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1420422374]
 unique_name_in_owner = true
@@ -385,6 +447,16 @@ texture_pressed = ExtResource("15_rgufk")
 texture_hover = ExtResource("16_k0lso")
 stretch_mode = 6
 
+[node name="Button" type="Button" parent="UIElements/Interactables_buttons" unique_id=1133945070]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 668.0
+offset_right = 607.0
+offset_bottom = 723.0
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 24
+text = "Food Dolphin"
+
 [node name="MainCamera" type="Camera2D" parent="." unique_id=1200944931]
 unique_name_in_owner = true
 anchor_mode = 0
@@ -409,3 +481,5 @@ offset_bottom = 72.0
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 40
 text = "Tamagochi Scene"
+
+[connection signal="pressed" from="UIElements/Interactables_buttons/Button" to="SceneManager" method="_on_feed_dolphins_button_pressed"]

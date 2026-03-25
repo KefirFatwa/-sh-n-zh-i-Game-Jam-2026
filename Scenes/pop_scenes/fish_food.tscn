@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bx4w2dyk2n8a0"]
+
+[ext_resource type="Script" uid="uid://4xaplx7syluh" path="res://Scenes/pop_scenes/fish_food.gd" id="1_6gxva"]
+[ext_resource type="Texture2D" uid="uid://cnceucbxpb6oa" path="res://Assets/UI_Temporal_Tony/fish_food.png" id="2_hmeyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2u7w"]
+radius = 31.144823
+
+[node name="fish_food" type="CharacterBody2D" unique_id=490539188]
+collision_layer = 8
+script = ExtResource("1_6gxva")
+gravity = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1589309822]
+scale = Vector2(2.375, 2.1875)
+texture = ExtResource("2_hmeyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=440954196]
+shape = SubResource("CircleShape2D_i2u7w")
