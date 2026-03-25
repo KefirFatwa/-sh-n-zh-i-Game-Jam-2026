@@ -1,0 +1,128 @@
+[
+	{
+		"label": "¿Cuál es la mejor salsa para comer tamales?",
+		"opciones": [
+			{
+				"label": "Chimichurri",
+				"correcta": false
+			},
+			{
+				"label": "Salsa inglesa con tamarindo",
+				"correcta": true
+			},
+			{
+				"label": "Chipotle",
+				"correcta": false
+			},
+			{
+				"label": "Pico de gallo",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuál de estas frutas NO es común en el trópico centroamericano?",
+		"opciones": [
+			{
+				"label": "Banano",
+				"correcta": false
+			},
+			{
+				"label": "Papaya",
+				"correcta": false
+			},
+			{
+				"label": "Durián",
+				"correcta": true
+			},
+			{
+				"label": "Mango",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuál es el método ideal para mantener caliente el pollo frito?",
+		"opciones": [
+			{
+				"label": "Bombillo de luz",
+				"correcta": true
+			},
+			{
+				"label": "Estufa de gas",
+				"correcta": false
+			},
+			{
+				"label": "Horno de leña",
+				"correcta": false
+			},
+			{
+				"label": "Sartén de inducción",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "Hay dos países sudamericanos cuyos nombres provienen de:",
+		"opciones": [
+			{
+				"label": "Juanito Mora",
+				"correcta": false
+			},
+			{
+				"label": "Napoleón Bonaparte",
+				"correcta": false
+			},
+			{
+				"label": "Américo Vespucio",
+				"correcta": false
+			},
+			{
+				"label": "Simón Bolívar",
+				"correcta": true
+			}
+		]
+	},
+	{
+		"label": "El primer país que abolió la esclavitud, y lo hizo a través de la revolución armada, fue:",
+		"opciones": [
+			{
+				"label": "Brasil",
+				"correcta": false
+			},
+			{
+				"label": "Colombia",
+				"correcta": false
+			},
+			{
+				"label": "Haití",
+				"correcta": true
+			},
+			{
+				"label": "Panamá",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿En qué país se come más rico?",
+		"opciones": [
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			},
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			},
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			},
+			{
+				"label": "Costa Rica",
+				"correcta": true
+			}
+		]
+	}
+]

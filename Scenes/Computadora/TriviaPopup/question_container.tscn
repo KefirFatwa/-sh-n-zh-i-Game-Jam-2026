@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ijaymot7rg0q"]
+
+[ext_resource type="Script" uid="uid://b1l4j3cd3ot53" path="res://Scenes/Computadora/TriviaPopup/question_container.gd" id="1_ffbtf"]
+
+[node name="Computadora" type="Control" unique_id=630852609]
+layout_mode = 3
+anchor_right = 0.45700002
+anchor_bottom = 0.60800004
+offset_right = -877.44006
+offset_bottom = -656.64
+script = ExtResource("1_ffbtf")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1794041999]
+layout_mode = 1
+offset_right = 879.0
+offset_bottom = 655.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1161544921]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Pregunta" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=85027847]
+layout_mode = 2
+
+[node name="PreguntaLabel" type="Label" parent="PanelContainer/MarginContainer/Pregunta" unique_id=1786758216]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Pregunta"
+
+[node name="Container" type="Control" parent="PanelContainer/MarginContainer/Pregunta" unique_id=1964267673]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Pregunta/Container" unique_id=949274436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer" unique_id=1738944082]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer" unique_id=27375233]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Hello"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer" unique_id=1655244605]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Hello"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer" unique_id=301660641]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer2" unique_id=1508871503]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Hello"
+
+[node name="Button4" type="Button" parent="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer2" unique_id=1938878319]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Hello"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer2/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer2/Button4" to="." method="_on_button_4_pressed"]
