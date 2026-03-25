@@ -124,5 +124,89 @@
 				"correcta": true
 			}
 		]
+	},
+	{
+		"label": "¿Cuál es el nombre científico del delfín rosado?",
+		"opciones": [
+			{
+				"label": "Inia geoffrensis",
+				"correcta": true
+			},
+			{
+				"label": "Trichechus manatus",
+				"correcta": false
+			},
+			{
+				"label": "Enhydra lutris",
+				"correcta": false
+			},
+			{
+				"label": "Ursus maritimus",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuánto puede llegar a pesar un delfín rosado macho?",
+		"opciones": [
+			{
+				"label": "185 kilos",
+				"correcta": true
+			},
+			{
+				"label": "120 kilos",
+				"correcta": false
+			},
+			{
+				"label": "360 kilos",
+				"correcta": false
+			},
+			{
+				"label": "1 tonelada",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿En dónde NO habita el delfín rosado?",
+		"opciones": [
+			{
+				"label": "Cuenca del Amazonas",
+				"correcta": false
+			},
+			{
+				"label": "Río Madeira",
+				"correcta": false
+			},
+			{
+				"label": "Cuenca del Orinoco",
+				"correcta": false
+			},
+			{
+				"label": "Río de la Plata",
+				"correcta": true
+			}
+		]
+	},
+	{
+		"label": "¿Qué cuenta la leyenda del bufeo colorado?",
+		"opciones": [
+			{
+				"label": "Un Boto se transforma en humano durante la luna llena para seducir mujeres.",
+				"correcta": true
+			},
+			{
+				"label": "Un lobo se viste de oveja para cazarlas fácilmente.",
+				"correcta": false
+			},
+			{
+				"label": "Un niño avisa que viene el lobo cuando no es así y cuando sí llega ya nadie le cree.",
+				"correcta": false
+			},
+			{
+				"label": "El fantasma de una mujer llora arrepentida por haber ahogado a sus hijos.",
+				"correcta": false
+			}
+		]
 	}
 ]
