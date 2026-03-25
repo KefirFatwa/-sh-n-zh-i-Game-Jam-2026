@@ -4,6 +4,8 @@ var gameManager = true
 var love_per_hit = 20
 var damage_per_hit = 1
 
+
+var correct_quiz_answers = 0
 var shits_numbers : int = 0
 
 signal shit_count(shit_coun: int)

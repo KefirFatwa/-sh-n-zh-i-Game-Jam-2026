@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b177rnnlsv3ai"]
+[gd_scene format=3 uid="uid://b177rnnlsv3ai"]
 
 [ext_resource type="Script" uid="uid://b72hkdcgde8pf" path="res://Scenes/Main_scene/scene_manager.gd" id="1_6ejmp"]
 [ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="2_evy7w"]
@@ -7,7 +7,9 @@
 [ext_resource type="Shader" uid="uid://7xawikrqpkve" path="res://Shaders/blur_shader.gdshader" id="4_vljgw"]
 [ext_resource type="Texture2D" uid="uid://bdh40fb34i2jo" path="res://Assets/UI_Temporal_Tony/Phone_Normal.png" id="5_pf2du"]
 [ext_resource type="Texture2D" uid="uid://bqlp1ji3ptqjb" path="res://Assets/UI_Temporal_Tony/Phone_Pressed.png" id="6_wl8wx"]
+[ext_resource type="Script" uid="uid://c1fmwd6v3nrhr" path="res://Scenes/Computadora/computadoraManager.gd" id="6_y22r5"]
 [ext_resource type="Texture2D" uid="uid://b0lnsptcmd6gw" path="res://Assets/UI_Temporal_Tony/Phone_Hover.png" id="7_ej4oj"]
+[ext_resource type="PackedScene" uid="uid://ijaymot7rg0q" path="res://Scenes/Computadora/TriviaPopup/question_container.tscn" id="7_m7uap"]
 [ext_resource type="Texture2D" uid="uid://cphp5oio1p7v4" path="res://Assets/UI_Temporal_Tony/PC_Normal.png" id="8_7k381"]
 [ext_resource type="Texture2D" uid="uid://cb5r46fq7onxp" path="res://Assets/UI_Temporal_Tony/PC_Pressed.png" id="9_d2j03"]
 [ext_resource type="Texture2D" uid="uid://u2ehixrxmbc0" path="res://Assets/UI_Temporal_Tony/PC_Hover.png" id="10_5frnu"]
@@ -42,26 +44,26 @@ shader_parameter/samples = 0
 shader_parameter/lod = 1
 shader_parameter/tint_color = Color(0, 0, 0, 0)
 
-[node name="Main_scene" type="Node"]
+[node name="Main_scene" type="Node" unique_id=123212929]
 
-[node name="Background_transistion" type="Sprite2D" parent="."]
+[node name="Background_transistion" type="Sprite2D" parent="." unique_id=4291387]
 position = Vector2(-966, 569)
 scale = Vector2(31.09375, 21.0625)
 texture = SubResource("GradientTexture2D_d2j03")
 
-[node name="Background_transistion_2" type="Sprite2D" parent="."]
+[node name="Background_transistion_2" type="Sprite2D" parent="." unique_id=1437450400]
 position = Vector2(-2390.9998, 563)
 scale = Vector2(31.09375, 21.0625)
 texture = SubResource("GradientTexture2D_d2j03")
 flip_h = true
 
-[node name="SceneManager" type="Node" parent="."]
+[node name="SceneManager" type="Node" parent="." unique_id=801590715]
 script = ExtResource("1_6ejmp")
 
-[node name="BackgroundElements" type="CanvasLayer" parent="."]
+[node name="BackgroundElements" type="CanvasLayer" parent="." unique_id=21085379]
 layer = -1
 
-[node name="PlaceHolder_BG_Main_scene" type="ColorRect" parent="BackgroundElements"]
+[node name="PlaceHolder_BG_Main_scene" type="ColorRect" parent="BackgroundElements" unique_id=1860836871]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,57 +71,57 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Dolphin_Character" parent="." instance=ExtResource("2_lx611")]
+[node name="Dolphin_Character" parent="." unique_id=332873896 instance=ExtResource("2_lx611")]
 position = Vector2(1164, 530)
 
-[node name="Dolphin_Character3" parent="." instance=ExtResource("2_lx611")]
+[node name="Dolphin_Character3" parent="." unique_id=668548660 instance=ExtResource("2_lx611")]
 position = Vector2(1535, 326)
 
-[node name="Dolphin_Character2" parent="." instance=ExtResource("2_lx611")]
+[node name="Dolphin_Character2" parent="." unique_id=1171152767 instance=ExtResource("2_lx611")]
 position = Vector2(667, 423.00003)
 rotation = -3.1415925
 scale = Vector2(1, -1)
 
-[node name="dolphin_container" type="Node2D" parent="."]
+[node name="dolphin_container" type="Node2D" parent="." unique_id=900561917]
 position = Vector2(1165, 416)
 scale = Vector2(10.74219, 4.6875)
 
-[node name="AnimalContainer" type="Sprite2D" parent="."]
+[node name="AnimalContainer" type="Sprite2D" parent="." unique_id=751729684]
 self_modulate = Color(0.12941177, 0.38039216, 1, 0.3254902)
 position = Vector2(1165, 416)
 scale = Vector2(10.74219, 4.6875)
 texture = ExtResource("2_evy7w")
 
-[node name="pop_deposit" type="Node2D" parent="AnimalContainer" groups=["pop_container"]]
+[node name="pop_deposit" type="Node2D" parent="AnimalContainer" unique_id=1450660244 groups=["pop_container"]]
 position = Vector2(-108.45088, -88.746666)
 scale = Vector2(0.093090884, 0.21333334)
 
-[node name="WallsContainer" type="StaticBody2D" parent="AnimalContainer"]
+[node name="WallsContainer" type="StaticBody2D" parent="AnimalContainer" unique_id=1027465704]
 
-[node name="LeftWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+[node name="LeftWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=506906189]
 position = Vector2(-64.27925, -59.093334)
 shape = SubResource("SegmentShape2D_hwyus")
 
-[node name="RghtWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+[node name="RghtWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=780745582]
 position = Vector2(64.09308, -59.093334)
 shape = SubResource("SegmentShape2D_brkqs")
 
-[node name="UpWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+[node name="UpWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=1215985866]
 position = Vector2(61.95199, -61.65333)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_vljgw")
 
-[node name="DownWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer"]
+[node name="DownWall" type="CollisionShape2D" parent="AnimalContainer/WallsContainer" unique_id=1076708945]
 position = Vector2(62.882896, 61.65334)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_hwyus")
 
-[node name="UIElements" type="CanvasLayer" parent="."]
+[node name="UIElements" type="CanvasLayer" parent="." unique_id=1525530458]
 
-[node name="MiniGamesManager" type="Node" parent="UIElements"]
+[node name="MiniGamesManager" type="Node" parent="UIElements" unique_id=1153645555]
 script = ExtResource("3_x6ed6")
 
-[node name="BlurBackground" type="ColorRect" parent="UIElements"]
+[node name="BlurBackground" type="ColorRect" parent="UIElements" unique_id=874546419]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_yrgqc")
 anchors_preset = 15
@@ -130,7 +132,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0.6392157)
 
-[node name="Telefono" type="Control" parent="UIElements"]
+[node name="Telefono" type="Control" parent="UIElements" unique_id=1192328590]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 8
@@ -149,7 +151,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_group_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="UIElements/Telefono"]
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Telefono" unique_id=363798855]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -157,7 +159,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="close_phone" type="Button" parent="UIElements/Telefono"]
+[node name="close_phone" type="Button" parent="UIElements/Telefono" unique_id=1979260514]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -173,7 +175,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
-[node name="Label" type="Label" parent="UIElements/Telefono"]
+[node name="Label" type="Label" parent="UIElements/Telefono" unique_id=923246538]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -189,7 +191,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Esta es el celular"
 
-[node name="Computadora" type="Control" parent="UIElements"]
+[node name="Computadora" type="Control" parent="UIElements" unique_id=1491748520 groups=["Computadora"]]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
@@ -201,9 +203,11 @@ rotation = 0.34906584
 pivot_offset = Vector2(960, 0)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("6_y22r5")
+random_quiz = ExtResource("7_m7uap")
 metadata/_edit_group_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="UIElements/Computadora"]
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Computadora" unique_id=1352255509]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -211,7 +215,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="close_Pc" type="Button" parent="UIElements/Computadora"]
+[node name="close_Pc" type="Button" parent="UIElements/Computadora" unique_id=1436958406]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -227,23 +231,11 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
-[node name="Label" type="Label" parent="UIElements/Computadora"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -11.5
-offset_right = 64.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Esta es el celular"
+[node name="Timer" type="Timer" parent="UIElements/Computadora" unique_id=1835240618]
+wait_time = 5.0
+autostart = true
 
-[node name="Cocina" type="Control" parent="UIElements"]
+[node name="Cocina" type="Control" parent="UIElements" unique_id=1994383423]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 8
@@ -261,7 +253,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_group_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="UIElements/Cocina"]
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Cocina" unique_id=141829868]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,7 +261,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="close_cook" type="Button" parent="UIElements/Cocina"]
+[node name="close_cook" type="Button" parent="UIElements/Cocina" unique_id=1607080653]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -285,7 +277,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
-[node name="Label2" type="Label" parent="UIElements/Cocina"]
+[node name="Label2" type="Label" parent="UIElements/Cocina" unique_id=1033757245]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -301,13 +293,13 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Esta es la cocina"
 
-[node name="Interactables_buttons" type="Control" parent="UIElements"]
+[node name="Interactables_buttons" type="Control" parent="UIElements" unique_id=1340349771]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Phone_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+[node name="Phone_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1329366065]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -324,7 +316,7 @@ texture_pressed = ExtResource("6_wl8wx")
 texture_hover = ExtResource("7_ej4oj")
 stretch_mode = 6
 
-[node name="PC_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+[node name="PC_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1740680259]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -341,7 +333,7 @@ texture_pressed = ExtResource("9_d2j03")
 texture_hover = ExtResource("10_5frnu")
 stretch_mode = 6
 
-[node name="Door_Interaction_button2" type="TextureButton" parent="UIElements/Interactables_buttons"]
+[node name="Door_Interaction_button2" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1420422374]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
@@ -357,7 +349,7 @@ texture_pressed = ExtResource("12_lx611")
 texture_hover = ExtResource("13_y22r5")
 stretch_mode = 6
 
-[node name="Room_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+[node name="Room_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=1622294210]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -374,7 +366,7 @@ texture_pressed = ExtResource("15_lx611")
 texture_hover = ExtResource("16_y22r5")
 stretch_mode = 6
 
-[node name="Cook_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons"]
+[node name="Cook_Interaction_button" type="TextureButton" parent="UIElements/Interactables_buttons" unique_id=414712272]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -393,23 +385,23 @@ texture_pressed = ExtResource("15_rgufk")
 texture_hover = ExtResource("16_k0lso")
 stretch_mode = 6
 
-[node name="MainCamera" type="Camera2D" parent="."]
+[node name="MainCamera" type="Camera2D" parent="." unique_id=1200944931]
 unique_name_in_owner = true
 anchor_mode = 0
 
-[node name="Puerta_ejemplo" type="Sprite2D" parent="."]
+[node name="Puerta_ejemplo" type="Sprite2D" parent="." unique_id=1388495201]
 position = Vector2(-4724, 503)
 scale = Vector2(3.0624988, 5.625)
 texture = ExtResource("2_evy7w")
 
-[node name="Label" type="Label" parent="Puerta_ejemplo"]
+[node name="Label" type="Label" parent="Puerta_ejemplo" unique_id=511135797]
 offset_left = -20.244907
 offset_top = -65.066666
 offset_right = 31.755093
 offset_bottom = -42.066666
 text = "Door"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=184741027]
 offset_left = 903.0
 offset_top = 17.0
 offset_right = 1237.0
