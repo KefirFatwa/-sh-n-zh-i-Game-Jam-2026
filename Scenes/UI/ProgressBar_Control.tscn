@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu3nb58kq66fg"]
+
+[ext_resource type="Script" uid="uid://t5dijso054lj" path="res://Scenes/UI/general_bar_scene.gd" id="1_4ch13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ch13"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3m3o"]
+bg_color = Color(0.6, 1, 0.6, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="ProgressBarManager" type="Control"]
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 3
+anchor_right = 0.132
+anchor_bottom = 0.047000002
+offset_right = -79.44
+offset_bottom = 3.2399979
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ch13")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4ch13")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f3m3o")
+max_value = 5.0
+step = 1.0
+value = 5.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Life"

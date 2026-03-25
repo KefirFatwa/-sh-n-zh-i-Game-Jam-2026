@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://bjprapupicomq"]
+
+[ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="1_albks"]
+[ext_resource type="Script" uid="uid://ctjijpdmogt64" path="res://Scenes/Dolphin_scenes/dolphin_character.gd" id="1_va7nk"]
+[ext_resource type="Script" uid="uid://nj1xjy5bnir0" path="res://Scenes/Dolphin_scenes/pop_manager.gd" id="2_1ty4b"]
+[ext_resource type="Script" uid="uid://defy8ec51ku5c" path="res://Scenes/Dolphin_scenes/love_status_manager.gd" id="2_hvstq"]
+[ext_resource type="Script" uid="uid://3uqgy7vydrd0" path="res://Scenes/Dolphin_scenes/emotional_status.gd" id="2_xi0lt"]
+[ext_resource type="PackedScene" uid="uid://bd1gedovv26li" path="res://Scenes/pop_scenes/poop.tscn" id="3_7vbcp"]
+[ext_resource type="Script" uid="uid://bhaga2d0lnx1m" path="res://Scenes/Dolphin_scenes/Available_states/death_state.gd" id="3_k1ajc"]
+[ext_resource type="Script" uid="uid://d03kbsufx5wa0" path="res://Scenes/Dolphin_scenes/state_machine.gd" id="3_xxsbn"]
+[ext_resource type="Script" uid="uid://s6n0bsbox76m" path="res://Scenes/Dolphin_scenes/Available_states/dying_state.gd" id="4_1ty4b"]
+[ext_resource type="Script" uid="uid://brob6yykk4o7c" path="res://Scenes/Dolphin_scenes/food_status_manager.gd" id="4_xi0lt"]
+[ext_resource type="Script" uid="uid://b24v7s2yloytx" path="res://Scenes/Dolphin_scenes/Available_states/falling_state.gd" id="5_7vbcp"]
+[ext_resource type="Script" uid="uid://blrdvsyalmmad" path="res://Scenes/Dolphin_scenes/Available_states/jump_state.gd" id="7_xi0lt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_va7nk"]
+radius = 73.109505
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
+radius = 99.00505
+
+[node name="Dolphin_Character" type="CharacterBody2D" unique_id=1029352982]
+position = Vector2(1058, 539)
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_va7nk")
+GRAVITY_STRENGHT = 400
+
+[node name="General_Manager" type="Node" parent="." unique_id=368527509]
+script = ExtResource("2_xi0lt")
+
+[node name="Love_Status_Manager" type="Node" parent="." unique_id=1115228182 node_paths=PackedStringArray("dolphin_character")]
+unique_name_in_owner = true
+script = ExtResource("2_hvstq")
+dolphin_character = NodePath("..")
+
+[node name="Food_Status_Manager" type="Node" parent="." unique_id=1035388642]
+script = ExtResource("4_xi0lt")
+
+[node name="Shit_Status_Manager" type="Node" parent="." unique_id=201292303]
+script = ExtResource("2_1ty4b")
+pop_instance = ExtResource("3_7vbcp")
+min_frequency_pop = 3
+max_frequency_pop = 8
+
+[node name="Timer" type="Timer" parent="Shit_Status_Manager" unique_id=1264493392]
+unique_name_in_owner = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=1629426530 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_xxsbn")
+initial_state = NodePath("FallingState")
+
+[node name="DeathState" type="Node" parent="StateMachine" unique_id=801693551]
+unique_name_in_owner = true
+script = ExtResource("3_k1ajc")
+metadata/_custom_type_script = "uid://bhaga2d0lnx1m"
+
+[node name="EatState" type="Node" parent="StateMachine" unique_id=1283698372]
+unique_name_in_owner = true
+script = ExtResource("4_1ty4b")
+metadata/_custom_type_script = "uid://s6n0bsbox76m"
+
+[node name="FallingState" type="Node" parent="StateMachine" unique_id=381454409]
+unique_name_in_owner = true
+script = ExtResource("5_7vbcp")
+metadata/_custom_type_script = "uid://b24v7s2yloytx"
+
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1741133256]
+unique_name_in_owner = true
+script = ExtResource("7_xi0lt")
+metadata/_custom_type_script = "uid://blrdvsyalmmad"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=57677916]
+modulate = Color(0.35533306, 0.32457706, 9.62615e-08, 1)
+position = Vector2(0.5, 2.5)
+texture = ExtResource("1_albks")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=601831766]
+position = Vector2(-42.5, -47.5)
+scale = Vector2(0.36718753, 0.27343753)
+texture = ExtResource("1_albks")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1457721703]
+position = Vector2(44, -46.999996)
+scale = Vector2(0.39062503, 0.265625)
+texture = ExtResource("1_albks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721586557]
+shape = SubResource("CircleShape2D_va7nk")
+
+[node name="Status_state" type="Label" parent="." unique_id=1792681934]
+offset_left = -53.0
+offset_top = -104.0
+offset_right = 53.0
+offset_bottom = -81.0
+theme_override_constants/outline_size = 9
+text = "Current_state"
+
+[node name="Down_raycast" type="RayCast2D" parent="." unique_id=376717149]
+unique_name_in_owner = true
+target_position = Vector2(0, 108)
+
+[node name="Right_raycast" type="RayCast2D" parent="." unique_id=997745135]
+unique_name_in_owner = true
+target_position = Vector2(105, 0)
+
+[node name="Left_raycast" type="RayCast2D" parent="." unique_id=1233172142]
+unique_name_in_owner = true
+target_position = Vector2(-91, -1)
+
+[node name="EatRange" type="Area2D" parent="." unique_id=900842731]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatRange" unique_id=59482704]
+shape = SubResource("CircleShape2D_hvstq")
+debug_color = Color(0.9393114, 1.0973811e-05, 0.62207997, 0.41960785)
+
+[node name="Debug_states" type="Control" parent="." unique_id=599289364]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -195.0
+offset_top = -164.0
+offset_right = -155.0
+offset_bottom = -124.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Debug_states" unique_id=1847523611]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Clean" type="Label" parent="Debug_states/VBoxContainer" unique_id=1303218278]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "Cleanest"
+
+[node name="Love" type="Label" parent="Debug_states/VBoxContainer" unique_id=1472470133]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "Love"
+
+[node name="Food" type="Label" parent="Debug_states/VBoxContainer" unique_id=2116794650]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "Food"

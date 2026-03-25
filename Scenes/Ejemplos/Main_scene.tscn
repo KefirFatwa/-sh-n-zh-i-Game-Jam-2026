@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://b177rnnlsv3ai"]
+[gd_scene load_steps=27 format=3 uid="uid://b177rnnlsv3ai"]
 
 [ext_resource type="Script" uid="uid://b72hkdcgde8pf" path="res://Scenes/Main_scene/scene_manager.gd" id="1_6ejmp"]
 [ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="2_evy7w"]
+[ext_resource type="PackedScene" uid="uid://bjprapupicomq" path="res://Scenes/Dolphin_scenes/dolphin_character.tscn" id="2_lx611"]
 [ext_resource type="Script" uid="uid://2q4tsql3185p" path="res://Scenes/Main_scene/mini_games_manager.gd" id="3_x6ed6"]
 [ext_resource type="Shader" uid="uid://7xawikrqpkve" path="res://Shaders/blur_shader.gdshader" id="4_vljgw"]
 [ext_resource type="Texture2D" uid="uid://bdh40fb34i2jo" path="res://Assets/UI_Temporal_Tony/Phone_Normal.png" id="5_pf2du"]
@@ -66,11 +67,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dolphin_Character" parent="." instance=ExtResource("2_lx611")]
+position = Vector2(1164, 530)
+
+[node name="Dolphin_Character3" parent="." instance=ExtResource("2_lx611")]
+position = Vector2(1535, 326)
+
+[node name="Dolphin_Character2" parent="." instance=ExtResource("2_lx611")]
+position = Vector2(667, 423.00003)
+rotation = -3.1415925
+scale = Vector2(1, -1)
+
+[node name="dolphin_container" type="Node2D" parent="."]
+position = Vector2(1165, 416)
+scale = Vector2(10.74219, 4.6875)
 
 [node name="AnimalContainer" type="Sprite2D" parent="."]
+self_modulate = Color(0.12941177, 0.38039216, 1, 0.3254902)
 position = Vector2(1165, 416)
 scale = Vector2(10.74219, 4.6875)
 texture = ExtResource("2_evy7w")
+
+[node name="pop_deposit" type="Node2D" parent="AnimalContainer" groups=["pop_container"]]
+position = Vector2(-108.45088, -88.746666)
+scale = Vector2(0.093090884, 0.21333334)
 
 [node name="WallsContainer" type="StaticBody2D" parent="AnimalContainer"]
 
@@ -105,6 +127,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(1, 1, 1, 0.6392157)
 
 [node name="Telefono" type="Control" parent="UIElements"]
