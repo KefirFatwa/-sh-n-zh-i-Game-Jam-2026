@@ -49,12 +49,19 @@ func handle_on_click(button: Button):
 			opcion = x
 	var isCorrect = opcion["correcta"]
 	if isCorrect:
+		GameManager.correct_quiz_answers += 1
 		print("Escogiste la opción correcta")
+		_delete_question()
 	else:
+		_delete_question()
 		print("Te equivocaste!")
 	
 	disable_all_buttons()
 
+func _delete_question()->void:
+	get_tree().create_timer(3).timeout.connect(func():
+		get_tree().get_first_node_in_group("Computadora").is_question_active = false
+		queue_free())
 
 func _on_button_pressed() -> void:
 	handle_on_click(button)
