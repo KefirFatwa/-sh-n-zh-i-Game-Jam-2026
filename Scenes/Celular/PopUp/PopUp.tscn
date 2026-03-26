@@ -3,19 +3,23 @@
 [ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="1_7qklf"]
 [ext_resource type="Script" uid="uid://batx22ff4oh5i" path="res://Scenes/Celular/PopUp/pop_up.gd" id="1_vp2px"]
 
-[node name="PopUp" type="Node" unique_id=1402577959]
+[node name="Window" type="ColorRect" unique_id=2109965852]
+anchors_preset = -1
+offset_right = 420.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_vp2px")
-
-[node name="Window" type="ColorRect" parent="." unique_id=2109965852]
-unique_name_in_owner = true
-offset_right = 325.0
-offset_bottom = 301.0
+metadata/_edit_lock_ = true
 
 [node name="CloseButton" type="Button" parent="." unique_id=399553365]
-offset_left = 184.0
-offset_top = 8.0
-offset_right = 320.0
-offset_bottom = 144.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_bottom = 136.0
+grow_horizontal = 0
 icon = ExtResource("1_7qklf")
 flat = true
 

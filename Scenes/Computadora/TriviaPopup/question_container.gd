@@ -69,6 +69,7 @@ func handle_on_click(button: Button):
 func quit_question() -> void:
 	disable_all_buttons()
 	_delete_question()
+	timer.stop()
 
 func _delete_question() -> void:
 	get_tree().create_timer(3).timeout.connect(func():

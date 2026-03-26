@@ -1,8 +1,8 @@
 extends Control
 
 @onready var button = %Button
-@onready var timer = %Timer
-@onready var canvasLayer = %CanvasLayer
+@onready var timer = %PopUpTimer
+@onready var popUpSpawnLocation: PathFollow2D = %PopUpSpawnLocation
 
 var popUpScene = preload("res://Scenes/Celular/PopUp/PopUp.tscn")
 
@@ -30,5 +30,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	var popUp = popUpScene.instantiate()
-	canvasLayer.add_child(popUp)
+	var popUp: ColorRect = popUpScene.instantiate()
+	popUpSpawnLocation.progress_ratio = randf()
+	popUp.position = popUpSpawnLocation.position
+	add_child(popUp)
