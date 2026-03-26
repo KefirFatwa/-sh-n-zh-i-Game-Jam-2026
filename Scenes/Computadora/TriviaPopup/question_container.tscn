@@ -11,6 +11,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ffbtf")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=830822540]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=355801238]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1794041999]
 layout_mode = 1
 anchors_preset = 8
@@ -90,21 +96,41 @@ theme_override_font_sizes/font_size = 24
 text = "Hello"
 
 [node name="Timer" type="Timer" parent="." unique_id=1609908340]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
+autostart = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2077625569]
-layout_mode = 0
-offset_left = 769.0
-offset_top = 128.0
-offset_right = 1191.0
-offset_bottom = 155.0
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 744.0
+offset_top = 176.0
+offset_right = -754.0
+offset_bottom = -877.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+value = 10.0
+show_percentage = false
 
 [node name="Label" type="Label" parent="ProgressBar" unique_id=1892807735]
-layout_mode = 0
-offset_left = 185.0
-offset_top = 32.0
-offset_right = 225.0
-offset_bottom = 55.0
-text = "Time Left"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -11.5
+offset_right = 29.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tiempo"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

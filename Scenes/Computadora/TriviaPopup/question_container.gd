@@ -6,17 +6,25 @@ extends Control
 @onready var button3 = %Button3
 @onready var button4 = %Button4
 
+@onready var timer = %Timer
+@onready var progressBar = %ProgressBar
+
 var preguntas: Array = []
 var preguntaActual = {}
+
+var timer_done: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	preguntas = load_json()
 	set_questions(preguntas)
+	
+	# Set timer
+	timer.wait_time = progressBar.value
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	handle_progress_bar()
 
 func load_json():
 	var file = FileAccess.open("res://Scenes/Computadora/TriviaPopup/questions.json", FileAccess.READ)
@@ -50,18 +58,37 @@ func handle_on_click(button: Button):
 	var isCorrect = opcion["correcta"]
 	if isCorrect:
 		GameManager.correct_quiz_answers += 1
+		button.modulate = Color("#44cc44")
 		print("Escogiste la opción correcta")
-		_delete_question()
 	else:
-		_delete_question()
+		button.modulate = Color("#ff4444")
 		print("Te equivocaste!")
 	
-	disable_all_buttons()
+	quit_question()
 
-func _delete_question()->void:
+func quit_question() -> void:
+	disable_all_buttons()
+	_delete_question()
+	timer.stop()
+
+func _delete_question() -> void:
 	get_tree().create_timer(3).timeout.connect(func():
 		get_tree().get_first_node_in_group("Computadora").is_question_active = false
 		queue_free())
+		
+func handle_progress_bar() -> void:
+	progressBar.value = timer.time_left
+	if progressBar.value > 7:
+		progressBar.modulate = Color("#44cc44")
+	if progressBar.value > 4 and progressBar.value < 7:
+		progressBar.modulate = Color("#ffdd00")
+	if progressBar.value < 4:
+		progressBar.modulate = Color("#ff4444")
+	
+	if timer.time_left == 0 and not timer_done:
+		timer_done = true
+		print("EL TIEMPO ACABO.")
+		quit_question()
 
 func _on_button_pressed() -> void:
 	handle_on_click(button)
