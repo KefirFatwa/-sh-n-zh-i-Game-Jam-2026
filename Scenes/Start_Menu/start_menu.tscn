@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://crwfabg6r0aqk"]
+
+[ext_resource type="Script" uid="uid://4nnytmyclgni" path="res://Scenes/Start_Menu/start_menu.gd" id="1_8vd0w"]
+[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/botones/splashartplaceholder.png" id="2_fi2g1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi2g1"]
+bg_color = Color(1, 0.4745098, 0.68235296, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdyax"]
+bg_color = Color(1, 0.40790308, 0.6538175, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1pa2"]
+bg_color = Color(0.99999887, 0.55795914, 0.7219824, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mch1c"]
+bg_color = Color(0.3882353, 0.60784316, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htqng"]
+bg_color = Color(0.29440227, 0.5454978, 0.9999972, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo832"]
+bg_color = Color(0.45682997, 0.65316075, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq4ty"]
+bg_color = Color(1, 0.54901963, 0.36078432, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jj0e"]
+bg_color = Color(0.9999992, 0.4950109, 0.27550405, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku3sm"]
+bg_color = Color(1, 0.60992897, 0.4508595, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpuqh"]
+bg_color = Color(1, 0.9764706, 0.50980395, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6q34"]
+bg_color = Color(0.9749784, 0.9307714, 8.471012e-06, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsfdp"]
+bg_color = Color(0.9999997, 0.9830515, 0.6055674, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="StartMenu" type="Node" unique_id=191973974]
+script = ExtResource("1_8vd0w")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=393375790]
+position = Vector2(1040, 536.00006)
+scale = Vector2(0.5436101, 0.5007234)
+texture = ExtResource("2_fi2g1")
+metadata/_edit_lock_ = true
+
+[node name="ButtonManager" type="Control" parent="." unique_id=1428948887]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Jugar" type="Button" parent="ButtonManager" unique_id=1415892801]
+layout_mode = 1
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 576.0
+offset_bottom = 592.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_fi2g1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rdyax")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v1pa2")
+text = "Jugar"
+
+[node name="Opciones" type="Button" parent="ButtonManager" unique_id=2075421276]
+layout_mode = 1
+offset_left = 256.0
+offset_top = 640.0
+offset_right = 576.0
+offset_bottom = 720.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mch1c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_htqng")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bo832")
+text = "Opciones	"
+
+[node name="Creditos" type="Button" parent="ButtonManager" unique_id=1233708643]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 768.0
+offset_right = 576.0
+offset_bottom = 848.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mq4ty")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0jj0e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ku3sm")
+text = "Créditos"
+
+[node name="Salir" type="Button" parent="ButtonManager" unique_id=749227195]
+layout_mode = 1
+offset_left = 256.0
+offset_top = 896.0
+offset_right = 576.0
+offset_bottom = 976.0
+theme_override_colors/font_color = Color(0, 0.03137255, 0.44313726, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.03137255, 0.44313726, 1)
+theme_override_colors/font_hover_color = Color(0, 0.03137255, 0.44313726, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_wpuqh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f6q34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bsfdp")
+text = "Salir"
+
+[connection signal="pressed" from="ButtonManager/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="ButtonManager/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="ButtonManager/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="ButtonManager/Salir" to="." method="_on_salir_pressed"]
