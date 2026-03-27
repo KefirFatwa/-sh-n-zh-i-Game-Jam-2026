@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dlqvvln1i5aa3"]
+
+[ext_resource type="Script" uid="uid://bwbs7rikmc6xr" path="res://Scenes/Start_Menu/Opciones/opciones.gd" id="1_l3nqf"]
+
+[node name="Opciones" type="Node" unique_id=510150795]
+script = ExtResource("1_l3nqf")
+
+[node name="Window" type="Window" parent="." unique_id=62890463]
+oversampling_override = 1.0
+title = "Opciones"
+initial_position = 1
+size = Vector2i(460, 320)
+
+[node name="MarginContainer" type="MarginContainer" parent="Window" unique_id=1827894888]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/MarginContainer" unique_id=133612414]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ScreenTypeToggle" type="CheckButton" parent="Window/MarginContainer/VBoxContainer" unique_id=187845448]
+layout_mode = 2
+button_pressed = true
+text = "Pantalla completa"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/MarginContainer/VBoxContainer" unique_id=1648359720]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/MarginContainer/VBoxContainer/HBoxContainer" unique_id=219130356]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 6
+
+[node name="Label" type="Label" parent="Window/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1385881787]
+layout_mode = 2
+text = "Resolución de Pantalla"
+
+[node name="OptionButton" type="OptionButton" parent="Window/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1340709079]
+layout_mode = 2
+size_flags_horizontal = 10
+item_count = 2
+popup/item_0/text = "1280x720"
+popup/item_0/id = 0
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
