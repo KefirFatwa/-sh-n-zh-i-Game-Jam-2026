@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ygfg5kd2guvj"]
 
 [ext_resource type="Script" uid="uid://c7adnfvq2cpo6" path="res://Scenes/pop_scenes/death_dolphin.gd" id="1_ra26q"]
-[ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="2_emsfc"]
-[ext_resource type="Texture2D" uid="uid://mig8idx42wjw" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojosmoribundo.png" id="3_0jwxc"]
+[ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="2_emsfc"]
+[ext_resource type="Texture2D" uid="uid://mig8idx42wjw" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojosmoribundo.png" id="3_0jwxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jwxc"]
 size = Vector2(140, 140)

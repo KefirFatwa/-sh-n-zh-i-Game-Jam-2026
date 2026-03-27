@@ -5,7 +5,7 @@ extends Control
 @onready var button2 = %Button2
 @onready var button3 = %Button3
 @onready var button4 = %Button4
-
+@onready var timerLabel = %TimerLabel
 @onready var timer = %Timer
 @onready var progressBar = %ProgressBar
 
@@ -78,6 +78,7 @@ func _delete_question() -> void:
 		
 func handle_progress_bar() -> void:
 	progressBar.value = timer.time_left
+	timerLabel.text = str(timer.time_left).pad_decimals(2)
 	if progressBar.value > 7:
 		progressBar.modulate = Color("#44cc44")
 	if progressBar.value > 4 and progressBar.value < 7:

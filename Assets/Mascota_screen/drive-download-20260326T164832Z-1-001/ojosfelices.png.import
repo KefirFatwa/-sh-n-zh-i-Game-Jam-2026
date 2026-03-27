@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg8c1cxod04td"
-path="res://.godot/imported/splashartplaceholder.png-3f2390b655677763cfd464dafb514530.ctex"
+uid="uid://bxsahbyg28qjf"
+path="res://.godot/imported/ojosfelices.png-b2b2219031d5bc575f3a4301ac209ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/botones/splashartplaceholder.png"
-dest_files=["res://.godot/imported/splashartplaceholder.png-3f2390b655677763cfd464dafb514530.ctex"]
+source_file="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojosfelices.png"
+dest_files=["res://.godot/imported/ojosfelices.png-b2b2219031d5bc575f3a4301ac209ed2.ctex"]
 
 [params]
 

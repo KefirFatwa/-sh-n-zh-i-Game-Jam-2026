@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtl6ofmn38yys"
-path="res://.godot/imported/ojos felices.png-accfdb0b5296d97c62cd0b2eac38713f.ctex"
+uid="uid://cg8c1cxod04td"
+path="res://.godot/imported/splashartplaceholder.png-109406bbcdf91038e1fe88254dd7a47d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojos felices.png"
-dest_files=["res://.godot/imported/ojos felices.png-accfdb0b5296d97c62cd0b2eac38713f.ctex"]
+source_file="res://Assets/Background/splashartplaceholder.png"
+dest_files=["res://.godot/imported/splashartplaceholder.png-109406bbcdf91038e1fe88254dd7a47d.ctex"]
 
 [params]
 

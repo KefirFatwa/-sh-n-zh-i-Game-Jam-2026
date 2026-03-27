@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0sh7qt7j30u"
-path="res://.godot/imported/suelokawaii.png-e4af8eccd8622f99ed5fdb09dec46523.ctex"
+uid="uid://bobrbnhmc7ul4"
+path="res://.godot/imported/sopita.png-52d2c1d7a6b42464294de2195a687e38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/suelokawaii.png"
-dest_files=["res://.godot/imported/suelokawaii.png-e4af8eccd8622f99ed5fdb09dec46523.ctex"]
+source_file="res://Assets/sustento/sopita.png"
+dest_files=["res://.godot/imported/sopita.png-52d2c1d7a6b42464294de2195a687e38.ctex"]
 
 [params]
 

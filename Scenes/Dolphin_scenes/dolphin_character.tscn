@@ -12,8 +12,8 @@
 [ext_resource type="Script" uid="uid://brob6yykk4o7c" path="res://Scenes/Dolphin_scenes/food_status_manager.gd" id="4_xi0lt"]
 [ext_resource type="Script" uid="uid://b24v7s2yloytx" path="res://Scenes/Dolphin_scenes/Available_states/falling_state.gd" id="5_7vbcp"]
 [ext_resource type="Script" uid="uid://blrdvsyalmmad" path="res://Scenes/Dolphin_scenes/Available_states/jump_state.gd" id="7_xi0lt"]
-[ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="13_e43um"]
-[ext_resource type="Texture2D" uid="uid://dtl6ofmn38yys" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojos felices.png" id="14_e43um"]
+[ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="13_e43um"]
+[ext_resource type="Texture2D" uid="uid://dtl6ofmn38yys" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos felices.png" id="14_e43um"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
 radius = 374.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mig8idx42wjw"
-path="res://.godot/imported/ojosmoribundo.png-e539cd3fab9805e44f8cc06fce0bf9de.ctex"
+uid="uid://73cilowj7pg4"
+path="res://.godot/imported/ojos normales.png-d7d0791a2f3c4dda7a6a2972dc3d2eb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojosmoribundo.png"
-dest_files=["res://.godot/imported/ojosmoribundo.png-e539cd3fab9805e44f8cc06fce0bf9de.ctex"]
+source_file="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos normales.png"
+dest_files=["res://.godot/imported/ojos normales.png-d7d0791a2f3c4dda7a6a2972dc3d2eb8.ctex"]
 
 [params]
 

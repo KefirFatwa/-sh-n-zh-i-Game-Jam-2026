@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://73cilowj7pg4"
-path="res://.godot/imported/ojos normales.png-e0fd8488659d9ea7c556a5a974ef0f09.ctex"
+uid="uid://drsojik4enwiq"
+path="res://.godot/imported/bordepantallamascota.png-b2cc2d6a3a8ba923e8854e105aae8e9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojos normales.png"
-dest_files=["res://.godot/imported/ojos normales.png-e0fd8488659d9ea7c556a5a974ef0f09.ctex"]
+source_file="res://Assets/Mascota_screen/bordepantallamascota.png"
+dest_files=["res://.godot/imported/bordepantallamascota.png-b2cc2d6a3a8ba923e8854e105aae8e9b.ctex"]
 
 [params]
 

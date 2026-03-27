@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crwfabg6r0aqk"]
 
 [ext_resource type="Script" uid="uid://4nnytmyclgni" path="res://Scenes/Start_Menu/start_menu.gd" id="1_8vd0w"]
-[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/botones/splashartplaceholder.png" id="2_fi2g1"]
+[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="2_fi2g1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi2g1"]
 bg_color = Color(1, 0.4745098, 0.68235296, 1)
