@@ -2,6 +2,34 @@
 
 [ext_resource type="Script" uid="uid://b1l4j3cd3ot53" path="res://Scenes/Computadora/TriviaPopup/question_container.gd" id="1_ffbtf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffbtf"]
+bg_color = Color(1, 0.54901963, 0.36078432, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dns1d"]
+bg_color = Color(0.99999934, 0.46205425, 0.2176378, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_paglk"]
+bg_color = Color(1, 0.62027717, 0.4658401, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a31f"]
+bg_color = Color(0.34407556, 0.34407583, 0.3440756, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="Computadora" type="Control" unique_id=630852609]
 layout_mode = 3
 anchors_preset = 15
@@ -19,14 +47,23 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=293523905]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1161544921]
-layout_mode = 0
-offset_left = 559.0
-offset_top = 171.0
-offset_right = 1318.0
-offset_bottom = 625.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 572.0
+offset_top = 169.0
+offset_right = 1331.0
+offset_bottom = 623.0
+grow_horizontal = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
@@ -39,6 +76,7 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 80)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Pregunta"
 autowrap_mode = 2
@@ -68,7 +106,12 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffbtf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dns1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_paglk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4a31f")
 text = "Hello"
 autowrap_mode = 2
 
@@ -76,7 +119,12 @@ autowrap_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffbtf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dns1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_paglk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4a31f")
 text = "Hello"
 autowrap_mode = 2
 
@@ -88,7 +136,12 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffbtf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dns1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_paglk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4a31f")
 text = "Hello"
 autowrap_mode = 2
 
@@ -96,7 +149,12 @@ autowrap_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffbtf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dns1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_paglk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4a31f")
 text = "Hello"
 autowrap_mode = 2
 
@@ -112,17 +170,18 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 750.0
-offset_top = 41.0
-offset_right = -748.0
-offset_bottom = -1012.0
+offset_left = 744.0
+offset_top = 168.0
+offset_right = -754.0
+offset_bottom = -885.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 10.0
 value = 10.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="ProgressBar" unique_id=1892807735]
+[node name="TimerLabel" type="Label" parent="ProgressBar" unique_id=1892807735]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
