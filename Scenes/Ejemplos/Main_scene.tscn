@@ -10,13 +10,14 @@
 [ext_resource type="Script" uid="uid://2q4tsql3185p" path="res://Scenes/Main_scene/mini_games_manager.gd" id="3_x6ed6"]
 [ext_resource type="Texture2D" uid="uid://dr16qc1wjf0d2" path="res://Assets/Background/mesa.png" id="4_ddw3p"]
 [ext_resource type="Shader" uid="uid://7xawikrqpkve" path="res://Shaders/blur_shader.gdshader" id="4_vljgw"]
-[ext_resource type="Texture2D" uid="uid://m2epjqblyc0c" path="res://Assets/Tamagochi_screen/pantallatamagotchi.png" id="5_3bcjv"]
-[ext_resource type="Texture2D" uid="uid://0sh7qt7j30u" path="res://Assets/Tamagochi_screen/suelokawaii.png" id="6_ogl74"]
+[ext_resource type="Texture2D" uid="uid://m2epjqblyc0c" path="res://Assets/Mascota_screen/pantalla_mascota.png" id="5_3bcjv"]
+[ext_resource type="Texture2D" uid="uid://0sh7qt7j30u" path="res://Assets/Mascota_screen/suelokawaii.png" id="6_ogl74"]
 [ext_resource type="Script" uid="uid://c1fmwd6v3nrhr" path="res://Scenes/Computadora/computadoraManager.gd" id="6_y22r5"]
-[ext_resource type="Texture2D" uid="uid://drsojik4enwiq" path="res://Assets/Tamagochi_screen/bordepantallatamagotchi.png" id="7_bsixg"]
+[ext_resource type="Texture2D" uid="uid://drsojik4enwiq" path="res://Assets/Mascota_screen/bordepantallamascota.png" id="7_bsixg"]
 [ext_resource type="PackedScene" uid="uid://ijaymot7rg0q" path="res://Scenes/Computadora/TriviaPopup/question_container.tscn" id="7_m7uap"]
 [ext_resource type="Texture2D" uid="uid://dj0iykdfa0jvv" path="res://Assets/UI_Temporal_Tony/Door_Normal.png" id="11_fd4pn"]
 [ext_resource type="Texture2D" uid="uid://dg1t625xtqjs7" path="res://Assets/UI_Temporal_Tony/Door_Pressed.png" id="12_lx611"]
+[ext_resource type="Script" uid="uid://c2m02d0h7tl56" path="res://Scenes/Celular/celular_controller.gd" id="13_bsixg"]
 [ext_resource type="Texture2D" uid="uid://cx8qfk4h1a4t0" path="res://Assets/Phone/fondocelular.png" id="13_ca1ee"]
 [ext_resource type="Texture2D" uid="uid://v16a3wioyinp" path="res://Assets/UI_Temporal_Tony/Door_Hover.png" id="13_y22r5"]
 [ext_resource type="Texture2D" uid="uid://ckpehbrcwyx5" path="res://Assets/UI_Temporal_Tony/Room_Normal.png" id="14_fd4pn"]
@@ -73,6 +74,48 @@ shader = ExtResource("4_vljgw")
 shader_parameter/samples = 0
 shader_parameter/lod = 1
 shader_parameter/tint_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2x36"]
+bg_color = Color(1, 0.54901963, 0.36078432, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0i8m"]
+bg_color = Color(0.99999934, 0.4990098, 0.2821269, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qvw2"]
+bg_color = Color(1, 0.65737647, 0.5190999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogl74"]
+bg_color = Color(1, 0.4745098, 0.68235296, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsixg"]
+bg_color = Color(0.99999756, 0.30629686, 0.617796, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsrrq"]
+bg_color = Color(1, 0.6523258, 0.774378, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Main_scene" type="Node" unique_id=123212929]
 
@@ -219,6 +262,7 @@ grow_vertical = 2
 rotation = -1.0471976
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("13_bsixg")
 metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UIElements/Telefono" unique_id=13886956]
@@ -238,14 +282,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -440.74478
+offset_left = -475.5817
 offset_top = 4.5961304
-offset_right = -329.74478
-offset_bottom = 67.59613
+offset_right = -323.74478
+offset_bottom = 74.01703
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
-text = "Close"
+theme_override_styles/normal = SubResource("StyleBoxFlat_w2x36")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j0i8m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1qvw2")
+text = "Cerrar"
 
 [node name="Label" type="Label" parent="UIElements/Telefono" unique_id=923246538]
 layout_mode = 1
@@ -296,14 +344,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -36.972748
+offset_left = -57.056763
 offset_top = -29.052734
-offset_right = 74.02722
-offset_bottom = 33.947266
+offset_right = 106.36267
+offset_bottom = 41.2016
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
-text = "Close"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ogl74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bsixg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vsrrq")
+text = "Cerrar"
 
 [node name="Timer" type="Timer" parent="UIElements/Computadora" unique_id=1835240618]
 wait_time = 5.0
