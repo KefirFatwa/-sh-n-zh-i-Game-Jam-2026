@@ -1,36 +1,63 @@
 [gd_scene format=3 uid="uid://bxjdcdvj2vd6y"]
 
 [ext_resource type="Script" uid="uid://dbtw0jmf3wvkf" path="res://Scenes/Celular/celular_scene.gd" id="1_ffcyh"]
+[ext_resource type="Texture2D" uid="uid://bobrbnhmc7ul4" path="res://Assets/sustento/sopita.png" id="2_gucy2"]
 
-[sub_resource type="Curve2D" id="Curve2D_ffcyh"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 236.38379, 204.00002, 0, 0, 0, 0, 338.27902, 106.53439, 0, 0, 0, 0, 366.03687, 204.00002, 0, 0, 0, 0, 433.56445, 311.21222, 0, 0, 0, 0, 451.1217, 523.8791, 0, 0, 0, 0, 445.71948, 740.06104, 0, 0, 0, 0, 295.8081, 711.9398, 0, 0, 0, 0, 274.19922, 560.7882, 0, 0, 0, 0, 262.0443, 392.0608, 0, 0, 0, 0, 272.84863, 295.39404, 0, 0, 0, 0, 236.38379, 204.00002)
-}
-point_count = 11
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffcyh"]
+bg_color = Color(0.3882353, 0.60784316, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gucy2"]
+bg_color = Color(0.30195573, 0.55050886, 0.9999973, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wjnv"]
+bg_color = Color(0.46032137, 0.655456, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="CelularScene" type="Control" unique_id=1466766413]
 layout_mode = 3
-anchor_left = 0.30900002
-anchor_right = 0.698
-anchor_bottom = 1.0
-offset_left = 0.7199707
-offset_right = -0.16003418
+anchor_left = 0.504
+anchor_top = 0.582
+anchor_right = 0.504
+anchor_bottom = 0.582
+offset_left = -373.68
+offset_top = -628.56
+offset_right = 372.32
+offset_bottom = 451.44
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ffcyh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1947311558]
+[node name="Screen" type="ColorRect" parent="." unique_id=1947311558]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.50200003
 anchor_top = 0.5
 anchor_right = 0.50200003
 anchor_bottom = 0.5
-offset_left = -344.49203
-offset_top = -500.0
-offset_right = 335.50797
-offset_bottom = 481.4939
-color = Color(1, 1, 1, 0)
+offset_left = -99.153046
+offset_top = -246.93732
+offset_right = 266.12064
+offset_bottom = 384.60724
+rotation = 0.24207863
+color = Color(1, 0.9764706, 0.50980395, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=874215513]
+position = Vector2(394, 575)
+rotation = 0.24605988
+scale = Vector2(0.66429526, 0.66429526)
+texture = ExtResource("2_gucy2")
 
 [node name="Button" type="Button" parent="." unique_id=1732939255]
 unique_name_in_owner = true
@@ -40,12 +67,20 @@ anchor_left = 0.50100005
 anchor_top = 0.77900004
 anchor_right = 0.50100005
 anchor_bottom = 0.77900004
-offset_left = -295.74603
-offset_top = -81.32007
-offset_right = 282.25397
-offset_bottom = 81.67993
+offset_left = -195.74603
+offset_top = -45.320007
+offset_right = 117.973145
+offset_bottom = 46.48004
+rotation = 0.24101773
 size_flags_horizontal = 4
 size_flags_vertical = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ffcyh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
 text = "Comprar comida"
 
 [node name="PopUpTimer" type="Timer" parent="." unique_id=196379179]
@@ -53,15 +88,71 @@ unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
-[node name="SpawnPath" type="Path2D" parent="." unique_id=2137171756]
-position = Vector2(-31.704285, 95.045074)
-scale = Vector2(1.1874938, 0.65664166)
-curve = SubResource("Curve2D_ffcyh")
-
-[node name="PopUpSpawnLocation" type="PathFollow2D" parent="SpawnPath" unique_id=178159083]
+[node name="MarkerController" type="Control" parent="." unique_id=261660459]
 unique_name_in_owner = true
-position = Vector2(236.38379, 204.00002)
-rotation = -0.76318276
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Marker2D" type="Marker2D" parent="MarkerController" unique_id=1955339774]
+position = Vector2(312, 362)
+
+[node name="Marker2D2" type="Marker2D" parent="MarkerController" unique_id=1492586818]
+position = Vector2(411, 432)
+
+[node name="Marker2D3" type="Marker2D" parent="MarkerController" unique_id=927627291]
+position = Vector2(485, 445)
+
+[node name="Marker2D4" type="Marker2D" parent="MarkerController" unique_id=1698737882]
+position = Vector2(441, 530)
+
+[node name="Marker2D5" type="Marker2D" parent="MarkerController" unique_id=268315401]
+position = Vector2(232, 829)
+
+[node name="Marker2D6" type="Marker2D" parent="MarkerController" unique_id=155580159]
+position = Vector2(340, 852)
+
+[node name="Marker2D7" type="Marker2D" parent="MarkerController" unique_id=854934986]
+position = Vector2(268, 712)
+
+[node name="Marker2D8" type="Marker2D" parent="MarkerController" unique_id=1959157167]
+position = Vector2(380, 657)
+
+[node name="Marker2D9" type="Marker2D" parent="MarkerController" unique_id=318126028]
+position = Vector2(349, 464)
+
+[node name="Marker2D10" type="Marker2D" parent="MarkerController" unique_id=1724667792]
+position = Vector2(313, 555)
+
+[node name="Marker2D11" type="Marker2D" parent="MarkerController" unique_id=247317237]
+position = Vector2(441, 723)
+
+[node name="Marker2D12" type="Marker2D" parent="MarkerController" unique_id=1423493976]
+position = Vector2(537, 461)
+
+[node name="Marker2D13" type="Marker2D" parent="MarkerController" unique_id=6606821]
+position = Vector2(292, 627)
+
+[node name="Marker2D14" type="Marker2D" parent="MarkerController" unique_id=1514931655]
+position = Vector2(415, 893)
+
+[node name="Marker2D15" type="Marker2D" parent="MarkerController" unique_id=356687641]
+position = Vector2(331, 894)
+
+[node name="Marker2D16" type="Marker2D" parent="MarkerController" unique_id=1597951818]
+position = Vector2(263, 860)
+
+[node name="Marker2D17" type="Marker2D" parent="MarkerController" unique_id=164675329]
+position = Vector2(506, 586)
+
+[node name="Marker2D18" type="Marker2D" parent="MarkerController" unique_id=441312447]
+position = Vector2(473, 665)
+
+[node name="Marker2D19" type="Marker2D" parent="MarkerController" unique_id=613465828]
+position = Vector2(434, 791)
+
+[node name="Marker2D20" type="Marker2D" parent="MarkerController" unique_id=1751940296]
+position = Vector2(360, 771)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="PopUpTimer" to="." method="_on_timer_timeout"]
