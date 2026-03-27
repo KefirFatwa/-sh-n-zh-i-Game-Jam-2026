@@ -27,6 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://b6higuegiworf" path="res://Assets/Buttons/colorespc.png" id="16_xkqyh"]
 [ext_resource type="Texture2D" uid="uid://w5dx24sy6chg" path="res://Assets/UI_Temporal_Tony/Room_Hover.png" id="16_y22r5"]
 [ext_resource type="Texture2D" uid="uid://ckt1e47lhtebx" path="res://Assets/UI_Temporal_Tony/Progress_success_bar.png" id="17_bsixg"]
+[ext_resource type="Script" uid="uid://s4r16f2ep61x" path="res://Scenes/Ejemplos/cocina.gd" id="18_1qvw2"]
+[ext_resource type="PackedScene" uid="uid://e2u337n1g5u4" path="res://Scenes/Ejemplos/sustento.tscn" id="19_uxk0c"]
+[ext_resource type="PackedScene" uid="uid://cnnqxvibjsvw4" path="res://Scenes/Ejemplos/sustento_2.tscn" id="20_42e3y"]
+[ext_resource type="PackedScene" uid="uid://dkgj3hgykr53r" path="res://Scenes/Ejemplos/sustento_3.tscn" id="21_l1orr"]
 [ext_resource type="Texture2D" uid="uid://bxqou0niacpqk" path="res://Assets/Buttons/botonpersona.png" id="24_cyg67"]
 [ext_resource type="Texture2D" uid="uid://cnceucbxpb6oa" path="res://Assets/UI_Temporal_Tony/fish_food.png" id="26_3bcjv"]
 [ext_resource type="Texture2D" uid="uid://dsm21vaotpuu" path="res://Assets/Status/fondostatus.png" id="27_ogl74"]
@@ -390,6 +394,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("18_1qvw2")
+minijuego = Array[PackedScene]([ExtResource("19_uxk0c"), ExtResource("20_42e3y"), ExtResource("21_l1orr")])
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="UIElements/Cocina" unique_id=141829868]
@@ -399,6 +405,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIElements/Cocina" unique_id=514244709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Chicken_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=498120810]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(298.145, 189.915)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Pollo"
+
+[node name="noddle_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=740394445]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(298.145, 189.915)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sopa instantanea"
+
+[node name="Tacos_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=754145]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(298.145, 189.915)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Gallito de comida"
 
 [node name="close_cook" type="Button" parent="UIElements/Cocina" unique_id=1607080653]
 unique_name_in_owner = true
@@ -860,5 +895,6 @@ offset_right = 31.755093
 offset_bottom = -42.066666
 text = "Door"
 
+[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/Button" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2/BuyDolphin" to="SceneManager" method="_on_buy_dolphin_pressed"]

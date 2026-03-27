@@ -6,9 +6,14 @@ var is_question_active: bool = false
 @onready var questin_container: TextureRect = %quest_container
 @onready var timer: Timer = $Timer
 
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer.timeout.connect(on_time_out)
+	
 
 
 func on_time_out()->void:
@@ -17,6 +22,7 @@ func on_time_out()->void:
 	
 	_spawn_random_question()
 	
+
 	
 func _spawn_random_question()->void:
 	var question = random_quiz.instantiate()
