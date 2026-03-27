@@ -1,33 +1,59 @@
 extends Control
+class_name PhoneSceen
 
-@onready var button = %Button
+
 @onready var timer = %PopUpTimer
 @onready var screen = %Screen
 @onready var markerController = %MarkerController
 
 var popUpScene = preload("res://Scenes/Celular/PopUp/PopUp.tscn")
 
-# Reemplazar con variables globales
-var food_amount = 0
-var money_amount = 100
-var food_price = 16
 
-# Called when the node enters the scene tree for the first time.
+@onready var buy_chicken_button: Button = %Buy_Chicken_button
+@onready var buy_noodles_button: Button = %Buy_noodles_button
+@onready var buy_tacos_button: Button = %Buy_tacos_button
+@onready var buy_dolphin_food_container: Button = %Buy_dolphin_food_container
+
+
+@onready var price_chicken: Label = %Price_chicken
+@onready var price_noodles: Label = %Price_noodles
+@onready var price_tacos: Label = %price_Tacos
+@onready var price_dolphin_food: Label = %price_dolphin_food
+
+
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	price_chicken.text = str(GameManager.chicken_price)
+	price_noodles.text = str(GameManager.noodles_price)
+	price_tacos.text = str(GameManager.tacos_price)
+	price_dolphin_food.text = str(GameManager.dolphin_food_price)
+	
+	buy_chicken_button.button_down.connect(_on_chicken_button_down)
+	buy_noodles_button.button_down.connect(_on_noodles_button_down)
+	buy_tacos_button.button_down.connect(_on_tacos_button_down)
+	buy_dolphin_food_container.button_down.connect(_on_dolphin_button_down)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_chicken_button_down()->void:
+	if _check_threshold_price(GameManager.chicken_price):
+		print("mandar a comprar comida en la puerta")
+func _on_noodles_button_down()->void:
+	if _check_threshold_price(GameManager.noodles_price):
+		print("mandar a comprar comida en la puerta")
+func _on_tacos_button_down()->void:
+	if _check_threshold_price(GameManager.tacos_price):
+		print("mandar a comprar comida en la puerta")
+func _on_dolphin_button_down()->void:
+	if _check_threshold_price(GameManager.dolphin_food_price):
+		print("mandar a comprar comida en la puerta")
 
 
-func _on_button_pressed() -> void:
-	if money_amount > food_price:
-		money_amount -= food_price
-		food_amount += 1
-	else:
-		print("no tienes suficiente dinero.")
+func _check_threshold_price(food_price: int)->bool:
+	if food_price >= GameManager.global_money:
+		GameManager.global_money -= food_price
+		return true
+	return false
 
 
 func _on_timer_timeout() -> void:

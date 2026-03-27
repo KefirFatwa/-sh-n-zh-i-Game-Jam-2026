@@ -1,7 +1,30 @@
 [gd_scene format=3 uid="uid://crwfabg6r0aqk"]
 
 [ext_resource type="Script" uid="uid://4nnytmyclgni" path="res://Scenes/Start_Menu/start_menu.gd" id="1_8vd0w"]
-[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="2_fi2g1"]
+[ext_resource type="Texture2D" uid="uid://byoo7fevxcx2q" path="res://Assets/Main_Menu/6cieloynubes.png" id="2_mch1c"]
+[ext_resource type="Texture2D" uid="uid://c7x5tc3u3mhnv" path="res://Assets/Main_Menu/5nubes.png" id="3_htqng"]
+[ext_resource type="Texture2D" uid="uid://cledc3fw8pe0h" path="res://Assets/Main_Menu/3agua.png" id="4_bo832"]
+[ext_resource type="Texture2D" uid="uid://k6bqomrxky6f" path="res://Assets/Main_Menu/1delfinmenu.png" id="5_mq4ty"]
+[ext_resource type="Texture2D" uid="uid://dxdf0cx1y6jnx" path="res://Assets/Main_Menu/4brillos.png" id="6_0jj0e"]
+[ext_resource type="Shader" uid="uid://dxwulpob6l4r1" path="res://Shaders/start_menu.gdshader" id="7_ku3sm"]
+[ext_resource type="Texture2D" uid="uid://b1511us0yhia0" path="res://Assets/Main_Menu/2letras.png" id="8_dhs40"]
+[ext_resource type="Texture2D" uid="uid://buaprdn6mxnn7" path="res://Assets/Particles_effects/stars.png" id="9_htqng"]
+[ext_resource type="AudioStream" uid="uid://colpceq54jcel" path="res://FX/MENU MUSIC.wav" id="10_bo832"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qq6kj"]
+shader = ExtResource("7_ku3sm")
+shader_parameter/shine_color = Color(1, 1, 1, 0.25)
+shader_parameter/line_width = 0.1
+shader_parameter/angle = 0.7853982
+shader_parameter/speed = 1.0
+shader_parameter/wait_cycles = 1.0
+
+[sub_resource type="Curve" id="Curve_bo832"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9182561, 0.3361702), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mq4ty"]
+colors = PackedColorArray(1, 1, 1, 0.38039216, 1, 1, 1, 0.23137255)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi2g1"]
 bg_color = Color(1, 0.4745098, 0.68235296, 1)
@@ -87,23 +110,183 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="Animation" id="Animation_yvl5g"]
+resource_name = "Normal"
+length = 5.766667
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/TextureRect6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.6666667, 5.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(585, 20), Vector2(585, 45.19), Vector2(585, -12.465)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.7, 5.3333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-424, -61), Vector2(-383.785, -61), Vector2(-361.325, -61)]
+}
+
+[sub_resource type="Animation" id="Animation_0c4ry"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/TextureRect6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(585, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-424, -61)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oh04l"]
+_data = {
+&"Normal": SubResource("Animation_yvl5g"),
+&"RESET": SubResource("Animation_0c4ry")
+}
+
 [node name="StartMenu" type="Node" unique_id=191973974]
 script = ExtResource("1_8vd0w")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=393375790]
-position = Vector2(1040, 536.00006)
-scale = Vector2(0.5436101, 0.5007234)
-texture = ExtResource("2_fi2g1")
-metadata/_edit_lock_ = true
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=93078903]
 
-[node name="ButtonManager" type="Control" parent="." unique_id=1428948887]
+[node name="Background" type="Control" parent="CanvasLayer" unique_id=56932513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background" unique_id=955627690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mch1c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Background" unique_id=1515712826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -424.0
+offset_top = -61.0
+offset_right = -424.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_htqng")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Background" unique_id=1895380007]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bo832")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/Background" unique_id=1252835532]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 585.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mq4ty")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/Background" unique_id=1924129123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = 2.0
+offset_right = -692.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0jj0e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Background" unique_id=501524650]
+material = SubResource("ShaderMaterial_qq6kj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 26.0
+offset_right = -912.0
+offset_bottom = -581.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_dhs40")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer" unique_id=1614064122]
+position = Vector2(1136, 545)
+amount = 80
+texture = ExtResource("9_htqng")
+emission_shape = 3
+emission_rect_extents = Vector2(711.455, 483.185)
+gravity = Vector2(0, 0)
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_bo832")
+color_ramp = SubResource("Gradient_mq4ty")
+
+[node name="ButtonManager" type="Control" parent="CanvasLayer" unique_id=1428948887]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="Jugar" type="Button" parent="ButtonManager" unique_id=1415892801]
+[node name="Jugar" type="Button" parent="CanvasLayer/ButtonManager" unique_id=1415892801]
 layout_mode = 1
 offset_left = 256.0
 offset_top = 512.0
@@ -117,7 +300,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rdyax")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v1pa2")
 text = "Jugar"
 
-[node name="Opciones" type="Button" parent="ButtonManager" unique_id=2075421276]
+[node name="Opciones" type="Button" parent="CanvasLayer/ButtonManager" unique_id=2075421276]
 layout_mode = 1
 offset_left = 256.0
 offset_top = 640.0
@@ -131,7 +314,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_htqng")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bo832")
 text = "Opciones	"
 
-[node name="Creditos" type="Button" parent="ButtonManager" unique_id=1233708643]
+[node name="Creditos" type="Button" parent="CanvasLayer/ButtonManager" unique_id=1233708643]
 layout_mode = 0
 offset_left = 256.0
 offset_top = 768.0
@@ -145,7 +328,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0jj0e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ku3sm")
 text = "Créditos"
 
-[node name="Salir" type="Button" parent="ButtonManager" unique_id=749227195]
+[node name="Salir" type="Button" parent="CanvasLayer/ButtonManager" unique_id=749227195]
 layout_mode = 1
 offset_left = 256.0
 offset_top = 896.0
@@ -160,9 +343,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_f6q34")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bsfdp")
 text = "Salir"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=595534298]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1579139339]
+libraries/ = SubResource("AnimationLibrary_oh04l")
+autoplay = &"Normal"
 
-[connection signal="pressed" from="ButtonManager/Jugar" to="." method="_on_jugar_pressed"]
-[connection signal="pressed" from="ButtonManager/Opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="ButtonManager/Creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="ButtonManager/Salir" to="." method="_on_salir_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=595534298]
+stream = ExtResource("10_bo832")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/ButtonManager/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonManager/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonManager/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonManager/Salir" to="." method="_on_salir_pressed"]

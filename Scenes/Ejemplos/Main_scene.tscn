@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b72hkdcgde8pf" path="res://Scenes/Main_scene/scene_manager.gd" id="1_6ejmp"]
 [ext_resource type="Texture2D" uid="uid://c55bbmpqosg3e" path="res://Assets/Background/pared2.png" id="1_k0lso"]
 [ext_resource type="Texture2D" uid="uid://di2cokbiae7h7" path="res://Assets/Background/pared1.png" id="2_cyg67"]
-[ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="2_evy7w"]
 [ext_resource type="PackedScene" uid="uid://bjprapupicomq" path="res://Scenes/Dolphin_scenes/dolphin_character.tscn" id="2_lx611"]
 [ext_resource type="PackedScene" uid="uid://bx4w2dyk2n8a0" path="res://Scenes/pop_scenes/fish_food.tscn" id="2_rgufk"]
 [ext_resource type="Texture2D" uid="uid://b7auahvacgddf" path="res://Assets/Background/suelo.png" id="3_cche8"]
@@ -15,8 +14,11 @@
 [ext_resource type="Script" uid="uid://c1fmwd6v3nrhr" path="res://Scenes/Computadora/computadoraManager.gd" id="6_y22r5"]
 [ext_resource type="Texture2D" uid="uid://drsojik4enwiq" path="res://Assets/Mascota_screen/bordepantallamascota.png" id="7_bsixg"]
 [ext_resource type="PackedScene" uid="uid://ijaymot7rg0q" path="res://Scenes/Computadora/TriviaPopup/question_container.tscn" id="7_m7uap"]
+[ext_resource type="Texture2D" uid="uid://bk86jxp3873ew" path="res://Assets/Mi_sprite.png" id="8_uxk0c"]
 [ext_resource type="Texture2D" uid="uid://dj0iykdfa0jvv" path="res://Assets/UI_Temporal_Tony/Door_Normal.png" id="11_fd4pn"]
+[ext_resource type="Texture2D" uid="uid://co1pjame7gjcc" path="res://Assets/ComidaPacked_Door/dooropen.png" id="12_1xjet"]
 [ext_resource type="Texture2D" uid="uid://dg1t625xtqjs7" path="res://Assets/UI_Temporal_Tony/Door_Pressed.png" id="12_lx611"]
+[ext_resource type="Texture2D" uid="uid://2lkg4ftv0fks" path="res://Assets/ComidaPacked_Door/doorclosed.png" id="13_5638r"]
 [ext_resource type="Script" uid="uid://c2m02d0h7tl56" path="res://Scenes/Celular/celular_controller.gd" id="13_bsixg"]
 [ext_resource type="Texture2D" uid="uid://cx8qfk4h1a4t0" path="res://Assets/Phone/fondocelular.png" id="13_ca1ee"]
 [ext_resource type="Texture2D" uid="uid://v16a3wioyinp" path="res://Assets/UI_Temporal_Tony/Door_Hover.png" id="13_y22r5"]
@@ -31,13 +33,15 @@
 [ext_resource type="PackedScene" uid="uid://e2u337n1g5u4" path="res://Scenes/Ejemplos/sustento.tscn" id="19_uxk0c"]
 [ext_resource type="PackedScene" uid="uid://cnnqxvibjsvw4" path="res://Scenes/Ejemplos/sustento_2.tscn" id="20_42e3y"]
 [ext_resource type="PackedScene" uid="uid://dkgj3hgykr53r" path="res://Scenes/Ejemplos/sustento_3.tscn" id="21_l1orr"]
-[ext_resource type="Texture2D" uid="uid://bxqou0niacpqk" path="res://Assets/Buttons/botonpersona.png" id="24_cyg67"]
+[ext_resource type="Texture2D" uid="uid://c2qrt5ggtfiht" path="res://Assets/ComidaPacked_Door/logopc.png" id="21_yrowp"]
 [ext_resource type="Texture2D" uid="uid://cnceucbxpb6oa" path="res://Assets/UI_Temporal_Tony/fish_food.png" id="26_3bcjv"]
 [ext_resource type="Texture2D" uid="uid://dsm21vaotpuu" path="res://Assets/Status/fondostatus.png" id="27_ogl74"]
 [ext_resource type="Texture2D" uid="uid://dwqjmfu148np4" path="res://Resources/Prefabs_resources/health_bar.tres" id="28_bsixg"]
 [ext_resource type="Texture2D" uid="uid://dtp3c6nwljrxl" path="res://Assets/Status/barrafelicidad.png" id="29_vsrrq"]
 [ext_resource type="Texture2D" uid="uid://binhhnam5urvi" path="res://Assets/Status/monedas.png" id="31_j0i8m"]
 [ext_resource type="Texture2D" uid="uid://d1uocvbpthegf" path="res://Assets/UI_Temporal_Tony/Buy_Dolphin_normal.png" id="33_vsrrq"]
+[ext_resource type="Texture2D" uid="uid://bdywpemaogh0b" path="res://Assets/ComidaPacked_Door/botonpersona.png" id="35_t5pli"]
+[ext_resource type="Texture2D" uid="uid://bwq5u8o8w5wak" path="res://Assets/ComidaPacked_Door/timer.png" id="42_5wenp"]
 
 [sub_resource type="Gradient" id="Gradient_7k381"]
 offsets = PackedFloat32Array(0, 0.9942029)
@@ -121,12 +125,8 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="Gradient" id="Gradient_bsixg"]
-offsets = PackedFloat32Array(0, 0.9971014)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qvw2"]
-gradient = SubResource("Gradient_bsixg")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar0cn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main_scene" type="Node" unique_id=123212929]
 
@@ -175,6 +175,11 @@ texture = ExtResource("3_cche8")
 position = Vector2(1244.75, 951.75)
 scale = Vector2(0.8268745, 0.6243144)
 texture = ExtResource("4_ddw3p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Mesita" unique_id=780551454]
+position = Vector2(306.27374, -267.09296)
+scale = Vector2(3.8435628, 4.3264236)
+texture = ExtResource("8_uxk0c")
 
 [node name="Background_transistion2" type="Sprite2D" parent="Background" unique_id=2116591251]
 position = Vector2(-966, 569)
@@ -242,6 +247,21 @@ position = Vector2(60.881443, 53.760006)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_ca1ee")
 
+[node name="Room_Puerta" type="Node2D" parent="." unique_id=1870713736]
+position = Vector2(-4186, 69)
+
+[node name="Puertas" type="Node2D" parent="Room_Puerta" unique_id=1099959431]
+
+[node name="PuertaAbierta" type="Sprite2D" parent="Room_Puerta/Puertas" unique_id=1388495201]
+position = Vector2(-567.8872, 538.58203)
+scale = Vector2(0.82081527, 0.6839404)
+texture = ExtResource("12_1xjet")
+
+[node name="PuertaCerrada" type="Sprite2D" parent="Room_Puerta/Puertas" unique_id=1491370047]
+position = Vector2(-567.8872, 538.58203)
+scale = Vector2(0.82081527, 0.6839404)
+texture = ExtResource("13_5638r")
+
 [node name="UIElements" type="CanvasLayer" parent="." unique_id=1525530458]
 
 [node name="MiniGamesManager" type="Node" parent="UIElements" unique_id=1153645555]
@@ -254,9 +274,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 14.0
-offset_top = 49.0
+offset_top = 46.0
 offset_right = 14.0
-offset_bottom = 49.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -353,6 +373,14 @@ texture = ExtResource("16_xkqyh")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="UIElements/Computadora/quest_container" unique_id=1124610355]
+layout_mode = 0
+offset_left = 339.6753
+offset_top = 82.11571
+offset_right = 759.5176
+offset_bottom = 468.63556
+texture = ExtResource("21_yrowp")
+
 [node name="close_Pc" type="Button" parent="UIElements/Computadora" unique_id=1436958406]
 unique_name_in_owner = true
 layout_mode = 1
@@ -375,7 +403,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vsrrq")
 text = "Cerrar"
 
 [node name="Timer" type="Timer" parent="UIElements/Computadora" unique_id=1835240618]
-wait_time = 5.0
+wait_time = 30.0
 autostart = true
 
 [node name="Cocina" type="Control" parent="UIElements" unique_id=1994383423]
@@ -606,9 +634,9 @@ offset_right = 1141.0
 offset_bottom = 1103.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("24_cyg67")
-texture_pressed = ExtResource("24_cyg67")
-texture_hover = ExtResource("24_cyg67")
+texture_normal = ExtResource("35_t5pli")
+texture_pressed = ExtResource("35_t5pli")
+texture_hover = ExtResource("35_t5pli")
 stretch_mode = 5
 
 [node name="FeedContainer" type="HBoxContainer" parent="UIElements/Interactables_buttons" unique_id=2066033150]
@@ -726,90 +754,6 @@ theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
 text = "Money"
 
-[node name="StatusContainer" type="TextureRect" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=155490408]
-layout_mode = 0
-offset_left = 1536.0
-offset_top = 240.0
-offset_right = 1920.0
-offset_bottom = 642.0
-texture = ExtResource("27_ogl74")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="MoneyCount" type="Label" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer" unique_id=1681981003]
-layout_mode = 0
-offset_left = 113.0
-offset_top = 18.0
-offset_right = 270.0
-offset_bottom = 85.0
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 48
-text = "Hungry"
-
-[node name="MoneyCount2" type="Label" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer" unique_id=143061539]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 142.0
-offset_right = 327.0
-offset_bottom = 209.0
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 48
-text = "Happiness"
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer" unique_id=2062798997]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 85.0
-offset_right = 494.0
-offset_bottom = 418.0
-rotation = 1.5707964
-scale = Vector2(0.37, 0.715)
-value = 100.0
-fill_mode = 3
-nine_patch_stretch = true
-stretch_margin_left = 174
-stretch_margin_top = 204
-texture_under = ExtResource("28_bsixg")
-texture_progress = ExtResource("28_bsixg")
-tint_under = Color(0, 0, 0, 1)
-
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer" unique_id=1638066681]
-layout_mode = 0
-offset_left = 321.0
-offset_top = 204.99998
-offset_right = 495.0
-offset_bottom = 538.0
-rotation = 1.5707964
-scale = Vector2(0.37, 0.715)
-value = 100.0
-fill_mode = 3
-nine_patch_stretch = true
-stretch_margin_left = 174
-stretch_margin_top = 204
-texture_under = ExtResource("29_vsrrq")
-texture_progress = ExtResource("29_vsrrq")
-tint_under = Color(0, 0, 0, 1)
-
-[node name="MoneyContainer" type="HBoxContainer" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer" unique_id=2054500214]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 295.0
-offset_right = 332.0
-offset_bottom = 361.0
-
-[node name="Icon_money" type="TextureRect" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer/MoneyContainer" unique_id=1225387328]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-texture = ExtResource("31_j0i8m")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="MoneyCount" type="Label" parent="UIElements/Interactables_buttons/StatusContainer/StatusContainer/MoneyContainer" unique_id=1047296698]
-layout_mode = 2
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 48
-text = "Money"
-
 [node name="Buy_Dolphin_Container" type="Control" parent="UIElements/Interactables_buttons" unique_id=808647003]
 anchors_preset = 0
 offset_left = 1571.0
@@ -855,14 +799,17 @@ stretch_mode = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="UIElements/Interactables_buttons" unique_id=706687275]
 layout_mode = 0
-offset_left = 1576.0
-offset_top = 23.0
-offset_right = 1873.0
-offset_bottom = 100.0
+offset_left = 1527.0
+offset_top = -9.0
+offset_right = 1904.0
+offset_bottom = 155.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ar0cn")
 
 [node name="TextureRect" type="TextureRect" parent="UIElements/Interactables_buttons/PanelContainer" unique_id=844601424]
 layout_mode = 2
-texture = SubResource("GradientTexture2D_1qvw2")
+texture = ExtResource("42_5wenp")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Timer_left" type="Label" parent="UIElements/Interactables_buttons/PanelContainer/TextureRect" unique_id=1014187753]
 unique_name_in_owner = true
@@ -882,18 +829,6 @@ horizontal_alignment = 1
 [node name="MainCamera" type="Camera2D" parent="." unique_id=1200944931]
 unique_name_in_owner = true
 anchor_mode = 0
-
-[node name="Puerta_ejemplo" type="Sprite2D" parent="." unique_id=1388495201]
-position = Vector2(-4724, 503)
-scale = Vector2(3.0624988, 5.625)
-texture = ExtResource("2_evy7w")
-
-[node name="Label" type="Label" parent="Puerta_ejemplo" unique_id=511135797]
-offset_left = -20.244907
-offset_top = -65.066666
-offset_right = 31.755093
-offset_bottom = -42.066666
-text = "Door"
 
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/Button" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
