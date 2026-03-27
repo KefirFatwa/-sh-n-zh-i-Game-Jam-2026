@@ -11,7 +11,6 @@ var gravity_dir = Vector2.DOWN
 var jump_multiplier: float = 1.0
 
 @onready var state_machine: StateMachine = $StateMachine
-@onready var status_state: Label = $Status_state
 
 @onready var down_raycast: RayCast2D = %Down_raycast
 @onready var right_raycast: RayCast2D = %Right_raycast
@@ -20,6 +19,9 @@ var jump_multiplier: float = 1.0
 @onready var general_manager: GeneralManager = $General_Manager
 
 @export var dealth_dolphin_scene : PackedScene
+
+@onready var base_dolphin: Sprite2D = $Base_Dolphin
+@onready var eyes: Sprite2D = $Base_Dolphin/Eyes
 
 var is_pettable = false
 
@@ -31,34 +33,28 @@ var is_death:bool= false
 
 func _ready() -> void:
 	state_machine.init(self)
+	GameManager.add_emotional_status(general_manager.increase_emotional_status)
+	GameManager.add_dolphins(1)
 	mouse_entered.connect(func():
 		is_pettable = true)
 	mouse_exited.connect(func():
 		is_pettable = false)
 	general_manager.start_death_state.connect(death_dolphin)
-		
+
 func death_dolphin():
 	var death_body = dealth_dolphin_scene.instantiate()
-	death_body.position = position
-	get_tree().get_first_node_in_group("death_bodies").add_child(death_body)
+	death_body.position = global_position
+	get_tree().get_first_node_in_group("dolphinContainer").add_child(death_body)
+	GameManager.remove_emotional_status(general_manager.emotional_damage)
+	GameManager.remove_dolphins(1)
+	GameManager.dolphin_has_death.emit()
 	queue_free()
-
 
 func _input(event: InputEvent)-> void:
 	state_machine.process_input(event)
 
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
-	#if get_facing_raycast():
-		#scale.x *= -scale.x
-		#right_raycast.enabled = false
-		#
-		#get_tree().create_timer(2).timeout.connect(func():
-			#left_raycast.enabled = true
-			#right_raycast.enabled = true)
-	
-	status_state.text = str(state_machine.current_state.name)
-	
 
 func _physics_process(delta: float) -> void:
 	state_machine.process_physics(delta)
@@ -77,16 +73,6 @@ func get_random_jump_strenght()->float:
 	return randf_range(min_jump_strengh,max_jump_strengh)
 
 func _pick_initial_facing()->void:
-	var is_facing_right = false
-	var is_facing_left = false
-	var facing_direction: Array = [is_facing_right,is_facing_left]
-
-	var random_facing = facing_direction.pick_random()
-	if random_facing == is_facing_right:
-		is_facing_right = true
-		is_facing_left = false
-		scale.x = 1
-	elif random_facing == is_facing_left:
-		is_facing_left = true
-		is_facing_right = false
-		scale.x = -1
+	var dir = [-1, 1].pick_random()
+	base_dolphin.flip_h = dir < 0
+	eyes.flip_h = dir< 0

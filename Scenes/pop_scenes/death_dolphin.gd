@@ -11,7 +11,4 @@ var gravity_dir = Vector2.DOWN
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += gravity_dir * gravity * delta
-	
-	
-	
 	move_and_slide()

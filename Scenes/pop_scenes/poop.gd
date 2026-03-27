@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+#caquita
 
 @export var gravity  = 300
 var gravity_dir = Vector2.DOWN
@@ -11,11 +11,12 @@ var gravity_dir = Vector2.DOWN
 var is_hitable = false
 
 var tween: Tween
-
+@export var general_manager: GeneralManager
 
 func _ready() -> void:
 	GameManager.add_shits(1)
 	health_component.is_death.connect(func():
+		GameManager.updated_money(health_component.target_object.money_dropped)
 		GameManager.remove_shits(1)
 		queue_free()
 		)

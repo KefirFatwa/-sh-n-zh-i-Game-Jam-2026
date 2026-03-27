@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd1gedovv26li"]
+[gd_scene format=3 uid="uid://bd1gedovv26li"]
 
 [ext_resource type="Texture2D" uid="uid://dhdwo8pk6ta5" path="res://Assets/UI_Temporal_Tony/pop.png" id="1_1oqih"]
 [ext_resource type="Script" uid="uid://b1y13xob7uckh" path="res://Scenes/pop_scenes/poop.gd" id="1_kansg"]
@@ -9,30 +9,30 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kansg"]
 size = Vector2(53, 42)
 
-[node name="Pop_character" type="CharacterBody2D"]
+[node name="Pop_character" type="CharacterBody2D" unique_id=1988243066]
 top_level = true
 collision_layer = 4
 input_pickable = true
 script = ExtResource("1_kansg")
 gravity = 200
 
-[node name="HealthComponent" type="Node" parent="."]
+[node name="HealthComponent" type="Node" parent="." unique_id=1739668666]
 script = ExtResource("4_avxje")
 target_object = ExtResource("5_avxje")
 metadata/_custom_type_script = "uid://cislm663ujgbn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1536293161]
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_kansg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=117582242]
 scale = Vector2(1.75, 1.5625)
 texture = ExtResource("1_1oqih")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=411395525]
 target_position = Vector2(0, 15)
 
-[node name="ProgressBarManager" parent="." node_paths=PackedStringArray("health_com") instance=ExtResource("3_enhvh")]
+[node name="ProgressBarManager" parent="." unique_id=411740621 node_paths=PackedStringArray("health_com") instance=ExtResource("3_enhvh")]
 offset_left = -79.0
 offset_top = -71.0
 offset_right = 91.0

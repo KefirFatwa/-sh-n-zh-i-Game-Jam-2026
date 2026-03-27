@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GeneralData" format=3 uid="uid://dh7ijq3pqny62"]
+
+[ext_resource type="Script" uid="uid://b7aabdkr0j2nb" path="res://Resources/data/general_lifetime_objects.gd" id="1_xmee1"]
+
+[resource]
+script = ExtResource("1_xmee1")
+name = "Level_2_shit"
+max_health_object = 10.0
+money_dropped = 20.0
+metadata/_custom_type_script = "uid://b7aabdkr0j2nb"

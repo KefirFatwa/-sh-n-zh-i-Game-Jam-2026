@@ -12,7 +12,8 @@ class_name MiniGamesManager
 @onready var door_interaction_button: TextureButton = %Door_Interaction_button2
 @onready var cook_interaction_button: TextureButton = %Cook_Interaction_button
 @onready var room_interaction_button: TextureButton = %Room_Interaction_button
-@onready var ui_player: TextureRect =%UIPlayer
+@onready var buy_dolphin: TextureButton = %BuyDolphin
+
 
 #referencia al contenedor de los botones
 @onready var interactables_buttons: Control = $"../Interactables_buttons"
@@ -87,6 +88,16 @@ func _ready() -> void:
 	room_interaction_button.button_down.connect(_on_opened_room_UI)
 	room_interaction_button.mouse_entered.connect(_on_entered_room_button)
 	room_interaction_button.mouse_exited.connect(_on_exited_room_button)
+	
+	#este es el signal del boton de comprar delfines:
+	buy_dolphin.mouse_entered.connect(_on_entered_mouse_button)
+	buy_dolphin.mouse_exited.connect(_on_exited_mouse_button)
+
+#comportamiento del boton de comprar delfines:
+func _on_entered_mouse_button():
+	_shake_and_zoom_button(buy_dolphin,max_zoom_button)
+func _on_exited_mouse_button():
+	_shake_and_zoom_button(buy_dolphin,min_zoom_button)
 
 #comportamiento del telefono
 func _on_open_phone_UI()->void:

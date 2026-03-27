@@ -3,7 +3,7 @@ class_name ComputerManager
 
 @export var random_quiz: PackedScene
 var is_question_active: bool = false
-@onready var questin_container: PanelContainer = $PanelContainer
+@onready var questin_container: TextureRect = %quest_container
 @onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.

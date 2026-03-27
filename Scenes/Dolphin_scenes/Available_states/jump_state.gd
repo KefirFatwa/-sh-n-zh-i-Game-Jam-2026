@@ -24,7 +24,8 @@ func enter():
 	vel.x += side
 	
 	if abs(vel.x) > 5:
-		parent.scale.x = sign(vel.x)
+		parent.base_dolphin.flip_h = vel.x < 0
+		parent.eyes.flip_h =  vel.x < 0
 	
 	parent.velocity = vel
 	bounce_cd = 0.0
@@ -35,18 +36,17 @@ func enter():
 func process_physics(delta: float) -> State:
 	bounce_cd -= delta
 	
-
 	var wall = parent.get_wall()
 	if wall != Vector2.ZERO and bounce_cd <= 0.0:
 		vel = vel.slide(wall) * 0.6 
 		parent.velocity = vel
 		
 		if abs(vel.x) > 5:
-			parent.scale.x = sign(vel.x)
+			parent.base_dolphin.flip_h = vel.x < 0
+			parent.eyes.flip_h =  vel.x < 0
 		
 		bounce_cd = 0.2
 	
-
 	var gravity_force = parent.GRAVITY_STRENGHT
 	if vel.dot(parent.gravity_dir) < 0:
 		gravity_force *= floatiness

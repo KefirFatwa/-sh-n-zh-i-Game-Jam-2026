@@ -12,7 +12,8 @@
 [ext_resource type="Script" uid="uid://brob6yykk4o7c" path="res://Scenes/Dolphin_scenes/food_status_manager.gd" id="4_xi0lt"]
 [ext_resource type="Script" uid="uid://b24v7s2yloytx" path="res://Scenes/Dolphin_scenes/Available_states/falling_state.gd" id="5_7vbcp"]
 [ext_resource type="Script" uid="uid://blrdvsyalmmad" path="res://Scenes/Dolphin_scenes/Available_states/jump_state.gd" id="7_xi0lt"]
-[ext_resource type="Texture2D" uid="uid://cv4g3gumvp0mc" path="res://Assets/Tamagochi_screen/delfintamagotchi.png" id="12_xi0lt"]
+[ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="13_e43um"]
+[ext_resource type="Texture2D" uid="uid://dtl6ofmn38yys" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojos felices.png" id="14_e43um"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
 radius = 374.0
@@ -29,22 +30,22 @@ dealth_dolphin_scene = ExtResource("2_jltbp")
 
 [node name="General_Manager" type="Node" parent="." unique_id=368527509]
 script = ExtResource("2_xi0lt")
-max_shit_available = 15
+emotional_damage = 15
 
-[node name="Love_Status_Manager" type="Node" parent="." unique_id=1115228182 node_paths=PackedStringArray("dolphin_character")]
+[node name="Love_Status_Manager" type="Node" parent="." unique_id=1115228182 node_paths=PackedStringArray("dolphin_character", "general_status")]
 unique_name_in_owner = true
 script = ExtResource("2_hvstq")
 dolphin_character = NodePath("..")
-lonelines_frequency = 2
+general_status = NodePath("../General_Manager")
 
 [node name="Food_Status_Manager" type="Node" parent="." unique_id=1035388642 node_paths=PackedStringArray("general_status")]
 script = ExtResource("4_xi0lt")
 general_status = NodePath("../General_Manager")
-hungry_range = 5.0
 
-[node name="Shit_Status_Manager" type="Node" parent="." unique_id=201292303]
+[node name="Shit_Status_Manager" type="Node" parent="." unique_id=201292303 node_paths=PackedStringArray("general_status")]
 script = ExtResource("2_1ty4b")
 pop_instance = ExtResource("3_7vbcp")
+general_status = NodePath("../General_Manager")
 min_frequency_pop = 3
 max_frequency_pop = 8
 
@@ -84,21 +85,16 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_hvstq")
 debug_color = Color(0.9393114, 1.0973811e-05, 0.62207997, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=57677916]
-scale = Vector2(0.2, 0.21)
-texture = ExtResource("12_xi0lt")
-flip_h = true
+[node name="Base_Dolphin" type="Sprite2D" parent="." unique_id=57677916]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_e43um")
+
+[node name="Eyes" type="Sprite2D" parent="Base_Dolphin" unique_id=1466414252]
+position = Vector2(-5.0000153, 4.9999847)
+texture = ExtResource("14_e43um")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721586557]
 shape = SubResource("CircleShape2D_va7nk")
-
-[node name="Status_state" type="Label" parent="." unique_id=1792681934]
-offset_left = -53.0
-offset_top = -104.0
-offset_right = 53.0
-offset_bottom = -81.0
-theme_override_constants/outline_size = 9
-text = "Current_state"
 
 [node name="Down_raycast" type="RayCast2D" parent="." unique_id=376717149]
 unique_name_in_owner = true
@@ -111,32 +107,3 @@ target_position = Vector2(105, 0)
 [node name="Left_raycast" type="RayCast2D" parent="." unique_id=1233172142]
 unique_name_in_owner = true
 target_position = Vector2(-91, -1)
-
-[node name="Debug_states" type="Control" parent="." unique_id=599289364]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -195.0
-offset_top = -164.0
-offset_right = -155.0
-offset_bottom = -124.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Debug_states" unique_id=1847523611]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Clean" type="Label" parent="Debug_states/VBoxContainer" unique_id=1303218278]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-text = "Cleanest"
-
-[node name="Love" type="Label" parent="Debug_states/VBoxContainer" unique_id=1472470133]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-text = "Love"
-
-[node name="Food" type="Label" parent="Debug_states/VBoxContainer" unique_id=2116794650]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-text = "Food"
