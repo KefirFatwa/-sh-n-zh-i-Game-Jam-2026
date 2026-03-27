@@ -11,6 +11,7 @@ var max_food_container: int = 30
 var current_food_container :int = 0
 
 
+
 var emotional_status: int = 0
 
 
@@ -19,7 +20,11 @@ var current_dolphins : int = 0
 
 var global_money : int = 0
 
-var correct_quiz_answers = 0
+var correct_quiz_money = 0
+var punishment_quiz_money = 0
+var punishment_quiz_happiness = 0
+
+
 var shits_numbers : int = 0
 
 signal shit_count(shit_coun: int)

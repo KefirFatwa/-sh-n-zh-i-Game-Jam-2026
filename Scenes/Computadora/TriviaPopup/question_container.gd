@@ -57,10 +57,15 @@ func handle_on_click(button: Button):
 			opcion = x
 	var isCorrect = opcion["correcta"]
 	if isCorrect:
-		GameManager.correct_quiz_answers += 1
+		GameManager.global_money += GameManager.correct_quiz_money
+		GameManager.money_changed.emit()
 		button.modulate = Color("#44cc44")
+		
+		
 		print("Escogiste la opción correcta")
 	else:
+		GameManager.remove_emotional_status(GameManager.punishment_quiz_happiness)
+		GameManager.emotional_status_changed.emit(GameManager.emotional_status)
 		button.modulate = Color("#ff4444")
 		print("Te equivocaste!")
 	

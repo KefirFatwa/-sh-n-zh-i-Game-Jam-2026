@@ -16,7 +16,7 @@ gravity = 100
 shape = SubResource("RectangleShape2D_0jwxc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=283642874]
-modulate = Color(0.6901961, 0.9882353, 0.33333334, 1)
+modulate = Color(0, 0.75603247, 0.4876141, 1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_emsfc")
 flip_v = true

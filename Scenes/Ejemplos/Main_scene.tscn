@@ -117,13 +117,26 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="Gradient" id="Gradient_bsixg"]
+offsets = PackedFloat32Array(0, 0.9971014)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qvw2"]
+gradient = SubResource("Gradient_bsixg")
+
 [node name="Main_scene" type="Node" unique_id=123212929]
 
 [node name="SceneManager" type="Node" parent="." unique_id=801590715]
 script = ExtResource("1_6ejmp")
 food_scene = ExtResource("2_rgufk")
 dolphin_scene = ExtResource("2_lx611")
-food_decay_rate = 3.0
+punishment_quiz_happines = 10
+
+[node name="LevelTime" type="Timer" parent="." unique_id=154799122]
+unique_name_in_owner = true
+wait_time = 300.0
+one_shot = true
+autostart = true
 
 [node name="Background" type="Node" parent="." unique_id=255842808]
 
@@ -190,11 +203,11 @@ unique_name_in_owner = true
 position = Vector2(940, 221)
 
 [node name="pop_deposit" type="Node2D" parent="Dolphin_container/dolphin_container" unique_id=1450660244 groups=["pop_container"]]
+z_index = 1
 position = Vector2(-19.083633, -38.399998)
-scale = Vector2(0.093090884, 0.21333334)
 
-[node name="Dolphin_Character" parent="Dolphin_container/dolphin_container" unique_id=332873896 instance=ExtResource("2_lx611")]
-position = Vector2(0.18618393, 33.493332)
+[node name="Dolphin_Character" parent="Dolphin_container/dolphin_container" unique_id=1029352982 instance=ExtResource("2_lx611")]
+position = Vector2(13, 75)
 
 [node name="food_container" type="Node2D" parent="." unique_id=962476179]
 unique_name_in_owner = true
@@ -594,9 +607,9 @@ text = "Feed Dolphin"
 [node name="StatusContainer" type="TextureRect" parent="UIElements/Interactables_buttons" unique_id=1960880237]
 layout_mode = 0
 offset_left = 1534.0
-offset_top = 56.0
+offset_top = 113.0
 offset_right = 1918.0
-offset_bottom = 458.0
+offset_bottom = 515.0
 texture = ExtResource("27_ogl74")
 expand_mode = 1
 stretch_mode = 5
@@ -765,9 +778,9 @@ text = "Money"
 [node name="Buy_Dolphin_Container" type="Control" parent="UIElements/Interactables_buttons" unique_id=808647003]
 anchors_preset = 0
 offset_left = 1571.0
-offset_top = 493.0
+offset_top = 548.0
 offset_right = 1878.0
-offset_bottom = 630.0
+offset_bottom = 685.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container" unique_id=1845379138]
 layout_mode = 0
@@ -804,6 +817,32 @@ texture_normal = ExtResource("33_vsrrq")
 texture_pressed = ExtResource("33_vsrrq")
 texture_hover = ExtResource("33_vsrrq")
 stretch_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="UIElements/Interactables_buttons" unique_id=706687275]
+layout_mode = 0
+offset_left = 1576.0
+offset_top = 23.0
+offset_right = 1873.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="UIElements/Interactables_buttons/PanelContainer" unique_id=844601424]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_1qvw2")
+
+[node name="Timer_left" type="Label" parent="UIElements/Interactables_buttons/PanelContainer/TextureRect" unique_id=1014187753]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -27.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Timer"
+horizontal_alignment = 1
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=1200944931]
 unique_name_in_owner = true

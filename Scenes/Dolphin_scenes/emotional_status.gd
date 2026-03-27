@@ -20,25 +20,64 @@ var current_shit :float= 0
 @export var increase_emotional_status: int = 10
 @export var emotional_damage : int =5
 
+@onready var love_progress_bar: ProgressBar = %Love_progress_bar
+@onready var hungre_progress_bar: ProgressBar = %Hungre_progress_bar
+@onready var cleanest_progress_bar: ProgressBar = %Cleanest_progress_bar
+
+
+
+
 var is_hungry :bool= false
 var is_sad :bool= false
 var is_dirty :bool= false
 
 signal start_death_state
 
+@onready var dolphin: AnimationPlayer = %Dolphin
 
 
 func _ready():
+	GameManager.shit_count.connect(_on_shits_changed)
+	
 	current_food = max_food
 	current_love = max_love
-	current_shit = 0
+	cleanest_progress_bar.max_value = max_shit
+	current_shit = max_shit
 
 func _process(delta):
 	_apply_decay(delta)
 	_update_states()
+	_update_UI_states()
 	_check_death()
+	_updated_animations()
 
+func _updated_animations()->void:
+	var food_ratio = current_food / max_food
+	var status = _get_global_status()
 
+	if food_ratio <= 0.3:
+		_play_anim("moribundo")
+	elif food_ratio <= 0.4:
+		_play_anim("normal")
+	elif status <= 0.5:
+		_play_anim("moribundo")
+	elif status <= 0.8:
+		_play_anim("normal")
+	else:
+		_play_anim("happy")
+
+func _play_anim(name: String):
+	if dolphin.current_animation != name:
+		dolphin.play(name)
+func _get_global_status() -> float:
+	var food_ratio = current_food / max_food
+	var love_ratio = current_love / max_love
+	var clean_ratio = current_shit / max_shit
+	
+	return (food_ratio * 0.7) + (love_ratio * 0.2) + (clean_ratio * 0.2)
+func _on_shits_changed(number_shits)->void:
+	current_shit = clamp(max_shit - number_shits, 0, max_shit)
+	_update_UI_states()
 
 func _apply_decay(delta):
 	current_food -= food_decay_rate * delta
@@ -51,6 +90,11 @@ func _update_states():
 	is_hungry = current_food <= hungry_threshold
 	is_sad = current_love <= sad_threshold
 	is_dirty = GameManager.shits_numbers >= max_shit
+
+func _update_UI_states():
+	love_progress_bar.value = current_love
+	hungre_progress_bar.value = current_food
+	cleanest_progress_bar.value = current_shit
 
 func _check_death():
 	if is_hungry and is_sad and is_dirty:

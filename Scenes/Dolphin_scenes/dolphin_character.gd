@@ -31,13 +31,20 @@ var is_happy:bool= false
 var is_dying:bool= false
 var is_death:bool= false
 
+var dolphin_tween: Tween
+@onready var status_ui: Control = %Status_UI
+
 func _ready() -> void:
 	state_machine.init(self)
 	GameManager.add_emotional_status(general_manager.increase_emotional_status)
 	GameManager.add_dolphins(1)
 	mouse_entered.connect(func():
+		status_ui.visible = true
+		zoom_dolphin_hovered(self, Vector2(1.1,1.1))
 		is_pettable = true)
 	mouse_exited.connect(func():
+		status_ui.visible = false
+		zoom_dolphin_hovered(self, Vector2(1,1))
 		is_pettable = false)
 	general_manager.start_death_state.connect(death_dolphin)
 
@@ -76,3 +83,14 @@ func _pick_initial_facing()->void:
 	var dir = [-1, 1].pick_random()
 	base_dolphin.flip_h = dir < 0
 	eyes.flip_h = dir< 0
+
+
+func zoom_dolphin_hovered(dolphin: DolphinBase, zoom_intensity: Vector2)->void:
+	if dolphin_tween:
+		dolphin_tween.kill()
+		dolphin_tween = null
+	var initial_rot = dolphin.rotation_degrees
+	
+	dolphin_tween= create_tween()
+	#este controla el zoom
+	dolphin_tween.parallel().tween_property(dolphin,"scale",zoom_intensity, 0.1)

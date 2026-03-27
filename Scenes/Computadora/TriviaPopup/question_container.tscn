@@ -30,6 +30,9 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffp2h"]
+bg_color = Color(0.033853274, 0.03385329, 0.033853233, 1)
+
 [node name="Computadora" type="Control" unique_id=630852609]
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +56,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1920.0
 offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1161544921]
 layout_mode = 1
@@ -160,7 +165,7 @@ autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=1609908340]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
@@ -176,6 +181,7 @@ offset_right = -754.0
 offset_bottom = -885.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ffp2h")
 max_value = 10.0
 value = 10.0
 show_percentage = false
@@ -195,6 +201,8 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Tiempo"
+
+[node name="Sound_effect" type="AudioStreamPlayer" parent="." unique_id=50044069]
 
 [connection signal="pressed" from="ColorRect/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -10,12 +10,17 @@ var gravity_dir = Vector2.DOWN
 
 var is_hitable = false
 
+@export var money_effect : PackedScene
+ 
 var tween: Tween
 @export var general_manager: GeneralManager
+@onready var spawn: Marker2D = $Spawn
+
 
 func _ready() -> void:
 	GameManager.add_shits(1)
 	health_component.is_death.connect(func():
+		_spawn_money_effect()
 		GameManager.updated_money(health_component.target_object.money_dropped)
 		GameManager.remove_shits(1)
 		queue_free()
@@ -37,6 +42,14 @@ func _input(event: InputEvent) -> void:
 			shake_hit()
 			
 			
+
+func _spawn_money_effect()->void:
+	var effect = money_effect.instantiate() as icon_money
+	var pop_deposit = get_tree().get_first_node_in_group("pop_container")
+	effect.position = spawn.position
+	effect.scale = Vector2(0.5,0.5)
+	effect.position.y += 350
+	pop_deposit.add_child(effect)
 
 func _on_mouse_entered() -> void:
 	is_hitable = true
