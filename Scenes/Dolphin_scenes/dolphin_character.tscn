@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bjprapupicomq"]
+
+[ext_resource type="Script" uid="uid://ctjijpdmogt64" path="res://Scenes/Dolphin_scenes/dolphin_character.gd" id="1_va7nk"]
+[ext_resource type="Script" uid="uid://nj1xjy5bnir0" path="res://Scenes/Dolphin_scenes/pop_manager.gd" id="2_1ty4b"]
+[ext_resource type="Script" uid="uid://defy8ec51ku5c" path="res://Scenes/Dolphin_scenes/love_status_manager.gd" id="2_hvstq"]
+[ext_resource type="PackedScene" uid="uid://ygfg5kd2guvj" path="res://Scenes/pop_scenes/death_dolphin.tscn" id="2_jltbp"]
+[ext_resource type="Script" uid="uid://3uqgy7vydrd0" path="res://Scenes/Dolphin_scenes/emotional_status.gd" id="2_xi0lt"]
+[ext_resource type="PackedScene" uid="uid://bd1gedovv26li" path="res://Scenes/pop_scenes/poop.tscn" id="3_7vbcp"]
+[ext_resource type="Script" uid="uid://bhaga2d0lnx1m" path="res://Scenes/Dolphin_scenes/Available_states/death_state.gd" id="3_k1ajc"]
+[ext_resource type="Script" uid="uid://d03kbsufx5wa0" path="res://Scenes/Dolphin_scenes/state_machine.gd" id="3_xxsbn"]
+[ext_resource type="Script" uid="uid://s6n0bsbox76m" path="res://Scenes/Dolphin_scenes/Available_states/dying_state.gd" id="4_1ty4b"]
+[ext_resource type="Script" uid="uid://brob6yykk4o7c" path="res://Scenes/Dolphin_scenes/food_status_manager.gd" id="4_xi0lt"]
+[ext_resource type="Script" uid="uid://b24v7s2yloytx" path="res://Scenes/Dolphin_scenes/Available_states/falling_state.gd" id="5_7vbcp"]
+[ext_resource type="Script" uid="uid://blrdvsyalmmad" path="res://Scenes/Dolphin_scenes/Available_states/jump_state.gd" id="7_xi0lt"]
+[ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="13_e43um"]
+[ext_resource type="Texture2D" uid="uid://dtl6ofmn38yys" path="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojos felices.png" id="14_e43um"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
+radius = 374.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_va7nk"]
+radius = 73.109505
+
+[node name="Dolphin_Character" type="CharacterBody2D" unique_id=1029352982]
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_va7nk")
+GRAVITY_STRENGHT = 400
+dealth_dolphin_scene = ExtResource("2_jltbp")
+
+[node name="General_Manager" type="Node" parent="." unique_id=368527509]
+script = ExtResource("2_xi0lt")
+emotional_damage = 15
+
+[node name="Love_Status_Manager" type="Node" parent="." unique_id=1115228182 node_paths=PackedStringArray("dolphin_character", "general_status")]
+unique_name_in_owner = true
+script = ExtResource("2_hvstq")
+dolphin_character = NodePath("..")
+general_status = NodePath("../General_Manager")
+
+[node name="Food_Status_Manager" type="Node" parent="." unique_id=1035388642 node_paths=PackedStringArray("general_status")]
+script = ExtResource("4_xi0lt")
+general_status = NodePath("../General_Manager")
+
+[node name="Shit_Status_Manager" type="Node" parent="." unique_id=201292303 node_paths=PackedStringArray("general_status")]
+script = ExtResource("2_1ty4b")
+pop_instance = ExtResource("3_7vbcp")
+general_status = NodePath("../General_Manager")
+min_frequency_pop = 3
+max_frequency_pop = 8
+
+[node name="Timer" type="Timer" parent="Shit_Status_Manager" unique_id=1264493392]
+unique_name_in_owner = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=1629426530 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_xxsbn")
+initial_state = NodePath("FallingState")
+
+[node name="DeathState" type="Node" parent="StateMachine" unique_id=801693551]
+unique_name_in_owner = true
+script = ExtResource("3_k1ajc")
+metadata/_custom_type_script = "uid://bhaga2d0lnx1m"
+
+[node name="EatState" type="Node" parent="StateMachine" unique_id=1283698372]
+unique_name_in_owner = true
+script = ExtResource("4_1ty4b")
+metadata/_custom_type_script = "uid://s6n0bsbox76m"
+
+[node name="FallingState" type="Node" parent="StateMachine" unique_id=381454409]
+unique_name_in_owner = true
+script = ExtResource("5_7vbcp")
+metadata/_custom_type_script = "uid://b24v7s2yloytx"
+
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1741133256]
+unique_name_in_owner = true
+script = ExtResource("7_xi0lt")
+metadata/_custom_type_script = "uid://blrdvsyalmmad"
+
+[node name="EatRange" type="Area2D" parent="." unique_id=900842731]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatRange" unique_id=59482704]
+shape = SubResource("CircleShape2D_hvstq")
+debug_color = Color(0.9393114, 1.0973811e-05, 0.62207997, 0.41960785)
+
+[node name="Base_Dolphin" type="Sprite2D" parent="." unique_id=57677916]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_e43um")
+
+[node name="Eyes" type="Sprite2D" parent="Base_Dolphin" unique_id=1466414252]
+position = Vector2(-5.0000153, 4.9999847)
+texture = ExtResource("14_e43um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721586557]
+shape = SubResource("CircleShape2D_va7nk")
+
+[node name="Down_raycast" type="RayCast2D" parent="." unique_id=376717149]
+unique_name_in_owner = true
+target_position = Vector2(0, 108)
+
+[node name="Right_raycast" type="RayCast2D" parent="." unique_id=997745135]
+unique_name_in_owner = true
+target_position = Vector2(105, 0)
+
+[node name="Left_raycast" type="RayCast2D" parent="." unique_id=1233172142]
+unique_name_in_owner = true
+target_position = Vector2(-91, -1)

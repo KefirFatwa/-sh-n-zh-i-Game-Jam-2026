@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bglat55rewxv3"]
+
+[ext_resource type="Texture2D" uid="uid://cwydlo64sl3ak" path="res://icon.svg" id="1_7qklf"]
+[ext_resource type="Script" uid="uid://batx22ff4oh5i" path="res://Scenes/Celular/PopUp/pop_up.gd" id="1_vp2px"]
+
+[node name="Window" type="ColorRect" unique_id=2109965852]
+anchors_preset = -1
+offset_right = 420.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vp2px")
+metadata/_edit_lock_ = true
+
+[node name="CloseButton" type="Button" parent="." unique_id=399553365]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_bottom = 136.0
+grow_horizontal = 0
+icon = ExtResource("1_7qklf")
+flat = true
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

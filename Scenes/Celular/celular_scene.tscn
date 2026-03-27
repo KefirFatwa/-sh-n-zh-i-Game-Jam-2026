@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bxjdcdvj2vd6y"]
+
+[ext_resource type="Script" uid="uid://dbtw0jmf3wvkf" path="res://Scenes/Celular/celular_scene.gd" id="1_ffcyh"]
+
+[sub_resource type="Curve2D" id="Curve2D_ffcyh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 236.38379, 204.00002, 0, 0, 0, 0, 338.27902, 106.53439, 0, 0, 0, 0, 366.03687, 204.00002, 0, 0, 0, 0, 433.56445, 311.21222, 0, 0, 0, 0, 451.1217, 523.8791, 0, 0, 0, 0, 445.71948, 740.06104, 0, 0, 0, 0, 295.8081, 711.9398, 0, 0, 0, 0, 274.19922, 560.7882, 0, 0, 0, 0, 262.0443, 392.0608, 0, 0, 0, 0, 272.84863, 295.39404, 0, 0, 0, 0, 236.38379, 204.00002)
+}
+point_count = 11
+
+[node name="CelularScene" type="Control" unique_id=1466766413]
+layout_mode = 3
+anchor_left = 0.30900002
+anchor_right = 0.698
+anchor_bottom = 1.0
+offset_left = 0.7199707
+offset_right = -0.16003418
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ffcyh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1947311558]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.5
+anchor_right = 0.50200003
+anchor_bottom = 0.5
+offset_left = -344.49203
+offset_top = -500.0
+offset_right = 335.50797
+offset_bottom = 481.4939
+color = Color(1, 1, 1, 0)
+
+[node name="Button" type="Button" parent="." unique_id=1732939255]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50100005
+anchor_top = 0.77900004
+anchor_right = 0.50100005
+anchor_bottom = 0.77900004
+offset_left = -295.74603
+offset_top = -81.32007
+offset_right = 282.25397
+offset_bottom = 81.67993
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Comprar comida"
+
+[node name="PopUpTimer" type="Timer" parent="." unique_id=196379179]
+unique_name_in_owner = true
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnPath" type="Path2D" parent="." unique_id=2137171756]
+position = Vector2(-31.704285, 95.045074)
+scale = Vector2(1.1874938, 0.65664166)
+curve = SubResource("Curve2D_ffcyh")
+
+[node name="PopUpSpawnLocation" type="PathFollow2D" parent="SpawnPath" unique_id=178159083]
+unique_name_in_owner = true
+position = Vector2(236.38379, 204.00002)
+rotation = -0.76318276
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="PopUpTimer" to="." method="_on_timer_timeout"]

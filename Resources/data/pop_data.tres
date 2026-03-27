@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GeneralData" load_steps=2 format=3 uid="uid://dxgnx14ghwqdm"]
+
+[ext_resource type="Script" uid="uid://b7aabdkr0j2nb" path="res://Resources/data/general_lifetime_objects.gd" id="1_bgtkw"]
+
+[resource]
+script = ExtResource("1_bgtkw")
+name = "Normal_Pop"
+max_health_object = 4.0
+money_dropped = 5.0
+metadata/_custom_type_script = "uid://b7aabdkr0j2nb"
