@@ -8,12 +8,14 @@ class_name JumpState
 @export var floatiness :float= 0.6 
 @export var side_drift :float= 80.0  
 
+@export var jump_particles : PackedScene
+
 var vel: Vector2
 var bounce_cd := 0.0
 
 func enter():
 	super()
-	
+	_spawn_jump()
 	var up_dir = -parent.gravity_dir.normalized()
 	var base_force = parent.get_random_jump_strenght()
 	var force = base_force * parent.jump_multiplier
@@ -61,3 +63,10 @@ func process_physics(delta: float) -> State:
 		return falling_state
 	
 	return null
+
+func _spawn_jump()->void:
+	var jump_particle = jump_particles.instantiate()
+	jump_particle.position = get_parent().get_parent().global_position
+	jump_particle.position.y += 5
+	get_parent().add_child(jump_particle)
+	

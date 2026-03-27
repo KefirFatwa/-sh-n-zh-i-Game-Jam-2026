@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bb6fy6wm60chr"]
+
+[ext_resource type="Texture2D" uid="uid://b8ulgqltg860t" path="res://Assets/Particles_effects/love.png" id="1_ldnye"]
+[ext_resource type="Script" uid="uid://jwc11t6eqsex" path="res://Scenes/Particles/love.gd" id="2_r6to5"]
+
+[sub_resource type="Curve" id="Curve_r6to5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.80653954, 0.35691488), 0.0, 0.0, 0, 0, Vector2(0.98092645, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_iuwei"]
+offsets = PackedFloat32Array(0, 0.6920821, 0.9354839)
+colors = PackedColorArray(0.99999994, 0.113458075, 0.4853918, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=722266307]
+emitting = false
+amount = 10
+texture = ExtResource("1_ldnye")
+lifetime = 0.3
+one_shot = true
+speed_scale = 0.2
+explosiveness = 0.68
+emission_shape = 1
+emission_sphere_radius = 36.7
+direction = Vector2(1, 5)
+gravity = Vector2(0, -940)
+scale_amount_curve = SubResource("Curve_r6to5")
+color_initial_ramp = SubResource("Gradient_iuwei")
+script = ExtResource("2_r6to5")

@@ -20,8 +20,15 @@ var current_happiness: int = 0
 var current_food :float = 0.0
 @export var food_decay_rate := 1.5
 
+@export var decay_per_zero_dolphin :float= 0.5
+@export var correct_quiz_money : int = 100
+@export var punishment_quiz_happines: int =5
+
+
 @onready var player_food_progress: TextureProgressBar = %Player_food_progress
 @onready var player_happines_progress: TextureProgressBar = %Player_Happines_progress
+@onready var level_time: Timer = %LevelTime
+@onready var timer_left: Label = %Timer_left
 
 
 func _ready() -> void:
@@ -29,8 +36,11 @@ func _ready() -> void:
 	
 	GameManager.money_changed.connect(current_money)
 	GameManager.dolphings_changed.connect(_on_updated_current_dolphins)
-	
 	GameManager.emotional_status_changed.connect(_on_emotional_changed)
+	level_time.timeout.connect(_on_ended_level)
+	
+	GameManager.correct_quiz_money = correct_quiz_money
+	GameManager.punishment_quiz_happiness = punishment_quiz_happines
 	
 	GameManager.emotional_status = max_happiness
 	GameManager.goal_dolphins = target_dolphins
@@ -39,19 +49,33 @@ func _ready() -> void:
 	countfood.text = str(GameManager.current_food_container)
 	money_count.text = str(GameManager.global_money)
 	
-	current_happiness = max_happiness
-	player_happines_progress.value = current_happiness
+	GameManager.emotional_status = max_happiness
+	player_happines_progress.value = GameManager.emotional_status 
 	
 	current_food = max_food
 	player_food_progress.value = current_food
 
+func _on_ended_level()->void:
+	print("cambiar final regular")
+
+func _check_endings()->void:
+	if current_food <= 0 or GameManager.emotional_status  <= 0:
+		print("cambiar final malo")
+	elif GameManager.current_dolphins >= target_dolphins:
+		print("cambiar final perfecto")
+
+
 func _process(delta: float) -> void:
 	_apply_decay_food(delta)
+	_check_endings()
+	var time = level_time.time_left
+	var minutes = int(time) / 60
+	var seconds = int(time) % 60
+	timer_left.text = "%02d:%02d" % [minutes, seconds]
 
-func _on_emotional_changed(emotional_status)->void:
-	player_happines_progress.value = emotional_status
-	
-	current_happiness = clamp(current_happiness, 0 , max_happiness)
+func _on_emotional_changed(emootional)->void:
+	player_happines_progress.value = GameManager.emotional_status
+	GameManager.emotional_status = clamp(GameManager.emotional_status, 0 , max_happiness)
 
 func _on_updated_current_dolphins(number_dolphins)->void:
 	progress_target_dolphins.value = number_dolphins
@@ -60,7 +84,13 @@ func _apply_decay_food(delta):
 	current_food -= food_decay_rate * delta
 	current_food = clamp(current_food, 0 ,max_food)
 	player_food_progress.value = current_food
-
+	
+	if GameManager.current_dolphins == 0:
+		GameManager.emotional_status -= decay_per_zero_dolphin * delta
+	elif GameManager.current_dolphins > 0:
+		GameManager.emotional_status += (decay_per_zero_dolphin * 0.5) * delta
+		#player_happines_progress.value = current_happiness
+	player_happines_progress.value = GameManager.emotional_status
 
 func current_money()->void:
 	money_count.text = str(GameManager.global_money)

@@ -160,6 +160,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_f6q34")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bsfdp")
 text = "Salir"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=595534298]
+
 [connection signal="pressed" from="ButtonManager/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="ButtonManager/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="ButtonManager/Creditos" to="." method="_on_creditos_pressed"]

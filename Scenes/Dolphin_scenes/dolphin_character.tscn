@@ -10,16 +10,216 @@
 [ext_resource type="Script" uid="uid://d03kbsufx5wa0" path="res://Scenes/Dolphin_scenes/state_machine.gd" id="3_xxsbn"]
 [ext_resource type="Script" uid="uid://s6n0bsbox76m" path="res://Scenes/Dolphin_scenes/Available_states/dying_state.gd" id="4_1ty4b"]
 [ext_resource type="Script" uid="uid://brob6yykk4o7c" path="res://Scenes/Dolphin_scenes/food_status_manager.gd" id="4_xi0lt"]
+[ext_resource type="PackedScene" uid="uid://bb6fy6wm60chr" path="res://Scenes/Particles/Love.tscn" id="5_5vmjm"]
 [ext_resource type="Script" uid="uid://b24v7s2yloytx" path="res://Scenes/Dolphin_scenes/Available_states/falling_state.gd" id="5_7vbcp"]
 [ext_resource type="Script" uid="uid://blrdvsyalmmad" path="res://Scenes/Dolphin_scenes/Available_states/jump_state.gd" id="7_xi0lt"]
 [ext_resource type="Texture2D" uid="uid://dld64dxdbacw1" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/delfin.png" id="13_e43um"]
 [ext_resource type="Texture2D" uid="uid://dtl6ofmn38yys" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos felices.png" id="14_e43um"]
+[ext_resource type="Texture2D" uid="uid://dsm21vaotpuu" path="res://Assets/Status/fondostatus.png" id="15_gwa4w"]
+[ext_resource type="PackedScene" uid="uid://7lpvw35b7ah2" path="res://Scenes/Particles/jump.tscn" id="17_d53us"]
+[ext_resource type="Texture2D" uid="uid://c0x6k7b2k2jsc" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos moribundos.png" id="18_464rw"]
+[ext_resource type="Texture2D" uid="uid://73cilowj7pg4" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos normales.png" id="19_8push"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
 radius = 374.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_va7nk"]
 radius = 73.109505
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwa4w"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vmjm"]
+bg_color = Color(1, 0.28821793, 0.54906046, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d53us"]
+bg_color = Color(0.89072865, 0.47396624, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w51kw"]
+bg_color = Color(0, 0.6705589, 0.7841023, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Animation" id="Animation_p2o6d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base_Dolphin:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_e43um")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base_Dolphin/Eyes:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_e43um")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base_Dolphin:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s7a3y"]
+resource_name = "happy"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base_Dolphin:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_e43um")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base_Dolphin/Eyes:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_e43um")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base_Dolphin:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sd86b"]
+resource_name = "moribundo"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base_Dolphin:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_e43um")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base_Dolphin/Eyes:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_464rw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base_Dolphin:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6100044, 0.59474576, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xnwhb"]
+resource_name = "normal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base_Dolphin:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_e43um")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base_Dolphin/Eyes:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_8push")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base_Dolphin:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 0.7294118, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vnkfa"]
+_data = {
+&"RESET": SubResource("Animation_p2o6d"),
+&"happy": SubResource("Animation_s7a3y"),
+&"moribundo": SubResource("Animation_sd86b"),
+&"normal": SubResource("Animation_xnwhb")
+}
 
 [node name="Dolphin_Character" type="CharacterBody2D" unique_id=1029352982]
 collision_layer = 2
@@ -37,6 +237,7 @@ unique_name_in_owner = true
 script = ExtResource("2_hvstq")
 dolphin_character = NodePath("..")
 general_status = NodePath("../General_Manager")
+love_particles = ExtResource("5_5vmjm")
 
 [node name="Food_Status_Manager" type="Node" parent="." unique_id=1035388642 node_paths=PackedStringArray("general_status")]
 script = ExtResource("4_xi0lt")
@@ -74,6 +275,7 @@ metadata/_custom_type_script = "uid://b24v7s2yloytx"
 [node name="JumpState" type="Node" parent="StateMachine" unique_id=1741133256]
 unique_name_in_owner = true
 script = ExtResource("7_xi0lt")
+jump_particles = ExtResource("17_d53us")
 metadata/_custom_type_script = "uid://blrdvsyalmmad"
 
 [node name="EatRange" type="Area2D" parent="." unique_id=900842731]
@@ -107,3 +309,92 @@ target_position = Vector2(105, 0)
 [node name="Left_raycast" type="RayCast2D" parent="." unique_id=1233172142]
 unique_name_in_owner = true
 target_position = Vector2(-91, -1)
+
+[node name="Status_UI" type="Control" parent="." unique_id=2082538504]
+unique_name_in_owner = true
+visible = false
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_left = -193.0
+offset_top = -120.0
+offset_right = -77.0
+offset_bottom = 28.0
+
+[node name="TextureRect" type="TextureRect" parent="Status_UI" unique_id=1446023554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_gwa4w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Status_UI/TextureRect" unique_id=1518577146]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16900001
+anchor_top = 0.079
+anchor_right = 0.91400003
+anchor_bottom = 0.818
+offset_left = -2.2510052
+offset_top = -2.138997
+offset_right = -13.606003
+offset_bottom = 23.527992
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Status_UI/TextureRect/MarginContainer" unique_id=1173934262]
+layout_mode = 2
+
+[node name="Love_Tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=818139795]
+layout_mode = 2
+text = "Love"
+horizontal_alignment = 1
+
+[node name="Love_progress_bar" type="ProgressBar" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=1542767007]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10.76)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_gwa4w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5vmjm")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Hungre_Tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=652516706]
+layout_mode = 2
+text = "Hungry"
+horizontal_alignment = 1
+
+[node name="Hungre_progress_bar" type="ProgressBar" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=1988454876]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10.76)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_gwa4w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d53us")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="clean_tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=2055968727]
+layout_mode = 2
+text = "Cleanest"
+horizontal_alignment = 1
+
+[node name="Cleanest_progress_bar" type="ProgressBar" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=311089307]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10.76)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_gwa4w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w51kw")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Dolphin" type="AnimationPlayer" parent="." unique_id=1424328364]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_vnkfa")
+autoplay = &"happy"

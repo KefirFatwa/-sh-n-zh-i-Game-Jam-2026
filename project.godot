@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Prototipo"
 run/main_scene="uid://crwfabg6r0aqk"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,8 +29,8 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [file_customization]
 
@@ -50,6 +50,10 @@ pop_container=""
 Computadora=""
 death_bodies=""
 dolphinContainer=""
+
+[gui]
+
+theme/custom="uid://bv2kqcftok42f"
 
 [input]
 
