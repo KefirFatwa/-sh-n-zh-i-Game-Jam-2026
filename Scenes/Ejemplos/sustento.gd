@@ -82,6 +82,7 @@ func resultado():
 	if diferencia <= margen_error: 
 		print("Se puede comer!")
 		sfx_resultado_bien.play()
+		#aqui iria aja el codigo que sube la energia etc y en los otros 2 lo jodemos jeje
 	elif tiempo_cocinado < tiempo_meta:
 		print("IT's FUCKEN RAAAAW")
 		sfx_resultado_mal.play()
