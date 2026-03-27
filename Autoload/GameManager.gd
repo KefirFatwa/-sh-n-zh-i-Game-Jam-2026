@@ -14,6 +14,15 @@ var pollo:int = 0
 var marucha :int = 0
 var tacos :int = 0
 
+var chicken_price = 30
+var noodles_price = 20
+var tacos_price = 40
+var dolphin_food_price = 20
+
+var health_chicken = 30
+var health_noodles = 20
+var health_tacos = 40
+var dolphin_food_packed = 10
 
 
 var emotional_status: int = 0

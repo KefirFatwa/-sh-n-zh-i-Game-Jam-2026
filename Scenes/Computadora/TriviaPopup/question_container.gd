@@ -93,6 +93,8 @@ func handle_progress_bar() -> void:
 	
 	if timer.time_left == 0 and not timer_done:
 		timer_done = true
+		GameManager.remove_emotional_status(GameManager.punishment_quiz_happiness)
+		GameManager.emotional_status_changed.emit(GameManager.emotional_status)
 		print("EL TIEMPO ACABO.")
 		quit_question()
 

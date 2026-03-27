@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dbtw0jmf3wvkf" path="res://Scenes/Celular/celular_scene.gd" id="1_ffcyh"]
 [ext_resource type="Texture2D" uid="uid://bobrbnhmc7ul4" path="res://Assets/sustento/sopita.png" id="2_gucy2"]
+[ext_resource type="Texture2D" uid="uid://binhhnam5urvi" path="res://Assets/Status/monedas.png" id="3_6wjnv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffcyh"]
-bg_color = Color(0.3882353, 0.60784316, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6br5"]
+bg_color = Color(0.92417, 0.47110087, 0.26256752, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -19,6 +20,13 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wjnv"]
 bg_color = Color(0.46032137, 0.655456, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omekw"]
+bg_color = Color(5.4869056e-06, 0.69447565, 0.7794923, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -59,29 +67,147 @@ rotation = 0.24605988
 scale = Vector2(0.66429526, 0.66429526)
 texture = ExtResource("2_gucy2")
 
-[node name="Button" type="Button" parent="." unique_id=1732939255]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1646300185]
+layout_mode = 0
+offset_left = 283.1046
+offset_top = 327.5379
+offset_right = 615.8838
+offset_bottom = 904.23126
+rotation = 0.24260077
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=353603775]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Chicken_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1019908928]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Chicken_container_button" unique_id=2072877304]
+custom_minimum_size = Vector2(52.72, 68.585)
+layout_mode = 2
+texture = ExtResource("3_6wjnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price_chicken" type="Label" parent="MarginContainer/VBoxContainer/Chicken_container_button" unique_id=2035494589]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.50100005
-anchor_top = 0.77900004
-anchor_right = 0.50100005
-anchor_bottom = 0.77900004
-offset_left = -195.74603
-offset_top = -45.320007
-offset_right = 117.973145
-offset_bottom = 46.48004
-rotation = 0.24101773
-size_flags_horizontal = 4
-size_flags_vertical = 10
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Price"
+
+[node name="Buy_Chicken_button" type="Button" parent="MarginContainer/VBoxContainer/Chicken_container_button" unique_id=1732939255]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(142.455, 132.15)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_ffcyh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6br5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
-text = "Comprar comida"
+text = "Buy Chicken 
+"
+
+[node name="Noodles_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=424398257]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Noodles_container_button" unique_id=1612395795]
+custom_minimum_size = Vector2(52.72, 68.585)
+layout_mode = 2
+texture = ExtResource("3_6wjnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price_noodles" type="Label" parent="MarginContainer/VBoxContainer/Noodles_container_button" unique_id=120900094]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Price"
+
+[node name="Buy_noodles_button" type="Button" parent="MarginContainer/VBoxContainer/Noodles_container_button" unique_id=424983431]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(142.455, 132.15)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6br5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
+text = "Buy Noodles
+"
+
+[node name="Tacos_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=371055617]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Tacos_container_button" unique_id=514534961]
+custom_minimum_size = Vector2(52.72, 68.585)
+layout_mode = 2
+texture = ExtResource("3_6wjnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="price_Tacos" type="Label" parent="MarginContainer/VBoxContainer/Tacos_container_button" unique_id=2002909293]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Price"
+
+[node name="Buy_tacos_button" type="Button" parent="MarginContainer/VBoxContainer/Tacos_container_button" unique_id=1081552489]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(142.455, 132.15)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6br5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
+text = "Buy Tacos
+"
+
+[node name="Dolphin_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=419508849]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Dolphin_container_button" unique_id=474963670]
+custom_minimum_size = Vector2(52.72, 68.585)
+layout_mode = 2
+texture = ExtResource("3_6wjnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="price_dolphin_food" type="Label" parent="MarginContainer/VBoxContainer/Dolphin_container_button" unique_id=1904766282]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Price"
+
+[node name="Buy_dolphin_food_container" type="Button" parent="MarginContainer/VBoxContainer/Dolphin_container_button" unique_id=66524607]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(142.455, 132.15)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_omekw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
+text = "Buy Dolphin 
+food
+"
 
 [node name="PopUpTimer" type="Timer" parent="." unique_id=196379179]
 unique_name_in_owner = true
@@ -154,5 +280,4 @@ position = Vector2(434, 791)
 [node name="Marker2D20" type="Marker2D" parent="MarkerController" unique_id=1751940296]
 position = Vector2(360, 771)
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="PopUpTimer" to="." method="_on_timer_timeout"]
