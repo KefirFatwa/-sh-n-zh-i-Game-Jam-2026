@@ -1,48 +1,67 @@
 extends Node
 class_name GeneralManager
 
-#general data (could be replaced with resources)
-var max_food = 10
-var max_clean = 3
-var max_love = 10
 
-var current_food
-var current_love
-var current_clean
+@export var max_food :float= 100.0
+@export var max_love :float= 100.0
+@export var max_shit :float= 10
 
-#status for die
-var is_dirt :bool = false
-var is_hungry: bool= false
-var is_sad: bool = false
+var current_food :float= 0.0
+var current_love :float= 0.0
+var current_shit :float= 0
+
+
+@export var food_decay_rate :float= 5.0
+@export var love_decay_rate :float= 2.0
+
+
+@export var hungry_threshold :float= 30.0
+@export var sad_threshold :float= 30.0
+@export var increase_emotional_status: int = 10
+@export var emotional_damage : int =5
+
+var is_hungry :bool= false
+var is_sad :bool= false
+var is_dirty :bool= false
 
 signal start_death_state
-@onready var love_status_manager: LoveManager = %Love_Status_Manager
 
 
-@onready var clean: Label = $"../Debug_states/VBoxContainer/Clean"
-@onready var love: Label = $"../Debug_states/VBoxContainer/Love"
-@onready var food: Label = $"../Debug_states/VBoxContainer/Food"
 
-
-func _ready() -> void:
-	GameManager.shit_count.connect(_on_to_much_shit)
+func _ready():
 	current_food = max_food
-	current_clean = max_clean
 	current_love = max_love
+	current_shit = 0
+
+func _process(delta):
+	_apply_decay(delta)
+	_update_states()
+	_check_death()
 
 
-func _process(delta: float) -> void:
-	clean.text = "Clean State: " + str(is_dirt)
-	love.text = "Love State: " + str(love_status_manager.is_sad)
-	food.text = "Food State: " + str(is_hungry)
 
-func _on_to_much_shit(count_shit: int)->void:
-	
-	if current_clean <= count_shit:
-		is_dirt = true
-	else:
-		is_dirt = false
-	if is_ready_to_die() and love_status_manager.is_sad:
+func _apply_decay(delta):
+	current_food -= food_decay_rate * delta
+	current_love -= love_decay_rate * delta
+
+	current_food = clamp(current_food, 0, max_food)
+	current_love = clamp(current_love, 0, max_love)
+
+func _update_states():
+	is_hungry = current_food <= hungry_threshold
+	is_sad = current_love <= sad_threshold
+	is_dirty = GameManager.shits_numbers >= max_shit
+
+func _check_death():
+	if is_hungry and is_sad and is_dirty:
 		start_death_state.emit()
-func is_ready_to_die()->bool:
-	return is_dirt and is_hungry and is_sad
+	if current_food <= 0:
+		start_death_state.emit()
+
+func add_food(amount: float):
+	current_food += amount
+	current_food = clamp(current_food, 0, max_food)
+
+func add_love(amount: float):
+	current_love += amount
+	current_love = clamp(current_love, 0, max_love)

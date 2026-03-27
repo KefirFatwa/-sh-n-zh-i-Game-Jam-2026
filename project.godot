@@ -30,6 +30,7 @@ window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [file_customization]
 
@@ -47,6 +48,8 @@ folder_colors={
 
 pop_container=""
 Computadora=""
+death_bodies=""
+dolphinContainer=""
 
 [input]
 
@@ -63,9 +66,10 @@ interaction_left_click={
 
 [layer_names]
 
-2d_physics/layer_1="World"
+2d_physics/layer_1="world"
 2d_physics/layer_2="Dolphin"
 2d_physics/layer_3="pop"
+2d_physics/layer_4="food"
 
 [physics]
 
