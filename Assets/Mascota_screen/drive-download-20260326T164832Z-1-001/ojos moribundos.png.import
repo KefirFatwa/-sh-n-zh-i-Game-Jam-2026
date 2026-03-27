@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0x6k7b2k2jsc"
-path="res://.godot/imported/ojos moribundos.png-c2025c4c04e5465ecc0d3d5bd6ca7905.ctex"
+path="res://.godot/imported/ojos moribundos.png-22e2fe5d8a6e46a31f1aed9cea11d17a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/ojos moribundos.png"
-dest_files=["res://.godot/imported/ojos moribundos.png-c2025c4c04e5465ecc0d3d5bd6ca7905.ctex"]
+source_file="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos moribundos.png"
+dest_files=["res://.godot/imported/ojos moribundos.png-22e2fe5d8a6e46a31f1aed9cea11d17a.ctex"]
 
 [params]
 

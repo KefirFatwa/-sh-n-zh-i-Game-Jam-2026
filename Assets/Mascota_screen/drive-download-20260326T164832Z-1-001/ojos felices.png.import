@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv4g3gumvp0mc"
-path="res://.godot/imported/delfintamagotchi.png-974fbe2e147f47b92caf94b233d9c095.ctex"
+uid="uid://dtl6ofmn38yys"
+path="res://.godot/imported/ojos felices.png-4c5e2cb065de23e167cac2d45bd5c919.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/delfintamagotchi.png"
-dest_files=["res://.godot/imported/delfintamagotchi.png-974fbe2e147f47b92caf94b233d9c095.ctex"]
+source_file="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos felices.png"
+dest_files=["res://.godot/imported/ojos felices.png-4c5e2cb065de23e167cac2d45bd5c919.ctex"]
 
 [params]
 

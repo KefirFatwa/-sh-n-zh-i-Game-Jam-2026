@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dld64dxdbacw1"
-path="res://.godot/imported/delfin.png-deea25afbf3497f76c28aae21eaa0ef4.ctex"
+uid="uid://buodxic7j4ctu"
+path="res://.godot/imported/botonx.png-7bc8283539e0fc8d03e9b20d5ce515c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tamagochi_screen/drive-download-20260326T164832Z-1-001/delfin.png"
-dest_files=["res://.godot/imported/delfin.png-deea25afbf3497f76c28aae21eaa0ef4.ctex"]
+source_file="res://Assets/Buttons/botonx.png"
+dest_files=["res://.godot/imported/botonx.png-7bc8283539e0fc8d03e9b20d5ce515c7.ctex"]
 
 [params]
 
