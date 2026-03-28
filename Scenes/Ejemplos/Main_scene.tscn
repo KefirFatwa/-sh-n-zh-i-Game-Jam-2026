@@ -48,8 +48,21 @@
 [ext_resource type="Texture2D" uid="uid://kyw3si4djx36" path="res://Assets/Status/comprarmas.png" id="41_1xjet"]
 [ext_resource type="Texture2D" uid="uid://bwq5u8o8w5wak" path="res://Assets/ComidaPacked_Door/timer.png" id="42_5wenp"]
 [ext_resource type="AudioStream" uid="uid://dwna64mq4vj8q" path="res://FX/Musica juego base fixed.mp3" id="45_t5pli"]
-[ext_resource type="AudioStream" uid="uid://t8gd6g236gf1" path="res://FX/sound_effects/Delfines_effectos/sonido premio.mp3" id="46_ar0cn"]
 [ext_resource type="Script" uid="uid://bvpi4cge20oom" path="res://Scenes/Ejemplos/audio_manager.gd" id="47_ltogy"]
+[ext_resource type="Script" uid="uid://q0ip42dg68f7" path="res://Scenes/Ejemplos/alerts.gd" id="48_msgo5"]
+[ext_resource type="Texture2D" uid="uid://djajkugqcnc12" path="res://Assets/Alerts/Sprite-0001.png" id="49_6dvfo"]
+[ext_resource type="Texture2D" uid="uid://chqwkmprv5vfe" path="res://Assets/Alerts/sad_alert.png" id="50_n4n23"]
+[ext_resource type="AudioStream" uid="uid://b3cxu1kj1eqcs" path="res://FX/sound_effects/General_sound_effects/drop_004.ogg" id="51_3kxlv"]
+[ext_resource type="Texture2D" uid="uid://ddw7tt6wglapu" path="res://Assets/Alerts/dying_food.png" id="51_m8gfi"]
+[ext_resource type="AudioStream" uid="uid://cia2wmjj0kdf1" path="res://FX/sound_effects/EfectosPC/Notificación cel.mp3" id="53_6dvfo"]
+[ext_resource type="AudioStream" uid="uid://itjswgurelga" path="res://FX/sound_effects/EfectosPC/386499-plates_04.mp3" id="54_2n6ao"]
+[ext_resource type="AudioStream" uid="uid://d182elqcruhaj" path="res://FX/sound_effects/General_sound_effects/confirmation_003.ogg" id="55_2xfhl"]
+[ext_resource type="AudioStream" uid="uid://cvqifud7gebju" path="res://FX/sound_effects/General_sound_effects/error_004.ogg" id="56_mmev2"]
+[ext_resource type="AudioStream" uid="uid://coodimg26samx" path="res://FX/sound_effects/General_sound_effects/confirmation_004.ogg" id="57_y4iqs"]
+[ext_resource type="AudioStream" uid="uid://2lnqsyenxgds" path="res://FX/sound_effects/General_sound_effects/bong_001.ogg" id="58_3kxlv"]
+[ext_resource type="AudioStream" uid="uid://dr3e6sgate3w4" path="res://FX/sound_effects/General_sound_effects/error_005.ogg" id="59_41n1x"]
+[ext_resource type="AudioStream" uid="uid://co1ikyhvdqmxi" path="res://FX/sound_effects/General_sound_effects/question_003.ogg" id="62_ofxfp"]
+[ext_resource type="AudioStream" uid="uid://blrdm6iifcidi" path="res://FX/sound_effects/General_sound_effects/question_004.ogg" id="63_bl7yr"]
 
 [sub_resource type="Gradient" id="Gradient_7k381"]
 offsets = PackedFloat32Array(0, 0.9942029)
@@ -135,6 +148,214 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar0cn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_6dvfo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Respuesta Correcta:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Respuesta Incorrecta:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Robo_dinero:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2xfhl"]
+resource_name = "badAnswer"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Respuesta Incorrecta:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 1.8666667),
+"transitions": PackedFloat32Array(1, 2.3784142, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2n6ao"]
+resource_name = "goodAnswer"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Respuesta Correcta:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 1.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t5lux"]
+resource_name = "stealMoney"
+length = 0.8333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Robo_dinero:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Steal_money")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mmev2"]
+_data = {
+&"RESET": SubResource("Animation_6dvfo"),
+&"badAnswer": SubResource("Animation_2xfhl"),
+&"goodAnswer": SubResource("Animation_2n6ao"),
+&"stealMoney": SubResource("Animation_t5lux")
+}
+
+[sub_resource type="Animation" id="Animation_sc057"]
+resource_name = "Hungry"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hugry_fx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIElements/Alerts_status/Hugry_emote:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-12, 50), Vector2(-12, 58.96)]
+}
+
+[sub_resource type="Animation" id="Animation_wgeq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/Alerts_status/Hugry_emote:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x4vob"]
+_data = {
+&"Hungry": SubResource("Animation_sc057"),
+&"RESET": SubResource("Animation_wgeq8")
+}
+
+[sub_resource type="Animation" id="Animation_mrejw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIElements/Alerts_status/Sadness:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_7ph5q"]
+resource_name = "Sadness"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sadness_fx")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIElements/Alerts_status/Sadness:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-9, 180), Vector2(-9, 175.035)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_quqo7"]
+_data = {
+&"RESET": SubResource("Animation_mrejw"),
+&"Sadness": SubResource("Animation_7ph5q")
+}
 
 [node name="Main_scene" type="Node" unique_id=123212929]
 
@@ -412,7 +633,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vsrrq")
 text = "Cerrar"
 
 [node name="Timer" type="Timer" parent="UIElements/Computadora" unique_id=1835240618]
-wait_time = 30.0
+wait_time = 2.0
 autostart = true
 
 [node name="Cocina" type="Control" parent="UIElements" unique_id=1994383423]
@@ -520,6 +741,7 @@ offset_right = 1377.0
 offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UIElements/Interactables_buttons/Sucess_bar_manager" unique_id=1108796173]
 unique_name_in_owner = true
@@ -839,6 +1061,190 @@ theme_override_font_sizes/font_size = 40
 text = "Timer"
 horizontal_alignment = 1
 
+[node name="Alerts" type="Control" parent="UIElements" unique_id=557883204]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1894.0
+offset_bottom = 1030.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("48_msgo5")
+metadata/_edit_lock_ = true
+
+[node name="AlertaExamen" type="TextureRect" parent="UIElements/Alerts" unique_id=1729410495]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 279.0
+offset_right = 226.0
+offset_bottom = 444.0
+mouse_filter = 2
+texture = ExtResource("49_6dvfo")
+
+[node name="TextureRect" type="TextureRect" parent="UIElements/Alerts/AlertaExamen" unique_id=831482222]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 156.0
+offset_bottom = 106.0
+texture = ExtResource("16_xkqyh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AlertaCocina" type="TextureRect" parent="UIElements/Alerts" unique_id=923313273]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1130.0
+offset_top = 883.0
+offset_right = 1357.0
+offset_bottom = 1048.0
+mouse_filter = 2
+texture = ExtResource("49_6dvfo")
+
+[node name="TextureRect" type="TextureRect" parent="UIElements/Alerts/AlertaCocina" unique_id=1243286642]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 156.0
+offset_bottom = 106.0
+texture = ExtResource("35_t5pli")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Answers_Manager" type="Control" parent="UIElements" unique_id=677371105]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1918.0
+offset_bottom = 904.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Respuesta Correcta" type="ColorRect" parent="UIElements/Answers_Manager" unique_id=94761827]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 153.0
+offset_right = 1918.0
+offset_bottom = 252.0
+color = Color(0.51309586, 0.8532606, 0, 1)
+
+[node name="Label" type="Label" parent="UIElements/Answers_Manager/Respuesta Correcta" unique_id=126027164]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Ganaste 100 Monedas"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UIElements/Answers_Manager/Respuesta Correcta" unique_id=603116459]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 9.0
+offset_right = 688.0
+offset_bottom = 92.0
+texture = ExtResource("31_j0i8m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Robo_dinero" type="ColorRect" parent="UIElements/Answers_Manager" unique_id=737840241]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 153.0
+offset_right = 1918.0
+offset_bottom = 252.0
+color = Color(0.98737866, 0.4844944, 0.5173603, 1)
+
+[node name="Label" type="Label" parent="UIElements/Answers_Manager/Robo_dinero" unique_id=1626672779]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Te robaron -5 de dinero los hackers"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UIElements/Answers_Manager/Robo_dinero" unique_id=797968890]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 9.0
+offset_right = 529.0
+offset_bottom = 92.0
+texture = ExtResource("31_j0i8m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Respuesta Incorrecta" type="ColorRect" parent="UIElements/Answers_Manager" unique_id=1855985181]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 153.0
+offset_right = 1918.0
+offset_bottom = 252.0
+color = Color(0.99999994, 0.15395686, 0.07934832, 1)
+
+[node name="Label" type="Label" parent="UIElements/Answers_Manager/Respuesta Incorrecta" unique_id=1863671964]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Perdiste -10 de felicidad"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UIElements/Answers_Manager" unique_id=897537596 groups=["NotificationManager"]]
+libraries/ = SubResource("AnimationLibrary_mmev2")
+
+[node name="Alerts_status" type="Control" parent="UIElements" unique_id=1330058680]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1445.0
+offset_top = 34.0
+offset_right = 1926.0
+offset_bottom = 575.0
+mouse_filter = 2
+
+[node name="Sadness" type="TextureRect" parent="UIElements/Alerts_status" unique_id=218780834]
+visible = false
+layout_mode = 0
+offset_left = -9.0
+offset_top = 180.0
+offset_right = 144.0
+offset_bottom = 335.9999
+texture = ExtResource("50_n4n23")
+flip_h = true
+
+[node name="Hugry_emote" type="TextureRect" parent="UIElements/Alerts_status" unique_id=1055835119]
+visible = false
+layout_mode = 0
+offset_left = -12.0
+offset_top = 50.0
+offset_right = 141.0
+offset_bottom = 206.0
+texture = ExtResource("51_m8gfi")
+flip_h = true
+
 [node name="MainCamera" type="Camera2D" parent="." unique_id=1200944931]
 unique_name_in_owner = true
 anchor_mode = 0
@@ -848,12 +1254,51 @@ stream = ExtResource("45_t5pli")
 autoplay = true
 
 [node name="Money_get_it" type="AudioStreamPlayer" parent="." unique_id=130995958]
-stream = ExtResource("46_ar0cn")
+stream = ExtResource("51_3kxlv")
 
 [node name="audioManager" type="Node" parent="." unique_id=852881148]
 script = ExtResource("47_ltogy")
 
-[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
+[node name="Test_active" type="AudioStreamPlayer" parent="." unique_id=1399611375]
+unique_name_in_owner = true
+stream = ExtResource("53_6dvfo")
+
+[node name="Cocina_active" type="AudioStreamPlayer" parent="." unique_id=16939224]
+unique_name_in_owner = true
+stream = ExtResource("54_2n6ao")
+
+[node name="Button_feed" type="AudioStreamPlayer" parent="." unique_id=581095421]
+stream = ExtResource("55_2xfhl")
+
+[node name="Steal_money" type="AudioStreamPlayer" parent="." unique_id=826932256]
+stream = ExtResource("56_mmev2")
+
+[node name="Open_mini_game_sound" type="AudioStreamPlayer" parent="." unique_id=1416634113]
+stream = ExtResource("57_y4iqs")
+
+[node name="Close_buttton" type="AudioStreamPlayer" parent="." unique_id=148816199]
+unique_name_in_owner = true
+stream = ExtResource("58_3kxlv")
+
+[node name="No_money_dolphin" type="AudioStreamPlayer" parent="." unique_id=1827213853]
+unique_name_in_owner = true
+stream = ExtResource("59_41n1x")
+
+[node name="Hugry_fx" type="AudioStreamPlayer" parent="." unique_id=1599853132]
+unique_name_in_owner = true
+stream = ExtResource("62_ofxfp")
+
+[node name="Sadness_fx" type="AudioStreamPlayer" parent="." unique_id=747067561]
+unique_name_in_owner = true
+stream = ExtResource("63_bl7yr")
+
+[node name="Hungry" type="AnimationPlayer" parent="." unique_id=1065162067]
+libraries/ = SubResource("AnimationLibrary_x4vob")
+
+[node name="Sad" type="AnimationPlayer" parent="." unique_id=1103391457]
+libraries/ = SubResource("AnimationLibrary_quqo7")
+
+[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/noddle_button" to="UIElements/Cocina" method="_on_noddle_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/tacos_button" to="UIElements/Cocina" method="_on_tacos_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/FeedDolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]

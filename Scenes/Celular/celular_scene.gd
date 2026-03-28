@@ -10,6 +10,8 @@ var popUpScene = preload("res://Scenes/Celular/PopUp/PopUp.tscn")
 var popUpScene2 = preload("res://Scenes/Celular/PopUp2/PopUp.tscn")
 var popUps = [popUpScene, popUpScene2]
 
+@onready var button_buy_feed: AudioStreamPlayer = $Button_buy_feed
+@onready var not_money: AudioStreamPlayer = $Not_money
 
 @onready var buy_chicken_button: Button = %Buy_Chicken_button
 @onready var buy_noodles_button: Button = %Buy_noodles_button
@@ -39,20 +41,32 @@ func _ready() -> void:
 
 func _on_chicken_button_down()->void:
 	if _check_threshold_price(GameManager.chicken_price):
-		print("mandar a comprar comida en la puerta")
+		GameManager.add_food_chicken(1)
+		button_buy_feed.play()
+	else:
+		not_money.play()
 func _on_noodles_button_down()->void:
 	if _check_threshold_price(GameManager.noodles_price):
-		print("mandar a comprar comida en la puerta")
+		GameManager.add_food_maruchan(1)
+		button_buy_feed.play()
+	else:
+		not_money.play()
 func _on_tacos_button_down()->void:
 	if _check_threshold_price(GameManager.tacos_price):
-		print("mandar a comprar comida en la puerta")
+		GameManager.add_food_tacos(1)
+		button_buy_feed.play()
+	else:
+		not_money.play()
 func _on_dolphin_button_down()->void:
 	if _check_threshold_price(GameManager.dolphin_food_price):
-		print("mandar a comprar comida en la puerta")
+		GameManager.add_dolphin_food(GameManager.dolphin_food_packed)
+		button_buy_feed.play()
+	else:
+		not_money.play()
 
 
 func _check_threshold_price(food_price: int)->bool:
-	if food_price >= GameManager.global_money:
+	if GameManager.global_money >= food_price:
 		GameManager.global_money -= food_price
 		return true
 	return false

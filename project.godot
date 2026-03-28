@@ -48,6 +48,7 @@ pop_container=""
 Computadora=""
 death_bodies=""
 dolphinContainer=""
+NotificationManager=""
 
 [gui]
 

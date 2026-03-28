@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bu3nb58kq66fg" path="res://Scenes/UI/ProgressBar_Control.tscn" id="3_enhvh"]
 [ext_resource type="Script" uid="uid://cislm663ujgbn" path="res://Scenes/components/healt_component.gd" id="4_avxje"]
 [ext_resource type="Resource" uid="uid://dxgnx14ghwqdm" path="res://Resources/data/pop_data.tres" id="5_avxje"]
+[ext_resource type="AudioStream" uid="uid://i6y0jec812im" path="res://FX/sound_effects/General_sound_effects/switch_002.ogg" id="7_kvo6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kansg"]
 size = Vector2(53, 42)
@@ -42,6 +43,7 @@ offset_bottom = -21.0
 health_com = NodePath("../HealthComponent")
 
 [node name="Punch_sound_effect" type="AudioStreamPlayer" parent="." unique_id=591280826]
+stream = ExtResource("7_kvo6y")
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=1435522147]
 position = Vector2(0, -20)

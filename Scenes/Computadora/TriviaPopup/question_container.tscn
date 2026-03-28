@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ijaymot7rg0q"]
 
 [ext_resource type="Script" uid="uid://b1l4j3cd3ot53" path="res://Scenes/Computadora/TriviaPopup/question_container.gd" id="1_ffbtf"]
+[ext_resource type="AudioStream" uid="uid://b57jiinvogg84" path="res://FX/sound_effects/EfectosPC/Respuesta incorrecta.mp3" id="2_paglk"]
+[ext_resource type="AudioStream" uid="uid://b88xlq6r0kyyj" path="res://FX/sound_effects/EfectosPC/sonido de aprobación.mp3" id="3_4a31f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffbtf"]
 bg_color = Color(1, 0.54901963, 0.36078432, 1)
@@ -202,7 +204,11 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Tiempo"
 
-[node name="Sound_effect" type="AudioStreamPlayer" parent="." unique_id=50044069]
+[node name="Bad_answer" type="AudioStreamPlayer" parent="." unique_id=50044069]
+stream = ExtResource("2_paglk")
+
+[node name="Correct_answer" type="AudioStreamPlayer" parent="." unique_id=1677003206]
+stream = ExtResource("3_4a31f")
 
 [connection signal="pressed" from="ColorRect/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/Pregunta/Container/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

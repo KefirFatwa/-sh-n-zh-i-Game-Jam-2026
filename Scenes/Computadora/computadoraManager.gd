@@ -5,8 +5,11 @@ class_name ComputerManager
 var is_question_active: bool = false
 @onready var questin_container: TextureRect = %quest_container
 @onready var timer: Timer = $Timer
+@onready var alerta_examen: TextureRect = %AlertaExamen
+@onready var test_active: AudioStreamPlayer = %Test_active
 
 
+@onready var mini_games_manager: MiniGamesManager = $"../MiniGamesManager"
 
 
 
@@ -14,6 +17,12 @@ var is_question_active: bool = false
 func _ready() -> void:
 	timer.timeout.connect(on_time_out)
 	
+
+func _process(delta: float) -> void:
+	if !mini_games_manager.is_computer_active and is_question_active:
+		alerta_examen.visible = true
+	else:
+		alerta_examen.visible = false
 
 
 func on_time_out()->void:
@@ -25,6 +34,8 @@ func on_time_out()->void:
 
 	
 func _spawn_random_question()->void:
+	
+	test_active.play()
 	var question = random_quiz.instantiate()
 	questin_container.add_child(question)
 	is_question_active = true

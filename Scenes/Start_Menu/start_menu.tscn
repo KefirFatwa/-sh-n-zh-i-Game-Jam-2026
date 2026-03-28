@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b1511us0yhia0" path="res://Assets/Main_Menu/2letras.png" id="8_dhs40"]
 [ext_resource type="Texture2D" uid="uid://buaprdn6mxnn7" path="res://Assets/Particles_effects/stars.png" id="9_htqng"]
 [ext_resource type="AudioStream" uid="uid://bwv02fm8aqwg2" path="res://FX/Musica Menú fixed.mp3" id="10_bo832"]
+[ext_resource type="AudioStream" uid="uid://o53wg8srmsd7" path="res://FX/sound_effects/General_sound_effects/confirmation_001.ogg" id="11_mq4ty"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qq6kj"]
 shader = ExtResource("7_ku3sm")
@@ -24,7 +25,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9182561, 0.3361702), 0.0, 0.0,
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_mq4ty"]
-colors = PackedColorArray(1, 1, 1, 0.38039216, 1, 1, 1, 0.23137255)
+offsets = PackedFloat32Array(0.0029325513, 1)
+colors = PackedColorArray(1, 1, 1, 0.8784314, 1, 1, 1, 0.23137255)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi2g1"]
 bg_color = Color(1, 0.4745098, 0.68235296, 1)
@@ -350,6 +352,9 @@ autoplay = &"Normal"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=595534298]
 stream = ExtResource("10_bo832")
 autoplay = true
+
+[node name="Button_press_sound" type="AudioStreamPlayer" parent="." unique_id=1579238418]
+stream = ExtResource("11_mq4ty")
 
 [connection signal="pressed" from="CanvasLayer/ButtonManager/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonManager/Opciones" to="." method="_on_opciones_pressed"]

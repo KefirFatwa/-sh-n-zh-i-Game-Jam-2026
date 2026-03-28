@@ -9,6 +9,11 @@ extends Control
 @onready var timer = %Timer
 @onready var progressBar = %ProgressBar
 
+@onready var bad_answer: AudioStreamPlayer = $Bad_answer
+@onready var correct_answer: AudioStreamPlayer = $Correct_answer
+
+
+
 var preguntas: Array = []
 var preguntaActual = {}
 
@@ -61,12 +66,15 @@ func handle_on_click(button: Button):
 		GameManager.money_changed.emit()
 		button.modulate = Color("#44cc44")
 		
-		
+		correct_answer.play()
+		animation_notification().play("goodAnswer")
 		print("Escogiste la opción correcta")
 	else:
 		GameManager.remove_emotional_status(GameManager.punishment_quiz_happiness)
 		GameManager.emotional_status_changed.emit(GameManager.emotional_status)
 		button.modulate = Color("#ff4444")
+		bad_answer.play()
+		animation_notification().play("badAnswer")
 		print("Te equivocaste!")
 	
 	quit_question()
@@ -75,6 +83,9 @@ func quit_question() -> void:
 	disable_all_buttons()
 	_delete_question()
 	timer.stop()
+
+func animation_notification()->AnimationPlayer:
+	return get_tree().get_first_node_in_group("NotificationManager")
 
 func _delete_question() -> void:
 	get_tree().create_timer(3).timeout.connect(func():
