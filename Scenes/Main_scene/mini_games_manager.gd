@@ -13,12 +13,7 @@ class_name MiniGamesManager
 @onready var cook_interaction_button: TextureButton = %Cook_Interaction_button
 @onready var room_interaction_button: TextureButton = %Room_Interaction_button
 @onready var buy_dolphin: TextureButton = %BuyDolphin
-<<<<<<< HEAD
-@onready var feed_dolphin: Button = %Feed_dolphin
-
-=======
 @onready var feed_dolphin: TextureButton = %FeedDolphin
->>>>>>> d24fac901a09b08faa66ee8fb7111d6dc5538396
 
 
 #referencia al contenedor de los botones

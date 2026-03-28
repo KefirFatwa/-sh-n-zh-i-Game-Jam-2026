@@ -654,11 +654,7 @@ size_flags_vertical = 4
 texture = ExtResource("26_3bcjv")
 stretch_mode = 3
 
-<<<<<<< HEAD
-[node name="Feed_dolphin" type="Button" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=1133945070]
-=======
 [node name="FeedDolphin" type="TextureButton" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=1790142500]
->>>>>>> d24fac901a09b08faa66ee8fb7111d6dc5538396
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
@@ -833,11 +829,7 @@ unique_name_in_owner = true
 anchor_mode = 0
 
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
-<<<<<<< HEAD
-[connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/Feed_dolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
-=======
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/noddle_button" to="UIElements/Cocina" method="_on_noddle_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Tacos_button" to="UIElements/Cocina" method="_on_tacos_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/FeedDolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
->>>>>>> d24fac901a09b08faa66ee8fb7111d6dc5538396
 [connection signal="pressed" from="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2/BuyDolphin" to="SceneManager" method="_on_buy_dolphin_pressed"]
