@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfow3s53g6wpo" path="res://Scenes/Start_Menu/Creditos/creditos.gd" id="1_xgcg6"]
 [ext_resource type="Texture2D" uid="uid://ccbk1ycmxy13w" path="res://Assets/fondo/pared1.png" id="1_yo8oi"]
+[ext_resource type="Texture2D" uid="uid://2rb8b3l5uwui" path="res://Assets/Background/shanzai.png" id="3_xundy"]
 
 [node name="Creditos" type="Node" unique_id=968730528]
 script = ExtResource("1_xgcg6")
@@ -10,7 +11,7 @@ script = ExtResource("1_xgcg6")
 oversampling_override = 1.0
 title = "Créditos"
 initial_position = 2
-size = Vector2i(720, 480)
+size = Vector2i(1280, 720)
 
 [node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=940922011]
 texture = ExtResource("1_yo8oi")
@@ -127,5 +128,14 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Programación"
 horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Window" unique_id=387977]
+offset_left = 987.0
+offset_top = 459.0
+offset_right = 1256.0
+offset_bottom = 708.0
+texture = ExtResource("3_xundy")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

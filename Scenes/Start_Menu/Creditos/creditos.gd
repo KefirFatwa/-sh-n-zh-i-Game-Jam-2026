@@ -13,3 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_window_close_requested() -> void:
 	queue_free()
+
+
+func _on_jugar_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Ejemplos/Main_scene.tscn")
+	pass # Replace with function body.

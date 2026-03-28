@@ -46,6 +46,7 @@ signal emotional_status_changed(emotional_status: int)
 signal dolphings_changed(dolphin_count: int)
 signal dolphin_has_death
 
+var tutorial_activo: bool = true
 
 func add_dolphins(value)->void:
 	current_dolphins += value
