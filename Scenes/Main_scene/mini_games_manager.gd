@@ -13,6 +13,8 @@ class_name MiniGamesManager
 @onready var cook_interaction_button: TextureButton = %Cook_Interaction_button
 @onready var room_interaction_button: TextureButton = %Room_Interaction_button
 @onready var buy_dolphin: TextureButton = %BuyDolphin
+@onready var feed_dolphin: Button = %Feed_dolphin
+
 
 
 #referencia al contenedor de los botones
@@ -59,6 +61,7 @@ var camera_tween: Tween
 @export var min_max_zoom_UI : Vector2 = Vector2(1,1)
 @export var max_max_zoom_UI : Vector2 = Vector2(1.5,1.5)
 
+
 func _ready() -> void:
 	#signals que estan contectadas para un mejor control por codigo
 	#esta es la signal del phone UI
@@ -92,6 +95,7 @@ func _ready() -> void:
 	#este es el signal del boton de comprar delfines:
 	buy_dolphin.mouse_entered.connect(_on_entered_mouse_button)
 	buy_dolphin.mouse_exited.connect(_on_exited_mouse_button)
+
 
 #comportamiento del boton de comprar delfines:
 func _on_entered_mouse_button():

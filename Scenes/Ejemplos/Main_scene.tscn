@@ -172,7 +172,7 @@ scale = Vector2(2.2775047, 1)
 texture = ExtResource("3_cche8")
 
 [node name="Mesita" type="Sprite2D" parent="Background" unique_id=1183288452]
-position = Vector2(1244.75, 951.75)
+position = Vector2(1070.9999, 944)
 scale = Vector2(0.8268745, 0.6243144)
 texture = ExtResource("4_ddw3p")
 
@@ -253,13 +253,13 @@ position = Vector2(-4186, 69)
 [node name="Puertas" type="Node2D" parent="Room_Puerta" unique_id=1099959431]
 
 [node name="PuertaAbierta" type="Sprite2D" parent="Room_Puerta/Puertas" unique_id=1388495201]
-position = Vector2(-567.8872, 538.58203)
-scale = Vector2(0.82081527, 0.6839404)
+position = Vector2(-355.8399, 597.66406)
+scale = Vector2(0.6889884, 0.5917738)
 texture = ExtResource("12_1xjet")
 
 [node name="PuertaCerrada" type="Sprite2D" parent="Room_Puerta/Puertas" unique_id=1491370047]
-position = Vector2(-567.8872, 538.58203)
-scale = Vector2(0.82081527, 0.6839404)
+position = Vector2(-337.94363, 596.291)
+scale = Vector2(0.70252997, 0.5984952)
 texture = ExtResource("13_5638r")
 
 [node name="UIElements" type="CanvasLayer" parent="." unique_id=1525530458]
@@ -281,6 +281,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0.6392157)
+metadata/_edit_lock_ = true
 
 [node name="Telefono" type="Control" parent="UIElements" unique_id=1192328590]
 unique_name_in_owner = true
@@ -559,10 +560,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 146.0
-offset_top = 247.0
-offset_right = 374.0
-offset_bottom = 638.0
+offset_left = 125.0
+offset_top = 77.0
+offset_right = 353.0
+offset_bottom = 468.0
 grow_vertical = 0
 pivot_offset = Vector2(180, 75)
 texture_normal = ExtResource("15_ca1ee")
@@ -576,10 +577,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 93.0
-offset_top = 667.0
-offset_right = 462.0
-offset_bottom = 969.0
+offset_left = 53.0
+offset_top = 589.0
+offset_right = 422.0
+offset_bottom = 891.0
 grow_vertical = 0
 pivot_offset = Vector2(175, 85)
 texture_normal = ExtResource("16_eu1g5")
@@ -593,10 +594,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 86.0
-offset_top = 21.0
-offset_right = 440.0
-offset_bottom = 175.0
+offset_left = -566.0
+offset_top = -371.0
+offset_right = -212.0
+offset_bottom = -217.0
 grow_vertical = 0
 texture_normal = ExtResource("11_fd4pn")
 texture_pressed = ExtResource("12_lx611")
@@ -629,8 +630,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 845.0
-offset_top = 690.0
-offset_right = 1141.0
+offset_top = 687.0
+offset_right = 1111.0
 offset_bottom = 1103.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -660,7 +661,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("26_3bcjv")
 
-[node name="Button" type="Button" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=1133945070]
+[node name="Feed_dolphin" type="Button" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=1133945070]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 7
@@ -756,10 +757,10 @@ text = "Money"
 
 [node name="Buy_Dolphin_Container" type="Control" parent="UIElements/Interactables_buttons" unique_id=808647003]
 anchors_preset = 0
-offset_left = 1571.0
-offset_top = 548.0
-offset_right = 1878.0
-offset_bottom = 685.0
+offset_left = 1574.0
+offset_top = 610.0
+offset_right = 1881.0
+offset_bottom = 747.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container" unique_id=1845379138]
 layout_mode = 0
@@ -831,5 +832,5 @@ unique_name_in_owner = true
 anchor_mode = 0
 
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
-[connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/Button" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
+[connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/Feed_dolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2/BuyDolphin" to="SceneManager" method="_on_buy_dolphin_pressed"]

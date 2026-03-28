@@ -27,9 +27,12 @@ func _spawn_love()->void:
 	
 	add_child(love_pp)
 	add_child(number)
+	
 	get_tree().create_timer(2).timeout.connect(func():
+		if number == null:
+			return
 		number.queue_free()
 		)
-	
+
 func _delete_text(text:Label)->void:
 	text.queue_free()
