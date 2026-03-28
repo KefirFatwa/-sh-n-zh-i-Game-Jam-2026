@@ -452,7 +452,7 @@ offset_top = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Chicken_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=498120810]
+[node name="chicken_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=498120810]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
@@ -470,7 +470,7 @@ text = "x0"
 icon = ExtResource("27_ltogy")
 expand_icon = true
 
-[node name="Tacos_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=754145]
+[node name="tacos_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=754145]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
@@ -487,9 +487,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = 591.0
+offset_top = -729.8899
+offset_right = 702.0
+offset_bottom = -666.8899
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
@@ -852,8 +853,8 @@ stream = ExtResource("46_ar0cn")
 [node name="audioManager" type="Node" parent="." unique_id=852881148]
 script = ExtResource("47_ltogy")
 
-[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
+[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/noddle_button" to="UIElements/Cocina" method="_on_noddle_button_pressed"]
-[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Tacos_button" to="UIElements/Cocina" method="_on_tacos_button_pressed"]
+[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/tacos_button" to="UIElements/Cocina" method="_on_tacos_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/FeedDolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2/BuyDolphin" to="SceneManager" method="_on_buy_dolphin_pressed"]
