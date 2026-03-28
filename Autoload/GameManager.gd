@@ -56,6 +56,31 @@ signal dolphin_has_death
 
 var tutorial_activo: bool = true
 
+func add_food_chicken(value:int)->void:
+	pollo_cantidad += value
+	pollo_actualizado.emit(pollo_cantidad)
+
+func add_food_maruchan(value:int)->void:
+	maruchan_cantidad += value
+	maruchan_actualizado.emit(maruchan_cantidad)
+	
+func add_food_tacos(value:int)->void:
+	taco_cantidad += value
+	taco_actualizado.emit(taco_cantidad)
+
+func remove_food_pollo(value:int)->void:
+	pollo_cantidad -= value
+	pollo_actualizado.emit(pollo_cantidad)
+	
+func remove_food_maruchan(value:int)->void:
+	maruchan_cantidad -= value
+	maruchan_actualizado.emit(maruchan_cantidad)
+	
+func remove_food_tacos(value:int)->void:
+	taco_cantidad -= value
+	taco_actualizado.emit(taco_cantidad)
+
+
 func add_dolphins(value)->void:
 	current_dolphins += value
 	current_dolphins = clamp(current_dolphins, 0, goal_dolphins)
