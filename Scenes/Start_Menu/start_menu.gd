@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Ejemplos/Main_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Start_Menu/Tutorial/tutorial.tscn")
 
 
 func _on_opciones_pressed() -> void:

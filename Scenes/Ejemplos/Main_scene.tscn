@@ -39,8 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://dwqjmfu148np4" path="res://Resources/Prefabs_resources/health_bar.tres" id="28_bsixg"]
 [ext_resource type="Texture2D" uid="uid://dtp3c6nwljrxl" path="res://Assets/Status/barrafelicidad.png" id="29_vsrrq"]
 [ext_resource type="Texture2D" uid="uid://binhhnam5urvi" path="res://Assets/Status/monedas.png" id="31_j0i8m"]
-[ext_resource type="Texture2D" uid="uid://d1uocvbpthegf" path="res://Assets/UI_Temporal_Tony/Buy_Dolphin_normal.png" id="33_vsrrq"]
 [ext_resource type="Texture2D" uid="uid://bdywpemaogh0b" path="res://Assets/ComidaPacked_Door/botonpersona.png" id="35_t5pli"]
+[ext_resource type="Texture2D" uid="uid://bk10a0xt7nw4" path="res://Assets/Status/alimentardelfin.png" id="37_5638r"]
+[ext_resource type="Texture2D" uid="uid://kyw3si4djx36" path="res://Assets/Status/comprarmas.png" id="41_1xjet"]
 [ext_resource type="Texture2D" uid="uid://bwq5u8o8w5wak" path="res://Assets/ComidaPacked_Door/timer.png" id="42_5wenp"]
 
 [sub_resource type="Gradient" id="Gradient_7k381"]
@@ -549,7 +550,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 30
-text = "Number of Dolphins to win"
+text = "Cantidad de delfines para ganar"
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -641,10 +642,10 @@ stretch_mode = 5
 
 [node name="FeedContainer" type="HBoxContainer" parent="UIElements/Interactables_buttons" unique_id=2066033150]
 layout_mode = 0
-offset_left = 853.0
-offset_top = 654.0
-offset_right = 1013.0
-offset_bottom = 696.0
+offset_left = 866.0
+offset_top = 642.0
+offset_right = 1108.0
+offset_bottom = 742.0
 
 [node name="Countfood" type="Label" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=479908064]
 unique_name_in_owner = true
@@ -657,15 +658,21 @@ text = "30"
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="UIElements/Interactables_buttons/FeedContainer/PanelContainer" unique_id=599168942]
+visible = false
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("26_3bcjv")
+stretch_mode = 3
 
-[node name="Button" type="Button" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=1133945070]
+[node name="FeedDolphin" type="TextureButton" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=1790142500]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
-theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 24
-text = "Feed Dolphin"
+texture_normal = ExtResource("37_5638r")
+texture_pressed = ExtResource("37_5638r")
+texture_hover = ExtResource("37_5638r")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="StatusContainer" type="TextureRect" parent="UIElements/Interactables_buttons" unique_id=1960880237]
 layout_mode = 0
@@ -685,7 +692,7 @@ offset_right = 270.0
 offset_bottom = 85.0
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
-text = "Hungry"
+text = "Hambre"
 
 [node name="MoneyCount2" type="Label" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=1719518070]
 layout_mode = 0
@@ -695,7 +702,7 @@ offset_right = 327.0
 offset_bottom = 209.0
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
-text = "Happiness"
+text = "Felicidad"
 
 [node name="Player_food_progress" type="TextureProgressBar" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=815844959]
 unique_name_in_owner = true
@@ -752,7 +759,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
-text = "Money"
+text = "Dinero"
 
 [node name="Buy_Dolphin_Container" type="Control" parent="UIElements/Interactables_buttons" unique_id=808647003]
 anchors_preset = 0
@@ -782,7 +789,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
-text = "Price: 30"
+text = "Precio: 30"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer" unique_id=1848361769]
 layout_mode = 2
@@ -790,12 +797,13 @@ alignment = 1
 
 [node name="BuyDolphin" type="TextureButton" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2" unique_id=1758933247]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(283.43, 120.61)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
-texture_normal = ExtResource("33_vsrrq")
-texture_pressed = ExtResource("33_vsrrq")
-texture_hover = ExtResource("33_vsrrq")
-stretch_mode = 0
+texture_normal = ExtResource("41_1xjet")
+texture_pressed = ExtResource("41_1xjet")
+texture_hover = ExtResource("41_1xjet")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="UIElements/Interactables_buttons" unique_id=706687275]
 layout_mode = 0
@@ -831,5 +839,5 @@ unique_name_in_owner = true
 anchor_mode = 0
 
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
-[connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/Button" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
+[connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/FeedDolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2/BuyDolphin" to="SceneManager" method="_on_buy_dolphin_pressed"]

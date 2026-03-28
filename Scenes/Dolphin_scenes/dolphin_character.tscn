@@ -351,7 +351,7 @@ layout_mode = 2
 
 [node name="Love_Tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=818139795]
 layout_mode = 2
-text = "Love"
+text = "Cariño"
 horizontal_alignment = 1
 
 [node name="Love_progress_bar" type="ProgressBar" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=1542767007]
@@ -366,7 +366,7 @@ show_percentage = false
 
 [node name="Hungre_Tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=652516706]
 layout_mode = 2
-text = "Hungry"
+text = "Hambre"
 horizontal_alignment = 1
 
 [node name="Hungre_progress_bar" type="ProgressBar" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=1988454876]
@@ -381,7 +381,7 @@ show_percentage = false
 
 [node name="clean_tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=2055968727]
 layout_mode = 2
-text = "Cleanest"
+text = "Limpieza"
 horizontal_alignment = 1
 
 [node name="Cleanest_progress_bar" type="ProgressBar" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=311089307]

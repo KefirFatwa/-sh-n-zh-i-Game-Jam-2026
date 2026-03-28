@@ -109,8 +109,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6br5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
-text = "Buy Chicken 
-"
+text = "Comprar pollo"
 
 [node name="Noodles_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=424398257]
 layout_mode = 2
@@ -141,8 +140,7 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6br5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
-text = "Buy Noodles
-"
+text = "Comprar fideos"
 
 [node name="Tacos_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=371055617]
 layout_mode = 2
@@ -173,8 +171,8 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_v6br5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
-text = "Buy Tacos
-"
+text = "Comprar gallos
+de arracache"
 
 [node name="Dolphin_container_button" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=419508849]
 layout_mode = 2
@@ -205,8 +203,8 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_omekw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gucy2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wjnv")
-text = "Buy Dolphin 
-food
+text = "Comprar comida
+para delfín
 "
 
 [node name="PopUpTimer" type="Timer" parent="." unique_id=196379179]
