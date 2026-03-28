@@ -3,7 +3,7 @@ class_name CocinaManager
 
 
 @export var minijuego : Array[PackedScene]= []
-
+var hay_juego_activo : bool = false
 
 @onready var chicken_button: Button = %Chicken_button
 @onready var noddle_button: Button = %noddle_button
@@ -21,6 +21,15 @@ func _on_tacos_button_pressed() -> void:
 	_spawn_minigame(minijuego[2])
 
 func _spawn_minigame(mini_game : PackedScene)->void:
+	if hay_juego_activo:
+		return
+	
+	hay_juego_activo = true 
 	var game = mini_game.instantiate()
+	
+	game.tree_exited.connect(_on_minigame_exited)
 	game.position = cocina.position
 	cocina.add_child(game)
+	
+func _on_minigame_exited():
+	hay_juego_activo = false

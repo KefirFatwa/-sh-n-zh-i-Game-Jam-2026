@@ -35,9 +35,12 @@
 [ext_resource type="PackedScene" uid="uid://dkgj3hgykr53r" path="res://Scenes/Ejemplos/sustento_3.tscn" id="21_l1orr"]
 [ext_resource type="Texture2D" uid="uid://c2qrt5ggtfiht" path="res://Assets/ComidaPacked_Door/logopc.png" id="21_yrowp"]
 [ext_resource type="Texture2D" uid="uid://cnceucbxpb6oa" path="res://Assets/UI_Temporal_Tony/fish_food.png" id="26_3bcjv"]
+[ext_resource type="Texture2D" uid="uid://xogkx5g0xr3y" path="res://Assets/sustento/iconos/icono-cocina-pollo.png" id="26_ar0cn"]
 [ext_resource type="Texture2D" uid="uid://cciwuh1cjabdq" path="res://Assets/sustento/plantilla.png" id="26_yrowp"]
+[ext_resource type="Texture2D" uid="uid://ct5ykw16gaspt" path="res://Assets/sustento/iconos/icono-cocina-sopita.png" id="27_ltogy"]
 [ext_resource type="Texture2D" uid="uid://dsm21vaotpuu" path="res://Assets/Status/fondostatus.png" id="27_ogl74"]
 [ext_resource type="Texture2D" uid="uid://dwqjmfu148np4" path="res://Resources/Prefabs_resources/health_bar.tres" id="28_bsixg"]
+[ext_resource type="Texture2D" uid="uid://dwg5rv014qvvs" path="res://Assets/sustento/iconos/icono-cocina-gallo.png" id="28_sk2hc"]
 [ext_resource type="Texture2D" uid="uid://dtp3c6nwljrxl" path="res://Assets/Status/barrafelicidad.png" id="29_vsrrq"]
 [ext_resource type="Texture2D" uid="uid://binhhnam5urvi" path="res://Assets/Status/monedas.png" id="31_j0i8m"]
 [ext_resource type="Texture2D" uid="uid://bdywpemaogh0b" path="res://Assets/ComidaPacked_Door/botonpersona.png" id="35_t5pli"]
@@ -440,6 +443,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -448,21 +453,27 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Pollo"
+text = "x0"
+icon = ExtResource("26_ar0cn")
+expand_icon = true
 
 [node name="noddle_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=740394445]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Sopa instantanea"
+text = "x0"
+icon = ExtResource("27_ltogy")
+expand_icon = true
 
 [node name="Tacos_button" type="Button" parent="UIElements/Cocina/VBoxContainer" unique_id=754145]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Gallito de comida"
+text = "x0"
+icon = ExtResource("28_sk2hc")
+expand_icon = true
 
 [node name="close_cook" type="Button" parent="UIElements/Cocina" unique_id=1607080653]
 unique_name_in_owner = true
