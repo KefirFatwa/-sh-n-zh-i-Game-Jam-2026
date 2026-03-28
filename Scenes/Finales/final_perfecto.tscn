@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjxiw7q8w667r"]
+
+[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_j4hav"]
+
+[node name="FinalPerfecto" type="Node" unique_id=601499007]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1384934427]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j4hav")
+expand_mode = 1
+stretch_mode = 4

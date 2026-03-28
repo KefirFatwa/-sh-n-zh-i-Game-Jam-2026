@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bglat55rewxv3"]
 
 [ext_resource type="Script" uid="uid://batx22ff4oh5i" path="res://Scenes/Celular/PopUp/pop_up.gd" id="1_vp2px"]
+[ext_resource type="Texture2D" uid="uid://jmjxvrd8mdh8" path="res://Assets/Phone/popup1.png" id="2_2bnb8"]
 [ext_resource type="Texture2D" uid="uid://buodxic7j4ctu" path="res://Assets/Buttons/botonx.png" id="2_vp2px"]
 
 [node name="PopUp" type="ColorRect" unique_id=2109965852]
@@ -12,6 +13,17 @@ rotation = 0.2581622
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_vp2px")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=860809660]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 91.98378
+offset_bottom = 89.72812
+texture_normal = ExtResource("2_2bnb8")
+texture_pressed = ExtResource("2_2bnb8")
+texture_hover = ExtResource("2_2bnb8")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="CloseButton" type="Button" parent="." unique_id=399553365]
 layout_mode = 1
@@ -28,4 +40,5 @@ icon = ExtResource("2_vp2px")
 flat = true
 expand_icon = true
 
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

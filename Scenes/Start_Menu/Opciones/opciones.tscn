@@ -50,4 +50,10 @@ popup/item_0/id = 0
 popup/item_1/text = "1920x1080"
 popup/item_1/id = 1
 
+[node name="TutorialToggle" type="CheckButton" parent="Window/MarginContainer/VBoxContainer" unique_id=786322148]
+layout_mode = 2
+button_pressed = true
+text = "Siempre ver tutorial"
+
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="toggled" from="Window/MarginContainer/VBoxContainer/TutorialToggle" to="." method="_on_tutorial_toggle_toggled"]

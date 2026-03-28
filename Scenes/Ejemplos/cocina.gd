@@ -15,8 +15,10 @@ class_name CocinaManager
 
 func _on_chicken_button_pressed() -> void:
 	_spawn_minigame(minijuego[0])
-	
-
+func _on_noddle_button_pressed() -> void:
+	_spawn_minigame(minijuego[1])
+func _on_tacos_button_pressed() -> void:
+	_spawn_minigame(minijuego[2])
 
 func _spawn_minigame(mini_game : PackedScene)->void:
 	var game = mini_game.instantiate()

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ee431odvphsu"]
+
+[ext_resource type="Script" uid="uid://dfow3s53g6wpo" path="res://Scenes/Start_Menu/Creditos/creditos.gd" id="1_nw0fx"]
+[ext_resource type="Texture2D" uid="uid://ccbk1ycmxy13w" path="res://Assets/fondo/pared1.png" id="2_yxtn8"]
+[ext_resource type="Script" uid="uid://tsjhafj0b7oc" path="res://Scenes/Start_Menu/Tutorial/typewriter_effect.gd" id="3_dtyaj"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_1cp3h"]
+script = ExtResource("3_dtyaj")
+metadata/_custom_type_script = "uid://tsjhafj0b7oc"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f64wu"]
+bg_color = Color(1, 0.4745098, 0.68235296, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v15md"]
+bg_color = Color(1, 0.40790308, 0.6538175, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdejv"]
+bg_color = Color(0.99999887, 0.55795914, 0.7219824, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Tutorial" type="Node" unique_id=968730528]
+script = ExtResource("1_nw0fx")
+
+[node name="Window" type="Window" parent="." unique_id=513590360]
+oversampling_override = 1.0
+title = "Tutorial"
+initial_position = 2
+size = Vector2i(1200, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=940922011]
+texture = ExtResource("2_yxtn8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Window" unique_id=550737961]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window/MarginContainer" unique_id=1816710265]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[type]Es el año 2020, las autoridades dicen que tienes que permanecer adentro, tienes clases virtuales todos los dias y lo que mas te interesa es el nuevo lanzamiento de kawAIi friend....
+
+Finalmente, el día más esperado ha llegado.
+
+Lo único que quieres hacer es jugar con tus delfines; debes acariciarlos y darles alimento, por dicha sus excrementos te darán dinero para poder comprarlo.
+
+¡El problema es que estás extremadamente ocupado!
+
+Tienes clases que atender y preguntas que responder. Tienes que alimentarte y hacer las tareas del hogar. Y por si fuera poco, el celular desde donde compras tu comida está infectado de viruses que si los tocas te robarán tu dinero.
+
+¿Podrás completar el juego de kawAIi friend y cumplir con todos tus deberes?"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_1cp3h")]
+
+[node name="Jugar" type="Button" parent="Window/MarginContainer/RichTextLabel" unique_id=941447749]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 550.0
+offset_right = 754.0
+offset_bottom = 630.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_f64wu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v15md")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rdejv")
+text = "Jugar"
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/MarginContainer/RichTextLabel/Jugar" to="." method="_on_jugar_pressed"]

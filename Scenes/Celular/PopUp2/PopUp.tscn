@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dluq4w54unilv"]
+
+[ext_resource type="Script" uid="uid://c5ps1cyfqjn0x" path="res://Scenes/Celular/PopUp2/pop_up.gd" id="1_oxf71"]
+[ext_resource type="Texture2D" uid="uid://3p0fejkua87y" path="res://Assets/Phone/popup2.png" id="2_4axah"]
+[ext_resource type="Texture2D" uid="uid://buodxic7j4ctu" path="res://Assets/Buttons/botonx.png" id="2_sff6s"]
+
+[node name="PopUp" type="ColorRect" unique_id=2109965852]
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 66.914474
+offset_bottom = 29.779648
+rotation = 0.2581622
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_oxf71")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=860809660]
+layout_mode = 0
+offset_right = 91.98378
+offset_bottom = 89.72812
+texture_normal = ExtResource("2_4axah")
+texture_pressed = ExtResource("2_4axah")
+texture_hover = ExtResource("2_4axah")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CloseButton" type="Button" parent="." unique_id=399553365]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.474876
+offset_top = 3.2570002
+offset_right = -1.064621
+offset_bottom = 35.257
+grow_horizontal = 0
+rotation = -0.37825978
+icon = ExtResource("2_sff6s")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

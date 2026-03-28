@@ -10,9 +10,9 @@ var damage_per_hit = 1
 var max_food_container: int = 30
 var current_food_container :int = 0
 
-var pollo:int = 0
-var marucha :int = 0
-var tacos :int = 0
+var pollo_comido:int = 40
+var maruchan_comido :int = 20
+var tacos_comido :int = 30
 
 var chicken_price = 30
 var noodles_price = 20
@@ -46,6 +46,7 @@ signal emotional_status_changed(emotional_status: int)
 signal dolphings_changed(dolphin_count: int)
 signal dolphin_has_death
 
+var tutorial_activo: bool = true
 
 func add_dolphins(value)->void:
 	current_dolphins += value

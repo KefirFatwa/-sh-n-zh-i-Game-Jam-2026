@@ -13,8 +13,12 @@ class_name MiniGamesManager
 @onready var cook_interaction_button: TextureButton = %Cook_Interaction_button
 @onready var room_interaction_button: TextureButton = %Room_Interaction_button
 @onready var buy_dolphin: TextureButton = %BuyDolphin
+<<<<<<< HEAD
 @onready var feed_dolphin: Button = %Feed_dolphin
 
+=======
+@onready var feed_dolphin: TextureButton = %FeedDolphin
+>>>>>>> d24fac901a09b08faa66ee8fb7111d6dc5538396
 
 
 #referencia al contenedor de los botones
@@ -95,6 +99,10 @@ func _ready() -> void:
 	#este es el signal del boton de comprar delfines:
 	buy_dolphin.mouse_entered.connect(_on_entered_mouse_button)
 	buy_dolphin.mouse_exited.connect(_on_exited_mouse_button)
+	
+	#este es el signal del boton de alimentar delfines:
+	feed_dolphin.mouse_entered.connect(_on_entered_feed_dolphin_button)
+	feed_dolphin.mouse_exited.connect(_on_exited_feed_dolphin_button)
 
 
 #comportamiento del boton de comprar delfines:
@@ -102,6 +110,12 @@ func _on_entered_mouse_button():
 	_shake_and_zoom_button(buy_dolphin,max_zoom_button)
 func _on_exited_mouse_button():
 	_shake_and_zoom_button(buy_dolphin,min_zoom_button)
+	
+#comportamiento boton alimentar delfines:
+func _on_entered_feed_dolphin_button():
+	_shake_and_zoom_button(feed_dolphin,max_zoom_button)
+func _on_exited_feed_dolphin_button():
+	_shake_and_zoom_button(feed_dolphin,min_zoom_button)
 
 #comportamiento del telefono
 func _on_open_phone_UI()->void:

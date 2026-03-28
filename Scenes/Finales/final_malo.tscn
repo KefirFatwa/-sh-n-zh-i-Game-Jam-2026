@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bis8rtlimnew1"]
+
+[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_iu1de"]
+
+[node name="FinalMalo" type="Node" unique_id=129831354]
+
+[node name="Background" type="TextureRect" parent="." unique_id=73975142]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iu1de")
+expand_mode = 1
+stretch_mode = 4
