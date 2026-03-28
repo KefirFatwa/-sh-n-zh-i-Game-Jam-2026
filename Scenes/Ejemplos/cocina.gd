@@ -12,11 +12,18 @@ var hay_juego_activo : bool = false
 
 @onready var cocina: CocinaManager = %Cocina
 
+func _ready() -> void:
+	GameManager.pollo_actualizado.connect(_actualizar_texto_cantidad_pollo)
+
+func _actualizar_texto_cantidad_pollo(cantidad_pollo)->void:
+	chicken_button.text = "x" + str(cantidad_pollo)
 
 func _on_chicken_button_pressed() -> void:
 	_spawn_minigame(minijuego[0])
+	
 func _on_noddle_button_pressed() -> void:
 	_spawn_minigame(minijuego[1])
+	
 func _on_tacos_button_pressed() -> void:
 	_spawn_minigame(minijuego[2])
 
