@@ -43,8 +43,9 @@ func _physics_process(delta: float):
 			termina_de_cocinar()
 
 func _input(event):
-	if event.is_action_pressed("cocina") and cocinando and not fin:
-		termina_de_cocinar()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and cocinando and not fin:
+			termina_de_cocinar()
 		
 
 ##Mueve el color del pollo conforme se acerca al color xico y luego pasa a color quemado
