@@ -7,8 +7,9 @@ var love_per_hit = 5
 var damage_per_hit = 1
 
 
-var max_food_container: int = 30
+var max_food_container: int = 50
 var current_food_container :int = 0
+
 
 var pollo_cantidad :int =0
 var maruchan_cantidad :int =0
@@ -17,6 +18,7 @@ var taco_cantidad :int =0
 signal pollo_actualizado(cant_pollo:int)
 signal maruchan_actualizado(cant_marucha:int)
 signal taco_actualizado(cant_taco:int)
+signal dolphin_food_actualizado(cant_dolphin_food:int)
 
 var pollo_comido:int = 40
 var maruchan_comido :int = 20
@@ -55,6 +57,14 @@ signal dolphings_changed(dolphin_count: int)
 signal dolphin_has_death
 
 var tutorial_activo: bool = true
+
+func add_dolphin_food(value:int)->void:
+	current_food_container += value
+	dolphin_food_actualizado.emit(current_food_container)
+	
+func remove_dolphin_food(value:int)->void:
+	current_food_container -= value
+	dolphin_food_actualizado.emit(current_food_container)
 
 func add_food_chicken(value:int)->void:
 	pollo_cantidad += value

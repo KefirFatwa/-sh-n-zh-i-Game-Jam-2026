@@ -3,6 +3,7 @@ extends Node
 @onready var opcionesScene = preload("res://Scenes/Start_Menu/Opciones/opciones.tscn")
 @onready var creditosScene = preload("res://Scenes/Start_Menu/Creditos/creditos.tscn")
 @onready var tutorialScene = preload("res://Scenes/Start_Menu/Tutorial/tutorial_popup.tscn")
+@onready var button_press_sound: AudioStreamPlayer = $Button_press_sound
 
 var opciones = null
 var creditos = null
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 
 
 func _on_jugar_pressed() -> void:
+	button_press_sound.play()
 	if GameManager.tutorial_activo:
 		if tutorial == null:
 			tutorial = tutorialScene.instantiate()
@@ -28,16 +30,19 @@ func _on_jugar_pressed() -> void:
 
 
 func _on_opciones_pressed() -> void:
+	button_press_sound.play()
 	if opciones == null:
 		opciones = opcionesScene.instantiate()
 		add_child(opciones)
 
 
 func _on_creditos_pressed() -> void:
+	button_press_sound.play()
 	if creditos == null:
 		creditos = creditosScene.instantiate()
 		add_child(creditos)
 
 
 func _on_salir_pressed() -> void:
+	button_press_sound.play()
 	get_tree().quit()

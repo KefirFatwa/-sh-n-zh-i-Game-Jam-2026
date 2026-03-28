@@ -22,6 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://bgtx1ioxu8tlj" path="res://FX/sound_effects/Delfines_effectos/alerta virtual pet.mp3" id="20_s7a3y"]
 [ext_resource type="AudioStream" uid="uid://8i4s51qd1vm8" path="res://FX/sound_effects/Delfines_effectos/Sonido delfín gracioso.mp3" id="21_sd86b"]
 [ext_resource type="AudioStream" uid="uid://dq2noo4qfo2wx" path="res://FX/sound_effects/Delfines_effectos/Efecto virtual pet.mp3" id="22_xnwhb"]
+[ext_resource type="Texture2D" uid="uid://w00p03mmbpul" path="res://Assets/Alerts/dying.png" id="23_sd86b"]
+[ext_resource type="AudioStream" uid="uid://cqoyop4r5fpf1" path="res://FX/sound_effects/Delfines_effectos/Delfin sonido raro.mp3" id="23_xnwhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
 radius = 374.0
@@ -224,6 +226,94 @@ _data = {
 &"normal": SubResource("Animation_xnwhb")
 }
 
+[sub_resource type="Animation" id="Animation_vnkfa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dying:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72.00001, -88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dying:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gchwg"]
+resource_name = "dying"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dying:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72.00001, -88), Vector2(72, -67.005)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dying:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.033333335, 0.2, 0.3963993, 0.6765912),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i12fj"]
+_data = {
+&"RESET": SubResource("Animation_vnkfa"),
+&"dying": SubResource("Animation_gchwg")
+}
+
+[sub_resource type="Animation" id="Animation_i12fj"]
+resource_name = "new_animation"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sound_random_dolphin")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 10.788441),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1owgc"]
+_data = {
+&"new_animation": SubResource("Animation_i12fj")
+}
+
 [node name="Dolphin_Character" type="CharacterBody2D" unique_id=1029352982]
 collision_layer = 2
 input_pickable = true
@@ -409,7 +499,29 @@ stream = ExtResource("20_s7a3y")
 [node name="Dolphin_appear" type="AudioStreamPlayer" parent="." unique_id=1528518741]
 unique_name_in_owner = true
 stream = ExtResource("21_sd86b")
+volume_db = -20.493
 
 [node name="Loving" type="AudioStreamPlayer" parent="." unique_id=1567744338]
 unique_name_in_owner = true
 stream = ExtResource("22_xnwhb")
+
+[node name="Sound_random_dolphin" type="AudioStreamPlayer" parent="." unique_id=486816437]
+unique_name_in_owner = true
+stream = ExtResource("23_xnwhb")
+volume_db = -12.772
+
+[node name="Dying_animation" type="AnimationPlayer" parent="." unique_id=1617695096]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_i12fj")
+autoplay = &"dying"
+
+[node name="Dying" type="Sprite2D" parent="." unique_id=180456569]
+visible = false
+position = Vector2(72.00001, -88)
+scale = Vector2(2.5625, 2.375)
+texture = ExtResource("23_sd86b")
+hframes = 2
+
+[node name="Sound_normal_dolpin" type="AnimationPlayer" parent="." unique_id=185110660]
+libraries/ = SubResource("AnimationLibrary_1owgc")
+autoplay = &"new_animation"

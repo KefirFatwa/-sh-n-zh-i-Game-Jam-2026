@@ -42,7 +42,8 @@ class_name MiniGamesManager
 var is_phone_active: bool = false
 var is_door_active : bool = false
 var is_mouse_hovered: bool = false
-
+var is_computer_active: bool = false
+var is_food_active : bool = false
 #tweens que se encargan de la animacion de cada boton o UI
 var container_tween : Tween
 var button_tween: Tween
@@ -59,6 +60,10 @@ var camera_tween: Tween
 
 @export var min_max_zoom_UI : Vector2 = Vector2(1,1)
 @export var max_max_zoom_UI : Vector2 = Vector2(1.5,1.5)
+
+
+@onready var open_mini_game_sound: AudioStreamPlayer = $"../../Open_mini_game_sound"
+@onready var close_buttton: AudioStreamPlayer = %Close_buttton
 
 
 func _ready() -> void:
@@ -115,10 +120,10 @@ func _on_exited_feed_dolphin_button():
 #comportamiento del telefono
 func _on_open_phone_UI()->void:
 	_tween_UI_container(container_tween,phone,Vector2(673,173),transition_duration,false,0, 0,8,max_max_zoom_UI)
-
+	open_mini_game_sound.play()
 func _on_close_phone_UI()->void:
 	_tween_UI_container(container_tween,phone,Vector2(0,1600),transition_duration,true,-60, 8,0,min_max_zoom_UI)
-
+	close_buttton.play()
 func _on_entered_open_phone_button()->void:
 	_shake_and_zoom_button(phone_interaction_button,max_zoom_button)
 	is_mouse_hovered = true
@@ -129,23 +134,31 @@ func _on_exited_open_phone_button()->void:
 
 #comportamiento del pc
 func _on_opened_pc_UI()->void:
+	open_mini_game_sound.play()
+	is_computer_active = true
 	_tween_UI_container(container_tween,pc,Vector2(480,170),transition_duration,false,0, 0,8,max_max_zoom_UI)
 func _on_entered_open_pc_button()->void:
 	_shake_and_zoom_button(pc_interaction_button,max_zoom_button)
 func _on_exited_open_pc_button()->void:
+	is_computer_active = false
 	_shake_and_zoom_button(pc_interaction_button,min_zoom_button)
 func  _on_closed_pc_UI()->void:
+	close_buttton.play()
 	_tween_UI_container(container_tween,pc,Vector2(2050,940),transition_duration,true,20,8,0,min_max_zoom_UI)
 
 #comportamiento de la comida
 
 func _on_opened_cook_UI()->void:
+	open_mini_game_sound.play()
+	is_food_active = true
 	_tween_UI_container(container_tween,cook,Vector2(230,165),transition_duration,false,0, 0,8,max_max_zoom_UI)
 func  _on_entered_cook_button()->void:
 	_shake_and_zoom_button(cook_interaction_button,max_zoom_button)
 func _on_exited_cook_button()->void:
+	is_food_active = false
 	_shake_and_zoom_button(cook_interaction_button,min_zoom_button)
 func _on_closed_cook_UI()->void:
+	close_buttton.play()
 	_tween_UI_container(container_tween,cook,Vector2(230,1170),transition_duration,true,0, 8,0,min_max_zoom_UI)
 
 #comportamiento de la puerta
@@ -188,9 +201,9 @@ func _set_blur(intensity: int)->void:
 		mat.set_shader_parameter("samples",intensity)
 
 func _shake_and_zoom_button(button: TextureButton, zoom_intensity: Vector2)->void:
-	if button_tween:
-		button_tween.kill()
-		button_tween = null
+	#if button_tween:
+		#button_tween.kill()
+		#button_tween = null
 	var initial_rot = button.rotation_degrees
 	
 	button_tween= create_tween()
@@ -215,9 +228,9 @@ func _set_active_button(status_button : bool)->void:
 		room_interaction_button.visible = false
 
 func _tween_UI_container(type_tween: Tween, UI_container: Control, to_pos: Vector2, max_duration: float, stats_butt: bool, rotation : float, blur_from: float, blur_to : float, zoom: Vector2):
-	if type_tween:
-		type_tween.kill()
-		type_tween = null
+	#if type_tween:
+		#type_tween.kill()
+		#type_tween = null
 		
 	type_tween = create_tween()
 	type_tween.parallel().tween_property(UI_container, "position", to_pos,max_duration)

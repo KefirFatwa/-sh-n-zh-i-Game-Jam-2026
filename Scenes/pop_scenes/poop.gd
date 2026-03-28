@@ -15,6 +15,7 @@ var is_hitable = false
 var tween: Tween
 @export var general_manager: GeneralManager
 @onready var spawn: Marker2D = $Spawn
+@onready var punch_sound_effect: AudioStreamPlayer = $Punch_sound_effect
 
 
 func _ready() -> void:
@@ -40,7 +41,7 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("interaction_left_click"):
 			health_component.decrease_health(GameManager.damage_per_hit)
 			shake_hit()
-			
+			punch_sound_effect.play()
 			
 
 func _spawn_money_effect()->void:

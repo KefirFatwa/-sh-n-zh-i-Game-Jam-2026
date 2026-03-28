@@ -24,6 +24,8 @@ var current_shit :float= 0
 @onready var hungre_progress_bar: ProgressBar = %Hungre_progress_bar
 @onready var cleanest_progress_bar: ProgressBar = %Cleanest_progress_bar
 
+@onready var dolphin_is_dying: AudioStreamPlayer = %Dolphin_is_dying
+@onready var dying_animation: AnimationPlayer = %Dying_animation
 
 
 
@@ -35,6 +37,7 @@ signal start_death_state
 
 @onready var dolphin: AnimationPlayer = %Dolphin
 
+@onready var dying: Sprite2D = $"../Dying"
 
 func _ready():
 	GameManager.shit_count.connect(_on_shits_changed)
@@ -57,14 +60,19 @@ func _updated_animations()->void:
 
 	if food_ratio <= 0.3:
 		_play_anim("moribundo")
+		dying.visible = true
 	elif food_ratio <= 0.4:
 		_play_anim("normal")
+		dying.visible = false
 	elif status <= 0.5:
 		_play_anim("moribundo")
+		dying.visible = true
 	elif status <= 0.8:
 		_play_anim("normal")
+		dying.visible = false
 	else:
 		_play_anim("happy")
+		dying.visible = false
 
 func _play_anim(name: String):
 	if dolphin.current_animation != name:

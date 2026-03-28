@@ -34,7 +34,11 @@ var is_death:bool= false
 var dolphin_tween: Tween
 @onready var status_ui: Control = %Status_UI
 
+@onready var dolphin_appear: AudioStreamPlayer = %Dolphin_appear
+
+
 func _ready() -> void:
+	dolphin_appear.play()
 	state_machine.init(self)
 	GameManager.add_emotional_status(general_manager.increase_emotional_status)
 	GameManager.add_dolphins(1)

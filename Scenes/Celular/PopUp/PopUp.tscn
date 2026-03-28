@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://batx22ff4oh5i" path="res://Scenes/Celular/PopUp/pop_up.gd" id="1_vp2px"]
 [ext_resource type="Texture2D" uid="uid://jmjxvrd8mdh8" path="res://Assets/Phone/popup1.png" id="2_2bnb8"]
 [ext_resource type="Texture2D" uid="uid://buodxic7j4ctu" path="res://Assets/Buttons/botonx.png" id="2_vp2px"]
+[ext_resource type="AudioStream" uid="uid://d4l1yvyl6rbpw" path="res://FX/sound_effects/General_sound_effects/pluck_002.ogg" id="4_v6r8l"]
 
 [node name="PopUp" type="ColorRect" unique_id=2109965852]
 offset_left = -25.0
@@ -22,6 +23,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.06930542
 offset_bottom = -0.05152893
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_2bnb8")
 texture_pressed = ExtResource("2_2bnb8")
 texture_hover = ExtResource("2_2bnb8")
@@ -42,6 +45,9 @@ rotation = -0.37825978
 icon = ExtResource("2_vp2px")
 flat = true
 expand_icon = true
+
+[node name="close_sound" type="AudioStreamPlayer" parent="." unique_id=1433024777]
+stream = ExtResource("4_v6r8l")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
