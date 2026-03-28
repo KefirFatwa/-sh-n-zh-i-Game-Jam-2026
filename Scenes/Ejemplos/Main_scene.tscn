@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dkgj3hgykr53r" path="res://Scenes/Ejemplos/sustento_3.tscn" id="21_l1orr"]
 [ext_resource type="Texture2D" uid="uid://c2qrt5ggtfiht" path="res://Assets/ComidaPacked_Door/logopc.png" id="21_yrowp"]
 [ext_resource type="Texture2D" uid="uid://cnceucbxpb6oa" path="res://Assets/UI_Temporal_Tony/fish_food.png" id="26_3bcjv"]
+[ext_resource type="Texture2D" uid="uid://cciwuh1cjabdq" path="res://Assets/sustento/plantilla.png" id="26_yrowp"]
 [ext_resource type="Texture2D" uid="uid://dsm21vaotpuu" path="res://Assets/Status/fondostatus.png" id="27_ogl74"]
 [ext_resource type="Texture2D" uid="uid://dwqjmfu148np4" path="res://Resources/Prefabs_resources/health_bar.tres" id="28_bsixg"]
 [ext_resource type="Texture2D" uid="uid://dtp3c6nwljrxl" path="res://Assets/Status/barrafelicidad.png" id="29_vsrrq"]
@@ -425,7 +426,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("18_1qvw2")
 minijuego = Array[PackedScene]([ExtResource("19_uxk0c"), ExtResource("20_42e3y"), ExtResource("21_l1orr")])
-metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="UIElements/Cocina" unique_id=141829868]
 layout_mode = 1
@@ -480,21 +480,10 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
-[node name="Label2" type="Label" parent="UIElements/Cocina" unique_id=1033757245]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -27.5
-offset_right = 160.0
-offset_bottom = 27.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Esta es la cocina"
+[node name="Sprite2D" type="Sprite2D" parent="UIElements/Cocina" unique_id=98572856]
+position = Vector2(850, 344)
+scale = Vector2(0.6262136, 0.6262136)
+texture = ExtResource("26_yrowp")
 
 [node name="Interactables_buttons" type="Control" parent="UIElements" unique_id=1340349771]
 layout_mode = 3
@@ -839,5 +828,7 @@ unique_name_in_owner = true
 anchor_mode = 0
 
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
+[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/noddle_button" to="UIElements/Cocina" method="_on_noddle_button_pressed"]
+[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Tacos_button" to="UIElements/Cocina" method="_on_tacos_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/FeedDolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2/BuyDolphin" to="SceneManager" method="_on_buy_dolphin_pressed"]
