@@ -55,14 +55,19 @@ func _ready() -> void:
 	current_food = max_food
 	player_food_progress.value = current_food
 
-func _on_ended_level()->void:
-	print("cambiar final regular")
+func _on_ended_level() -> void:
+	# Final regular
+	get_tree().change_scene_to_file("res://Scenes/Finales/final_bueno.tscn")
+	print("Cambiar a final regular.")
+	
 
 func _check_endings()->void:
 	if current_food <= 0 or GameManager.emotional_status  <= 0:
-		print("cambiar final malo")
+		get_tree().change_scene_to_file("res://Scenes/Finales/final_malo.tscn")
+		print("Cambiar a final malo.")
 	elif GameManager.current_dolphins >= target_dolphins:
-		print("cambiar final perfecto")
+		get_tree().change_scene_to_file("res://Scenes/Finales/final_perfecto.tscn")
+		print("Cambiar a final perfecto.")
 
 
 func _process(delta: float) -> void:

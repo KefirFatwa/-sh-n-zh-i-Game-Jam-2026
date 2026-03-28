@@ -27,6 +27,7 @@ func _spawn_love()->void:
 	
 	add_child(love_pp)
 	add_child(number)
+	# Bug en este lambda: Invalid call. Nonexistent function 'queue_free' in base 'Nil'.
 	get_tree().create_timer(2).timeout.connect(func():
 		number.queue_free()
 		)

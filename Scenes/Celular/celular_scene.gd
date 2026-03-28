@@ -7,6 +7,8 @@ class_name PhoneSceen
 @onready var markerController = %MarkerController
 
 var popUpScene = preload("res://Scenes/Celular/PopUp/PopUp.tscn")
+var popUpScene2 = preload("res://Scenes/Celular/PopUp2/PopUp.tscn")
+var popUps = [popUpScene, popUpScene2]
 
 
 @onready var buy_chicken_button: Button = %Buy_Chicken_button
@@ -60,7 +62,7 @@ func _on_timer_timeout() -> void:
 	create_popUp()
 	
 func create_popUp() -> void:
-	var popUp: ColorRect = popUpScene.instantiate()
+	var popUp: ColorRect = popUps.pick_random().instantiate()
 	var markers = markerController.get_children()
 	var marker = markers.pick_random()
 	if marker.get_children().size() < 1:
