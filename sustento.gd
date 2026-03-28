@@ -95,12 +95,23 @@ func resultado():
 	if diferencia <= margen_error: 
 		print("Se puede comer!")
 		sfx_resultado_bien.play()
-		#aqui iria aja el codigo que sube la energia etc y en los otros 2 lo jodemos jeje
+		var manager = get_tree().current_scene.find_child("SceneManager", true, false)
+		if manager:
+			manager.current_food += GameManager.pollo_comido #ESTA ES LA QUE HAY QUE MODIFICAR
+			manager.current_food = clamp(manager.current_food, 0, manager.max_food)
 	elif tiempo_cocinado < tiempo_meta:
+		var manager = get_tree().current_scene.find_child("SceneManager", true, false)
+		if manager:
+			manager.current_food += GameManager.pollo_comido/2 #ESTA ES LA QUE HAY QUE MODIFICAR
+			manager.current_food = clamp(manager.current_food, 0, manager.max_food)
 		print("IT's FUCKEN RAAAAW")
 		sfx_resultado_mal.play()
 	else:
 		print("La puta madreee, se quemó.") 
+		var manager = get_tree().current_scene.find_child("SceneManager", true, false)
+		if manager:
+			manager.current_food += GameManager.pollo_comido/2 #ESTA ES LA QUE HAY QUE MODIFICAR
+			manager.current_food = clamp(manager.current_food, 0, manager.max_food)
 		sfx_resultado_mal.play()
 	await get_tree().create_timer(2.0).timeout
 	queue_free()

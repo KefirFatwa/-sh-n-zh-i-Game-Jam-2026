@@ -10,9 +10,9 @@ var damage_per_hit = 1
 var max_food_container: int = 30
 var current_food_container :int = 0
 
-var pollo:int = 0
-var marucha :int = 0
-var tacos :int = 0
+var pollo_comido:int = 40
+var maruchan_comido :int = 20
+var tacos_comido :int = 30
 
 var chicken_price = 30
 var noodles_price = 20

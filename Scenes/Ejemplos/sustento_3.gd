@@ -67,8 +67,10 @@ func atrapar_item(item, indice_en_lista):
 	ingrediente_actual += 1
 	
 	if gallo_completado == 3:
-		#Aqui metemos tal vez nada mas que el jugador recibe full energia
-		
+		var manager = get_tree().current_scene.find_child("SceneManager", true, false)
+		if manager:
+			manager.current_food += GameManager.tacos_comido/2 #ESTA ES LA QUE HAY QUE MODIFICAR
+			manager.current_food = clamp(manager.current_food, 0, manager.max_food)
 		print("Gallo listo")
 		finalizar_microjuego()
 	else:
@@ -79,6 +81,10 @@ func perder_juego(item, indice_en_lista):
 	ingredientes_en_aire.remove_at(indice_en_lista)
 	item.queue_free()
 	sfx_resultado_mal.play()
+	var manager = get_tree().current_scene.find_child("SceneManager", true, false)
+	if manager:
+		manager.current_food += GameManager.tacos_comido/2 #ESTA ES LA QUE HAY QUE MODIFICAR
+		manager.current_food = clamp(manager.current_food, 0, manager.max_food)
 	print("Sad salchi uwu")
 	finalizar_microjuego()
 	
