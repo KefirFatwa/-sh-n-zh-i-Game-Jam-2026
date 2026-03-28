@@ -16,9 +16,12 @@ script = ExtResource("1_vp2px")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=860809660]
 unique_name_in_owner = true
-layout_mode = 0
-offset_right = 91.98378
-offset_bottom = 89.72812
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.06930542
+offset_bottom = -0.05152893
 texture_normal = ExtResource("2_2bnb8")
 texture_pressed = ExtResource("2_2bnb8")
 texture_hover = ExtResource("2_2bnb8")

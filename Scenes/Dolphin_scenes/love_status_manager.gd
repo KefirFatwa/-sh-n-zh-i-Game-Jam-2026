@@ -6,11 +6,15 @@ class_name LoveManager
 @export var love_particles : PackedScene
 
 var text_tween : Tween
+@onready var loving: AudioStreamPlayer = %Loving
+
+
 
 func _input(event: InputEvent) -> void:
 	if dolphin_character.is_pettable:
 		if event.is_action_pressed("interaction_left_click"):
 			general_status.add_love(GameManager.love_per_hit)
+			loving.play()
 			_spawn_love()
 
 func _spawn_love()->void:

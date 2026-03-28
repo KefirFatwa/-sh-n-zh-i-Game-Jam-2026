@@ -9,7 +9,7 @@
 [ext_resource type="Shader" uid="uid://dxwulpob6l4r1" path="res://Shaders/start_menu.gdshader" id="7_ku3sm"]
 [ext_resource type="Texture2D" uid="uid://b1511us0yhia0" path="res://Assets/Main_Menu/2letras.png" id="8_dhs40"]
 [ext_resource type="Texture2D" uid="uid://buaprdn6mxnn7" path="res://Assets/Particles_effects/stars.png" id="9_htqng"]
-[ext_resource type="AudioStream" uid="uid://colpceq54jcel" path="res://FX/MENU MUSIC.wav" id="10_bo832"]
+[ext_resource type="AudioStream" uid="uid://bwv02fm8aqwg2" path="res://FX/Musica Menú fixed.mp3" id="10_bo832"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qq6kj"]
 shader = ExtResource("7_ku3sm")

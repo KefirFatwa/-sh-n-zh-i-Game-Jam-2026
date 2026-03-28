@@ -44,6 +44,9 @@
 [ext_resource type="Texture2D" uid="uid://bk10a0xt7nw4" path="res://Assets/Status/alimentardelfin.png" id="37_5638r"]
 [ext_resource type="Texture2D" uid="uid://kyw3si4djx36" path="res://Assets/Status/comprarmas.png" id="41_1xjet"]
 [ext_resource type="Texture2D" uid="uid://bwq5u8o8w5wak" path="res://Assets/ComidaPacked_Door/timer.png" id="42_5wenp"]
+[ext_resource type="AudioStream" uid="uid://dwna64mq4vj8q" path="res://FX/Musica juego base fixed.mp3" id="45_t5pli"]
+[ext_resource type="AudioStream" uid="uid://t8gd6g236gf1" path="res://FX/sound_effects/Delfines_effectos/sonido premio.mp3" id="46_ar0cn"]
+[ext_resource type="Script" uid="uid://bvpi4cge20oom" path="res://Scenes/Ejemplos/audio_manager.gd" id="47_ltogy"]
 
 [sub_resource type="Gradient" id="Gradient_7k381"]
 offsets = PackedFloat32Array(0, 0.9942029)
@@ -827,6 +830,16 @@ horizontal_alignment = 1
 [node name="MainCamera" type="Camera2D" parent="." unique_id=1200944931]
 unique_name_in_owner = true
 anchor_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=323209056]
+stream = ExtResource("45_t5pli")
+autoplay = true
+
+[node name="Money_get_it" type="AudioStreamPlayer" parent="." unique_id=130995958]
+stream = ExtResource("46_ar0cn")
+
+[node name="audioManager" type="Node" parent="." unique_id=852881148]
+script = ExtResource("47_ltogy")
 
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/noddle_button" to="UIElements/Cocina" method="_on_noddle_button_pressed"]

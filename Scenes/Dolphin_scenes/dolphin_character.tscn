@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://7lpvw35b7ah2" path="res://Scenes/Particles/jump.tscn" id="17_d53us"]
 [ext_resource type="Texture2D" uid="uid://c0x6k7b2k2jsc" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos moribundos.png" id="18_464rw"]
 [ext_resource type="Texture2D" uid="uid://73cilowj7pg4" path="res://Assets/Mascota_screen/drive-download-20260326T164832Z-1-001/ojos normales.png" id="19_8push"]
+[ext_resource type="AudioStream" uid="uid://bgtx1ioxu8tlj" path="res://FX/sound_effects/Delfines_effectos/alerta virtual pet.mp3" id="20_s7a3y"]
+[ext_resource type="AudioStream" uid="uid://8i4s51qd1vm8" path="res://FX/sound_effects/Delfines_effectos/Sonido delfín gracioso.mp3" id="21_sd86b"]
+[ext_resource type="AudioStream" uid="uid://dq2noo4qfo2wx" path="res://FX/sound_effects/Delfines_effectos/Efecto virtual pet.mp3" id="22_xnwhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
 radius = 374.0
@@ -398,3 +401,15 @@ show_percentage = false
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_vnkfa")
 autoplay = &"happy"
+
+[node name="Dolphin_is_dying" type="AudioStreamPlayer" parent="." unique_id=340460021]
+unique_name_in_owner = true
+stream = ExtResource("20_s7a3y")
+
+[node name="Dolphin_appear" type="AudioStreamPlayer" parent="." unique_id=1528518741]
+unique_name_in_owner = true
+stream = ExtResource("21_sd86b")
+
+[node name="Loving" type="AudioStreamPlayer" parent="." unique_id=1567744338]
+unique_name_in_owner = true
+stream = ExtResource("22_xnwhb")
