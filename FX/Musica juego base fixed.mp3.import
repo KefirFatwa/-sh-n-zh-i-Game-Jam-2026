@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwna64mq4vj8q"
+path="res://.godot/imported/Musica juego base fixed.mp3-3ee26d61f9c53da59dc0a151724ca9da.mp3str"
+
+[deps]
+
+source_file="res://FX/Musica juego base fixed.mp3"
+dest_files=["res://.godot/imported/Musica juego base fixed.mp3-3ee26d61f9c53da59dc0a151724ca9da.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

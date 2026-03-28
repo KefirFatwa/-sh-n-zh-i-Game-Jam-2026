@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgtx1ioxu8tlj"
+path="res://.godot/imported/alerta virtual pet.mp3-818d4f5c354b46ff90e00fc8f4260c52.mp3str"
+
+[deps]
+
+source_file="res://FX/sound_effects/Delfines_effectos/alerta virtual pet.mp3"
+dest_files=["res://.godot/imported/alerta virtual pet.mp3-818d4f5c354b46ff90e00fc8f4260c52.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

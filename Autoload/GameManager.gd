@@ -10,6 +10,14 @@ var damage_per_hit = 1
 var max_food_container: int = 30
 var current_food_container :int = 0
 
+var pollo_cantidad :int =0
+var maruchan_cantidad :int =0
+var taco_cantidad :int =0
+
+signal pollo_actualizado(cant_pollo:int)
+signal maruchan_actualizado(cant_marucha:int)
+signal taco_actualizado(cant_taco:int)
+
 var pollo_comido:int = 40
 var maruchan_comido :int = 20
 var tacos_comido :int = 30

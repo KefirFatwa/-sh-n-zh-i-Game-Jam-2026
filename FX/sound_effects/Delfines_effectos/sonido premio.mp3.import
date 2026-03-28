@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t8gd6g236gf1"
+path="res://.godot/imported/sonido premio.mp3-fa85128208cc0c561bb18cea58e7fbc0.mp3str"
+
+[deps]
+
+source_file="res://FX/sound_effects/Delfines_effectos/sonido premio.mp3"
+dest_files=["res://.godot/imported/sonido premio.mp3-fa85128208cc0c561bb18cea58e7fbc0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

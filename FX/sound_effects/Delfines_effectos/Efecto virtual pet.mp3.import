@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dq2noo4qfo2wx"
+path="res://.godot/imported/Efecto virtual pet.mp3-6e4471579ef48cc6b7dc3c8257b22221.mp3str"
+
+[deps]
+
+source_file="res://FX/sound_effects/Delfines_effectos/Efecto virtual pet.mp3"
+dest_files=["res://.godot/imported/Efecto virtual pet.mp3-6e4471579ef48cc6b7dc3c8257b22221.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

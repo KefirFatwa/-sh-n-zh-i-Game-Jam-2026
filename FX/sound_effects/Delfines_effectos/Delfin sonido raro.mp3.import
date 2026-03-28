@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqoyop4r5fpf1"
+path="res://.godot/imported/Delfin sonido raro.mp3-805bf7cc4345499cc5ad4bc43d70ba76.mp3str"
+
+[deps]
+
+source_file="res://FX/sound_effects/Delfines_effectos/Delfin sonido raro.mp3"
+dest_files=["res://.godot/imported/Delfin sonido raro.mp3-805bf7cc4345499cc5ad4bc43d70ba76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
