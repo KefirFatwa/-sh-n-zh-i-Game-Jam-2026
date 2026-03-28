@@ -20,8 +20,8 @@ func _ready():
 
 func _process(delta):
 	#controla que la mano se pueda mover nada mas
-	var dir = Input.get_axis("ui_left", "ui_right")
-	mano.position.x += dir * 600 * delta
+	var mouse_x = get_local_mouse_position().x
+	mano.position.x = mouse_x
 	# es para que no se salga la mano
 	mano.position.x = clamp(mano.position.x, 100, size.x -100)
 	actualizar_ingredientes(delta)
