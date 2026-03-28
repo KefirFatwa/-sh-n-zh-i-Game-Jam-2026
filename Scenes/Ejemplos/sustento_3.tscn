@@ -25,12 +25,12 @@ stream = ExtResource("5_bfn86")
 stream = ExtResource("6_ib0s6")
 
 [node name="Mano" type="Sprite2D" parent="." unique_id=285236127]
-position = Vector2(511, 574)
+position = Vector2(511, 550)
 texture = ExtResource("3_2gfon")
 
 [node name="Marker2D" type="Marker2D" parent="Mano" unique_id=1486620590]
 
 [node name="ContenedorCaída" type="Node2D" parent="." unique_id=1044566389]
-position = Vector2(503, -304)
+position = Vector2(503, -328)
 
 [node name="Timer" type="Timer" parent="." unique_id=1765148304]
