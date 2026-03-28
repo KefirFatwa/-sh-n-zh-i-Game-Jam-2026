@@ -32,8 +32,12 @@ func _process(delta: float) -> void:
 func _actualizar_texto_cantidad_pollo(cantidad_pollo)->void:
 	chicken_button.text = "x" + str(cantidad_pollo)
 
-
-
+func _actualizar_texto_cantidad_noodle(cantidad_noddle)->void:
+	noodle_button.text = "x" + str(cantidad_noddle)
+	
+func _actualizar_texto_cantidad_tacos(canitdad_tacos)->void:
+	
+	tacos_button.text = "x" + str(canitdad_tacos)
 func _on_chicken_button_pressed() -> void:
 	if GameManager.pollo_cantidad > 0:
 		_spawn_minigame(minijuego[0])

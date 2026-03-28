@@ -708,10 +708,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 591.0
-offset_top = -729.8899
-offset_right = 702.0
-offset_bottom = -666.8899
+offset_left = -899.0
+offset_top = -242.8899
+offset_right = -730.0
+offset_bottom = -134.8899
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
@@ -1298,7 +1298,6 @@ libraries/ = SubResource("AnimationLibrary_x4vob")
 [node name="Sad" type="AnimationPlayer" parent="." unique_id=1103391457]
 libraries/ = SubResource("AnimationLibrary_quqo7")
 
-[connection signal="pressed" from="UIElements/Cocina/VBoxContainer/Chicken_button" to="UIElements/Cocina" method="_on_chicken_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/noddle_button" to="UIElements/Cocina" method="_on_noddle_button_pressed"]
 [connection signal="pressed" from="UIElements/Cocina/VBoxContainer/tacos_button" to="UIElements/Cocina" method="_on_tacos_button_pressed"]
 [connection signal="pressed" from="UIElements/Interactables_buttons/FeedContainer/FeedDolphin" to="SceneManager" method="_on_feed_dolphins_button_pressed"]
