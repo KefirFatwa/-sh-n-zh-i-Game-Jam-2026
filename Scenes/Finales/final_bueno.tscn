@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://dm6h3cwtjq4k4"]
 
-[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_o8g8h"]
+[ext_resource type="Texture2D" uid="uid://dtkvanfy7qqx4" path="res://Assets/finales/finalbueno/7cielobueno.png" id="1_jioo5"]
+[ext_resource type="Script" uid="uid://l1g3jn7aj7yq" path="res://Scenes/Finales/final_bueno.gd" id="1_tcetc"]
+[ext_resource type="Texture2D" uid="uid://cbhy3wwbpa40s" path="res://Assets/finales/finalbueno/oceanobueno.png" id="3_t4xsh"]
+[ext_resource type="Texture2D" uid="uid://clcsqm80vxufr" path="res://Assets/finales/finalbueno/6estrellabueno.png" id="4_6gy5o"]
+[ext_resource type="Texture2D" uid="uid://ksue25q4oy4n" path="res://Assets/finales/finalbueno/5solbueno.png" id="5_8o4jy"]
+[ext_resource type="Texture2D" uid="uid://p8nwaeaac4it" path="res://Assets/finales/finalbueno/3parlantesbueno.png" id="6_f5027"]
+[ext_resource type="Texture2D" uid="uid://bejwwkom67ig8" path="res://Assets/finales/finalbueno/2notasmusicales.png" id="7_w8mxr"]
+[ext_resource type="Texture2D" uid="uid://b43ilkh05m4tx" path="res://Assets/finales/finalbueno/4latinoamerica.png" id="8_q4ltc"]
+[ext_resource type="Texture2D" uid="uid://7xwsme4xkngm" path="res://Assets/finales/finalbueno/1delfin.png" id="9_2yaxp"]
 
 [node name="FinalBueno" type="Node" unique_id=915366529]
+script = ExtResource("1_tcetc")
 
 [node name="Background" type="TextureRect" parent="." unique_id=341907459]
 anchors_preset = 15
@@ -10,6 +19,146 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_o8g8h")
+texture = ExtResource("1_jioo5")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="oceano" type="TextureRect" parent="." unique_id=955982911]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t4xsh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="estrellas" type="TextureRect" parent="." unique_id=2091952565]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6gy5o")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="sol" type="Sprite2D" parent="." unique_id=1680146071]
+position = Vector2(944.99994, 161)
+scale = Vector2(0.5280992, 0.5280992)
+texture = ExtResource("5_8o4jy")
+
+[node name="parlanteL" type="Sprite2D" parent="." unique_id=1850257630]
+position = Vector2(387, 293)
+scale = Vector2(0.49250442, 0.49250442)
+texture = ExtResource("6_f5027")
+
+[node name="musicaL" type="Sprite2D" parent="parlanteL" unique_id=1638381586]
+position = Vector2(538.06604, -357.3572)
+scale = Vector2(0.92398995, 0.92398995)
+texture = ExtResource("7_w8mxr")
+
+[node name="musicaL2" type="Sprite2D" parent="parlanteL" unique_id=1325747889]
+position = Vector2(816.23645, -276.13965)
+scale = Vector2(0.63977534, 0.63977534)
+texture = ExtResource("7_w8mxr")
+
+[node name="parlanteR" type="Sprite2D" parent="." unique_id=1228377867]
+position = Vector2(1523, 293)
+scale = Vector2(0.49250442, 0.49250442)
+texture = ExtResource("6_f5027")
+flip_h = true
+
+[node name="musicaR" type="Sprite2D" parent="parlanteR" unique_id=2120139372]
+position = Vector2(-538.0664, -355.32678)
+scale = Vector2(0.92398995, 0.92398995)
+texture = ExtResource("7_w8mxr")
+flip_h = true
+
+[node name="musicaR2" type="Sprite2D" parent="parlanteR" unique_id=1135438263]
+position = Vector2(-830.44946, -276.13965)
+scale = Vector2(0.63977534, 0.63977534)
+texture = ExtResource("7_w8mxr")
+flip_h = true
+
+[node name="latam" type="Sprite2D" parent="." unique_id=76276085]
+position = Vector2(959.1112, 539.5)
+scale = Vector2(0.50046295, 0.50046295)
+texture = ExtResource("8_q4ltc")
+
+[node name="delfines" type="Node2D" parent="." unique_id=930448677]
+
+[node name="Sprite2D" type="Sprite2D" parent="delfines" unique_id=303909525]
+position = Vector2(1302.0001, 506)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="delfines" unique_id=1972550289]
+position = Vector2(1731.0001, 553)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="delfines" unique_id=1133878047]
+position = Vector2(1513.0001, 702)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+
+[node name="Sprite2D4" type="Sprite2D" parent="delfines" unique_id=1474642480]
+position = Vector2(1801, 810)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+
+[node name="Sprite2D5" type="Sprite2D" parent="delfines" unique_id=2001903943]
+position = Vector2(1577, 940)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+
+[node name="Sprite2D6" type="Sprite2D" parent="delfines" unique_id=1166119151]
+position = Vector2(1335.0001, 946)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+
+[node name="Sprite2D7" type="Sprite2D" parent="delfines" unique_id=1790638328]
+position = Vector2(748.00006, 707)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="delfines" unique_id=394895966]
+position = Vector2(612.00006, 536)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="delfines" unique_id=1919995960]
+position = Vector2(343, 604)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="Sprite2D10" type="Sprite2D" parent="delfines" unique_id=1932834849]
+position = Vector2(148, 752)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="Sprite2D11" type="Sprite2D" parent="delfines" unique_id=1887264907]
+position = Vector2(521, 787)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="Sprite2D12" type="Sprite2D" parent="delfines" unique_id=601310274]
+position = Vector2(720.00006, 945)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="Sprite2D13" type="Sprite2D" parent="delfines" unique_id=330039952]
+position = Vector2(319.00006, 945.99994)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_2yaxp")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1982382163]
+autoplay = true

@@ -14,10 +14,15 @@
 [ext_resource type="Script" uid="uid://c1fmwd6v3nrhr" path="res://Scenes/Computadora/computadoraManager.gd" id="6_y22r5"]
 [ext_resource type="Texture2D" uid="uid://drsojik4enwiq" path="res://Assets/Mascota_screen/bordepantallamascota.png" id="7_bsixg"]
 [ext_resource type="PackedScene" uid="uid://ijaymot7rg0q" path="res://Scenes/Computadora/TriviaPopup/question_container.tscn" id="7_m7uap"]
+[ext_resource type="Texture2D" uid="uid://bg8ypac3kj18b" path="res://Assets/Background/mantel.png" id="8_2xfhl"]
 [ext_resource type="Texture2D" uid="uid://bk86jxp3873ew" path="res://Assets/Mi_sprite.png" id="8_uxk0c"]
+[ext_resource type="Texture2D" uid="uid://b28t57okolsav" path="res://Assets/Background/gatitochino.png" id="10_mmev2"]
 [ext_resource type="Texture2D" uid="uid://dj0iykdfa0jvv" path="res://Assets/UI_Temporal_Tony/Door_Normal.png" id="11_fd4pn"]
+[ext_resource type="Texture2D" uid="uid://bf1qdjak1jc5a" path="res://Assets/Background/cartucho.png" id="11_t5lux"]
 [ext_resource type="Texture2D" uid="uid://co1pjame7gjcc" path="res://Assets/ComidaPacked_Door/dooropen.png" id="12_1xjet"]
 [ext_resource type="Texture2D" uid="uid://dg1t625xtqjs7" path="res://Assets/UI_Temporal_Tony/Door_Pressed.png" id="12_lx611"]
+[ext_resource type="Texture2D" uid="uid://da3okcp31e1ij" path="res://Assets/Background/guadalupe.png" id="12_y4iqs"]
+[ext_resource type="Texture2D" uid="uid://j74ub03rfnis" path="res://Assets/Background/mandarina.png" id="13_3kxlv"]
 [ext_resource type="Texture2D" uid="uid://2lkg4ftv0fks" path="res://Assets/ComidaPacked_Door/doorclosed.png" id="13_5638r"]
 [ext_resource type="Script" uid="uid://c2m02d0h7tl56" path="res://Scenes/Celular/celular_controller.gd" id="13_bsixg"]
 [ext_resource type="Texture2D" uid="uid://cx8qfk4h1a4t0" path="res://Assets/Phone/fondocelular.png" id="13_ca1ee"]
@@ -184,10 +189,32 @@ position = Vector2(1070.9999, 944)
 scale = Vector2(0.8268745, 0.6243144)
 texture = ExtResource("4_ddw3p")
 
+[node name="mantel" type="Sprite2D" parent="Background/Mesita" unique_id=257356762]
+position = Vector2(30.234482, -1.601757)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("8_2xfhl")
+
 [node name="Sprite2D" type="Sprite2D" parent="Background/Mesita" unique_id=780551454]
-position = Vector2(306.27374, -267.09296)
+position = Vector2(325.32153, -145.75986)
 scale = Vector2(3.8435628, 4.3264236)
 texture = ExtResource("8_uxk0c")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Mesita" unique_id=385201943]
+position = Vector2(-430.53677, -309.1391)
+texture = ExtResource("10_mmev2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Mesita" unique_id=1085546619]
+position = Vector2(-320.48383, -115.32654)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("11_t5lux")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Mesita" unique_id=1991532794]
+position = Vector2(234.07813, -256.1691)
+texture = ExtResource("12_y4iqs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Mesita" unique_id=1113587665]
+position = Vector2(158.42805, -105.71596)
+texture = ExtResource("13_3kxlv")
 
 [node name="Background_transistion2" type="Sprite2D" parent="Background" unique_id=2116591251]
 position = Vector2(-966, 569)
@@ -497,7 +524,7 @@ theme_override_font_sizes/font_size = 40
 text = "Close"
 
 [node name="Sprite2D" type="Sprite2D" parent="UIElements/Cocina" unique_id=98572856]
-position = Vector2(850, 344)
+position = Vector2(850, 432)
 scale = Vector2(0.6262136, 0.6262136)
 texture = ExtResource("26_yrowp")
 
