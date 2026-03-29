@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ee431odvphsu"]
 
-[ext_resource type="Script" uid="uid://dfow3s53g6wpo" path="res://Scenes/Start_Menu/Creditos/creditos.gd" id="1_nw0fx"]
-[ext_resource type="Texture2D" uid="uid://ccbk1ycmxy13w" path="res://Assets/fondo/pared1.png" id="2_yxtn8"]
+[ext_resource type="Script" uid="uid://dg78e2hxlhb5s" path="res://Scenes/Start_Menu/Tutorial/tutorial.gd" id="1_nw0fx"]
 [ext_resource type="Script" uid="uid://tsjhafj0b7oc" path="res://Scenes/Start_Menu/Tutorial/typewriter_effect.gd" id="3_dtyaj"]
+[ext_resource type="Texture2D" uid="uid://jytd01uv64ce" path="res://Assets/Background/tutorial.png" id="4_yxtn8"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_1cp3h"]
 script = ExtResource("3_dtyaj")
@@ -36,12 +36,22 @@ script = ExtResource("1_nw0fx")
 oversampling_override = 1.0
 title = "Tutorial"
 initial_position = 2
-size = Vector2i(1200, 720)
+size = Vector2i(1080, 720)
 
-[node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=940922011]
-texture = ExtResource("2_yxtn8")
+[node name="ColorRect" type="ColorRect" parent="Window" unique_id=412413630]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 960.4706
+offset_bottom = 790.31274
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.53125, 0.47407404)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="Window" unique_id=550737961]
+[node name="HistoriaContainer" type="MarginContainer" parent="Window" unique_id=550737961]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,7 +64,7 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Window/MarginContainer" unique_id=1816710265]
+[node name="HistoriaText" type="RichTextLabel" parent="Window/HistoriaContainer" unique_id=1816710265]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -73,12 +83,54 @@ Tienes clases que atender y preguntas que responder. Tienes que alimentarte y ha
 fit_content = true
 custom_effects = [SubResource("RichTextEffect_1cp3h")]
 
-[node name="Jugar" type="Button" parent="Window/MarginContainer/RichTextLabel" unique_id=941447749]
+[node name="Continuar" type="Button" parent="Window/HistoriaContainer/HistoriaText" unique_id=941447749]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 550.0
-offset_right = 754.0
-offset_bottom = 630.0
+offset_left = 374.0
+offset_top = 574.0
+offset_right = 694.0
+offset_bottom = 654.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_f64wu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v15md")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rdejv")
+text = "Continuar"
+
+[node name="TutorialContainer" type="MarginContainer" parent="Window" unique_id=1134304007]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TutorialRect" type="TextureRect" parent="Window/TutorialContainer" unique_id=686128218]
+custom_minimum_size = Vector2(1080, 720)
+layout_mode = 2
+texture = ExtResource("4_yxtn8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Jugar" type="Button" parent="Window/TutorialContainer/TutorialRect" unique_id=1406410609]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -138.0
+offset_right = 158.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
@@ -88,4 +140,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rdejv")
 text = "Jugar"
 
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
-[connection signal="pressed" from="Window/MarginContainer/RichTextLabel/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Window/HistoriaContainer/HistoriaText/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Window/TutorialContainer/TutorialRect/Jugar" to="." method="_on_jugar_pressed"]
