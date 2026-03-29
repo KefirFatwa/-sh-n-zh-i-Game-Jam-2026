@@ -43,11 +43,6 @@ var was_sad := false
 
 func _ready() -> void:
 	
-	# Empezar con hambre llena (a pesar de valores default en Player_food_progress)
-	current_food = max_food
-	player_food_progress.max_value = current_food
-	player_food_progress.value = current_food
-	
 	GameManager.money_changed.connect(current_money)
 	GameManager.dolphings_changed.connect(_on_updated_current_dolphins)
 	GameManager.emotional_status_changed.connect(_on_emotional_changed)
