@@ -16,7 +16,7 @@ class_name SceneManager
 @export var max_happiness:int= 100
 var current_happiness: int = 0
 
-@export var max_food :float = 100.0
+@export var max_food :float = 200.0
 var current_food :float = 0.0
 @export var food_decay_rate := 1.5
 
@@ -43,6 +43,10 @@ var was_sad := false
 
 func _ready() -> void:
 	
+	# Empezar con hambre llena (a pesar de valores default en Player_food_progress)
+	current_food = max_food
+	player_food_progress.max_value = current_food
+	player_food_progress.value = current_food
 	
 	GameManager.money_changed.connect(current_money)
 	GameManager.dolphings_changed.connect(_on_updated_current_dolphins)

@@ -2,7 +2,7 @@ extends Node
 class_name GeneralManager
 
 
-@export var max_food :float= 100.0
+@export var max_food :float= 200.0
 @export var max_love :float= 100.0
 @export var max_shit :float= 10
 
@@ -42,7 +42,11 @@ signal start_death_state
 func _ready():
 	GameManager.shit_count.connect(_on_shits_changed)
 	
+	# Comida delfín sincronizada con progress bar default values
 	current_food = max_food
+	hungre_progress_bar.value = current_food
+	hungre_progress_bar.max_value = current_food
+	
 	current_love = max_love
 	cleanest_progress_bar.max_value = max_shit
 	current_shit = max_shit
