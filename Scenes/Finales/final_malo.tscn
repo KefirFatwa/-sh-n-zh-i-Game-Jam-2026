@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bis8rtlimnew1"]
 
 [ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_iu1de"]
+[ext_resource type="PackedScene" uid="uid://7864mfjgdcfn" path="res://Scenes/Finales/texto_final_caja.tscn" id="2_p4u3g"]
 
 [node name="FinalMalo" type="Node" unique_id=129831354]
 
@@ -13,3 +14,10 @@ grow_vertical = 2
 texture = ExtResource("1_iu1de")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="TextoFinalCaja" parent="." unique_id=1466937420 instance=ExtResource("2_p4u3g")]
+
+[node name="TextoFinal" parent="TextoFinalCaja" index="0" unique_id=1531488046]
+text = "Todos tus delfines han muerto, has perdido la motivacion para continuar..."
+
+[editable path="TextoFinalCaja"]

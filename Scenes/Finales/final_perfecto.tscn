@@ -1,15 +1,157 @@
 [gd_scene format=3 uid="uid://cjxiw7q8w667r"]
 
-[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_j4hav"]
+[ext_resource type="Script" uid="uid://cecx0rsktp8b5" path="res://Scenes/Finales/final_perfecto.gd" id="1_wh60r"]
+[ext_resource type="Texture2D" uid="uid://dtkvanfy7qqx4" path="res://Assets/Finales/finalbueno/7cielobueno.png" id="2_phtgs"]
+[ext_resource type="Texture2D" uid="uid://cbhy3wwbpa40s" path="res://Assets/Finales/finalbueno/oceanobueno.png" id="3_a6ajv"]
+[ext_resource type="Texture2D" uid="uid://clcsqm80vxufr" path="res://Assets/Finales/finalbueno/6estrellabueno.png" id="4_7ld1c"]
+[ext_resource type="Texture2D" uid="uid://ksue25q4oy4n" path="res://Assets/Finales/finalbueno/5solbueno.png" id="5_gjw67"]
+[ext_resource type="Texture2D" uid="uid://p8nwaeaac4it" path="res://Assets/Finales/finalbueno/3parlantesbueno.png" id="6_hc0ns"]
+[ext_resource type="Texture2D" uid="uid://bejwwkom67ig8" path="res://Assets/Finales/finalbueno/2notasmusicales.png" id="7_o02g7"]
+[ext_resource type="Texture2D" uid="uid://b43ilkh05m4tx" path="res://Assets/Finales/finalbueno/4latinoamerica.png" id="8_npahi"]
+[ext_resource type="Texture2D" uid="uid://7xwsme4xkngm" path="res://Assets/Finales/finalbueno/1delfin.png" id="9_w8oum"]
+[ext_resource type="AudioStream" uid="uid://dwkf4ybaq3gs8" path="res://FX/Finalbailable.mp3" id="10_lm5c5"]
+[ext_resource type="PackedScene" uid="uid://7864mfjgdcfn" path="res://Scenes/Finales/texto_final_caja.tscn" id="11_a6ajv"]
 
 [node name="FinalPerfecto" type="Node" unique_id=601499007]
+script = ExtResource("1_wh60r")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1384934427]
+[node name="Background" type="TextureRect" parent="." unique_id=1123739468]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_j4hav")
+texture = ExtResource("2_phtgs")
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="oceano" type="TextureRect" parent="." unique_id=1051577549]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a6ajv")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="estrellas" type="TextureRect" parent="." unique_id=1518179356]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7ld1c")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="sol" type="Sprite2D" parent="." unique_id=1665713898]
+position = Vector2(944.99994, 161)
+scale = Vector2(0.5280992, 0.5280992)
+texture = ExtResource("5_gjw67")
+
+[node name="parlanteL" type="Sprite2D" parent="." unique_id=846327352]
+position = Vector2(387, 293)
+scale = Vector2(0.49250442, 0.49250442)
+texture = ExtResource("6_hc0ns")
+
+[node name="musicaL" type="Sprite2D" parent="parlanteL" unique_id=1695601471]
+position = Vector2(538.06604, -357.3572)
+scale = Vector2(0.92398995, 0.92398995)
+texture = ExtResource("7_o02g7")
+
+[node name="musicaL2" type="Sprite2D" parent="parlanteL" unique_id=1487962034]
+position = Vector2(816.23645, -276.13965)
+scale = Vector2(0.63977534, 0.63977534)
+texture = ExtResource("7_o02g7")
+
+[node name="parlanteR" type="Sprite2D" parent="." unique_id=280968783]
+position = Vector2(1523, 293)
+scale = Vector2(0.49250442, 0.49250442)
+texture = ExtResource("6_hc0ns")
+flip_h = true
+
+[node name="musicaR" type="Sprite2D" parent="parlanteR" unique_id=177608223]
+position = Vector2(-538.0664, -355.32678)
+scale = Vector2(0.92398995, 0.92398995)
+texture = ExtResource("7_o02g7")
+flip_h = true
+
+[node name="musicaR2" type="Sprite2D" parent="parlanteR" unique_id=43259935]
+position = Vector2(-830.44946, -276.13965)
+scale = Vector2(0.63977534, 0.63977534)
+texture = ExtResource("7_o02g7")
+flip_h = true
+
+[node name="latam" type="Sprite2D" parent="." unique_id=621638478]
+position = Vector2(942, 530)
+scale = Vector2(0.3347222, 0.33472222)
+texture = ExtResource("8_npahi")
+
+[node name="delfines" type="Node2D" parent="." unique_id=1370255817]
+
+[node name="Sprite2D" type="Sprite2D" parent="delfines" unique_id=910344187]
+position = Vector2(1302.0001, 506)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+
+[node name="Sprite2D2" type="Sprite2D" parent="delfines" unique_id=1710417417]
+position = Vector2(1731.0001, 553)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+
+[node name="Sprite2D3" type="Sprite2D" parent="delfines" unique_id=5717196]
+position = Vector2(1513.0001, 702)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+
+[node name="Sprite2D4" type="Sprite2D" parent="delfines" unique_id=14041589]
+position = Vector2(1801, 810)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+
+[node name="Sprite2D5" type="Sprite2D" parent="delfines" unique_id=1461512063]
+position = Vector2(1291.0001, 761)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+
+[node name="Sprite2D7" type="Sprite2D" parent="delfines" unique_id=638643303]
+position = Vector2(748.00006, 707)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+flip_h = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="delfines" unique_id=1045161952]
+position = Vector2(612.00006, 536)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+flip_h = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="delfines" unique_id=1755038562]
+position = Vector2(343, 604)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+flip_h = true
+
+[node name="Sprite2D10" type="Sprite2D" parent="delfines" unique_id=1691814018]
+position = Vector2(148, 752)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+flip_h = true
+
+[node name="Sprite2D11" type="Sprite2D" parent="delfines" unique_id=2038018667]
+position = Vector2(521, 787)
+scale = Vector2(0.1080207, 0.10802069)
+texture = ExtResource("9_w8oum")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=644368923]
+stream = ExtResource("10_lm5c5")
+autoplay = true
+
+[node name="TextoFinalCaja" parent="." unique_id=1466937420 instance=ExtResource("11_a6ajv")]
