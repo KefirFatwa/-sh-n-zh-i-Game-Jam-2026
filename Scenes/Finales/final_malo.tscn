@@ -13,8 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_yijcs")
-expand_mode = 1
-stretch_mode = 4
+expand_mode = 2
 
 [node name="TextoFinalCaja" parent="." unique_id=1466937420 instance=ExtResource("2_p4u3g")]
 offset_left = -714.0
