@@ -208,5 +208,152 @@
 				"correcta": false
 			}
 		]
+	},
+	{
+		"label": "¿Cuál es la montaña más alta de Latinoamérica?",
+		"opciones": [
+			{
+				"label": "Everest",
+				"correcta": false
+			},
+			{
+				"label": "Aconcagua",
+				"correcta": true
+			},
+			{
+				"label": "Chirripó",
+				"correcta": false
+			},
+			{
+				"label": "Ojos del Salado",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuál es el país de Latinoamérica donde se juegan más videojuegos?",
+		"opciones": [
+			{
+				"label": "Perú",
+				"correcta": false
+			},
+			{
+				"label": "Chile",
+				"correcta": false
+			},
+			{
+				"label": "Argentina",
+				"correcta": false
+			},
+			{
+				"label": "Brasil",
+				"correcta": true
+			}
+		]
+	},
+	{
+		"label": "¿Cuál es el escritor latinoamericano más vendido en el mundo?",
+		"opciones": [
+			{
+				"label": "Gabriel García Márquez",
+				"correcta": true
+			},
+			{
+				"label": "Mario Vargas LLosa",
+				"correcta": false
+			},
+			{
+				"label": "Jorge Luis Borges",
+				"correcta": false
+			},
+			{
+				"label": "Paulo Coelho",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿En cuál país de América Latina llueven peces?",
+		"opciones": [
+			{
+				"label": "Honduras",
+				"correcta": true
+			},
+			{
+				"label": "Bolivia",
+				"correcta": false
+			},
+			{
+				"label": "Ecuador",
+				"correcta": false
+			},
+			{
+				"label": "Uruguay",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuántos grupos indígenas habitan Latinoamérica?",
+		"opciones": [
+			{
+				"label": "800",
+				"correcta": true
+			},
+			{
+				"label": "500",
+				"correcta": false
+			},
+			{
+				"label": "300",
+				"correcta": false
+			},
+			{
+				"label": "200",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuántos idiomas se hablan en Latinoamérica?",
+		"opciones": [
+			{
+				"label": "500",
+				"correcta": true
+			},
+			{
+				"label": "400",
+				"correcta": false
+			},
+			{
+				"label": "300",
+				"correcta": false
+			},
+			{
+				"label": "100",
+				"correcta": false
+			}
+		]
+	},
+	{
+		"label": "¿Cuál es el nombre más común en Latinoamérica?",
+		"opciones": [
+			{
+				"label": "Mariana",
+				"correcta": true
+			},
+			{
+				"label": "Andrés",
+				"correcta": false
+			},
+			{
+				"label": "José",
+				"correcta": false
+			},
+			{
+				"label": "Sofía",
+				"correcta": false
+			}
+		]
 	}
 ]
