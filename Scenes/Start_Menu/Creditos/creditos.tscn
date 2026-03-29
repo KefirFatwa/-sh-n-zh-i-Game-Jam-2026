@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://h3ussypjtiin"]
 
 [ext_resource type="Script" uid="uid://dfow3s53g6wpo" path="res://Scenes/Start_Menu/Creditos/creditos.gd" id="1_xgcg6"]
-[ext_resource type="Texture2D" uid="uid://ccbk1ycmxy13w" path="res://Assets/fondo/pared1.png" id="1_yo8oi"]
 [ext_resource type="Texture2D" uid="uid://2rb8b3l5uwui" path="res://Assets/Background/shanzai.png" id="3_xundy"]
 
 [node name="Creditos" type="Node" unique_id=968730528]
@@ -13,8 +12,12 @@ title = "Créditos"
 initial_position = 2
 size = Vector2i(1280, 720)
 
-[node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=940922011]
-texture = ExtResource("1_yo8oi")
+[node name="Sprite2D" type="ColorRect" parent="Window" unique_id=467327595]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Window" unique_id=550737961]
 anchors_preset = 15
@@ -32,102 +35,33 @@ theme_override_constants/margin_bottom = 6
 [node name="Container" type="VBoxContainer" parent="Window/MarginContainer" unique_id=1707497862]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Window/MarginContainer/Container" unique_id=504881357]
+[node name="RichTextLabel" type="RichTextLabel" parent="Window/MarginContainer/Container" unique_id=1022674462]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Equipo de desarrollo:"
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Equipo de desarrollo
 
-[node name="MarginContainer" type="MarginContainer" parent="Window/MarginContainer/Container" unique_id=1919812882]
-layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_right = 12
+José Fallas - Game Lead y 2D Artist - kefirfatwa.itch.io
+Anthony Vasquez - Game Dev Lead - kipperfalcon.itch.io
+Música y efectos de sonido - bastard8.itch.io
+Daniel González - Game Design y Programación - mandarinainteractiva.itch.io
+Programación - borninc.itch.io
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/MarginContainer/Container/MarginContainer" unique_id=2093719303]
-layout_mode = 2
-theme_override_constants/separation = 12
+Recursos de terceros con licencias de uso libre
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer" unique_id=442076660]
-layout_mode = 2
+Fonts
+https://fontmeme.com/fonts/boss-drum-font/
 
-[node name="Label" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2071368569]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "kefirfatwa.itch.io"
+Sonidos
+https://pixabay.com/users/freesound_community-46691455/
+https://pixabay.com/users/delon_boomkin-32986949/
 
-[node name="Label2" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=131604233]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "José Fallas - Game Lead y 2D Artist"
-horizontal_alignment = 2
+Paleta de colores
+https://lospec.com/palette-list/clement-8
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer" unique_id=408704542]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1589369624]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "kipperfalcon.itch.io"
-
-[node name="Label2" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1152647389]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Anthony Vasquez - Game Dev Lead"
-horizontal_alignment = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer" unique_id=1860799301]
-layout_mode = 2
-
-[node name="Label5" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer" unique_id=167707413]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "bastard8.itch.io"
-
-[node name="Label6" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer" unique_id=359748864]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Música y efectos de sonido"
-horizontal_alignment = 2
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer" unique_id=57395329]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1104578838]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "mandarinainteractiva.itch.io"
-
-[node name="Label2" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=2058366216]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Daniel González - Game Design y Programación"
-horizontal_alignment = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer" unique_id=535996262]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1730020098]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "borninc.itch.io"
-
-[node name="Label2" type="Label" parent="Window/MarginContainer/Container/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1734162760]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Programación"
-horizontal_alignment = 2
+Shaders
+https://godotshaders.com/shader/background-blur-with-tint/"
 
 [node name="TextureRect" type="TextureRect" parent="Window" unique_id=387977]
 offset_left = 987.0
