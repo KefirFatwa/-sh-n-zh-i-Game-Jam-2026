@@ -11,7 +11,7 @@ var current_love :float= 0.0
 var current_shit :float= 0
 
 
-@export var food_decay_rate :float= 5.0
+@export var food_decay_rate :float= 3.0
 @export var love_decay_rate :float= 2.0
 
 

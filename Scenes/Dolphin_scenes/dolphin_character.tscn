@@ -26,7 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://cqoyop4r5fpf1" path="res://FX/sound_effects/Delfines_effectos/Delfin sonido raro.mp3" id="23_xnwhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
-radius = 374.0
+radius = 550.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_va7nk"]
 radius = 73.109505

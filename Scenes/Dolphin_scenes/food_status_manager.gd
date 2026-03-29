@@ -8,7 +8,7 @@ func _ready():
 	eat_range.body_entered.connect(_on_food_entered)
 
 func _on_food_entered(body: Fishfood) -> void:
-	if general_status.current_food >= 80:
+	if general_status.current_food >= 160:
 		return
 
 	general_status.add_food(body.quality_food)

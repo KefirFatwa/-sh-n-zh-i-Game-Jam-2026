@@ -20,9 +20,9 @@ signal maruchan_actualizado(cant_marucha:int)
 signal taco_actualizado(cant_taco:int)
 signal dolphin_food_actualizado(cant_dolphin_food:int)
 
-var pollo_comido:int = 40
-var maruchan_comido :int = 20
-var tacos_comido :int = 30
+var pollo_comido:int = 100
+var maruchan_comido :int = 60
+var tacos_comido :int = 80
 
 var chicken_price = 30
 var noodles_price = 20

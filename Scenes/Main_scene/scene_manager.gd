@@ -21,7 +21,7 @@ var current_food :float = 0.0
 @export var food_decay_rate := 1.5
 
 @export var decay_per_zero_dolphin :float= 0.5
-@export var correct_quiz_money : int = 100
+@export var correct_quiz_money : int = 30
 @export var punishment_quiz_happines: int =5
 
 
