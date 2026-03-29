@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bis8rtlimnew1"]
 
-[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_iu1de"]
+[ext_resource type="Texture2D" uid="uid://dgfubduwsued6" path="res://Assets/Finales/final maloFI.png" id="1_yijcs"]
 [ext_resource type="PackedScene" uid="uid://7864mfjgdcfn" path="res://Scenes/Finales/texto_final_caja.tscn" id="2_p4u3g"]
+[ext_resource type="AudioStream" uid="uid://c04bfg2tyrib0" path="res://FX/Bad end.mp3" id="3_n6p8k"]
 
 [node name="FinalMalo" type="Node" unique_id=129831354]
 
@@ -11,13 +12,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_iu1de")
+texture = ExtResource("1_yijcs")
 expand_mode = 1
 stretch_mode = 4
 
 [node name="TextoFinalCaja" parent="." unique_id=1466937420 instance=ExtResource("2_p4u3g")]
+offset_left = -714.0
+offset_top = -428.0
+offset_right = 586.0
+offset_bottom = -328.0
 
 [node name="TextoFinal" parent="TextoFinalCaja" index="0" unique_id=1531488046]
 text = "Todos tus delfines han muerto, has perdido la motivacion para continuar..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1867839816]
+stream = ExtResource("3_n6p8k")
+autoplay = true
 
 [editable path="TextoFinalCaja"]
