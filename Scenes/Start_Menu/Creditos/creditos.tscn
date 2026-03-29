@@ -39,8 +39,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-text = "Equipo de desarrollo
+text = "[b]Equipo de desarrollo[/b]
 
 José Fallas - Game Lead y 2D Artist - kefirfatwa.itch.io
 Anthony Vasquez - Game Dev Lead - kipperfalcon.itch.io
@@ -48,7 +50,7 @@ Música y efectos de sonido - bastard8.itch.io
 Daniel González - Game Design y Programación - mandarinainteractiva.itch.io
 Programación - borninc.itch.io
 
-Recursos de terceros con licencias de uso libre
+[b]Recursos de terceros con licencias de uso libre[/b]
 
 Fonts
 https://fontmeme.com/fonts/boss-drum-font/
@@ -56,6 +58,7 @@ https://fontmeme.com/fonts/boss-drum-font/
 Sonidos
 https://pixabay.com/users/freesound_community-46691455/
 https://pixabay.com/users/delon_boomkin-32986949/
+https://kenney.nl/assets/interface-sounds
 
 Paleta de colores
 https://lospec.com/palette-list/clement-8

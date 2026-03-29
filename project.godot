@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Prototipo"
+config/name="kawAIi friend"
 run/main_scene="uid://crwfabg6r0aqk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

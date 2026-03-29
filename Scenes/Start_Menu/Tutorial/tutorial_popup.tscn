@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dg78e2hxlhb5s" path="res://Scenes/Start_Menu/Tutorial/tutorial.gd" id="1_nw0fx"]
 [ext_resource type="Script" uid="uid://tsjhafj0b7oc" path="res://Scenes/Start_Menu/Tutorial/typewriter_effect.gd" id="3_dtyaj"]
-[ext_resource type="Texture2D" uid="uid://jytd01uv64ce" path="res://Assets/Background/tutorial.png" id="4_yxtn8"]
+[ext_resource type="Texture2D" uid="uid://dxr03h0xdr7u4" path="res://Assets/Background/tutorial.jpg" id="3_nw0fx"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_1cp3h"]
 script = ExtResource("3_dtyaj")
@@ -69,7 +69,10 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[type]Es el año 2020, las autoridades dicen que tienes que permanecer adentro, tienes clases virtuales todos los dias y lo que mas te interesa es el nuevo lanzamiento de kawAIi friend....
+text = "
+
+
+[type speed=40]Es el año 2020, las autoridades dicen que tienes que permanecer adentro, tienes clases virtuales todos los dias y lo que mas te interesa es el nuevo lanzamiento de kawAIi friend....
 
 Finalmente, el día más esperado ha llegado.
 
@@ -86,9 +89,9 @@ custom_effects = [SubResource("RichTextEffect_1cp3h")]
 [node name="Continuar" type="Button" parent="Window/HistoriaContainer/HistoriaText" unique_id=941447749]
 layout_mode = 0
 offset_left = 474.0
-offset_top = 706.0
+offset_top = 778.0
 offset_right = 794.0
-offset_bottom = 786.0
+offset_bottom = 858.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
@@ -114,7 +117,7 @@ theme_override_constants/margin_bottom = 6
 [node name="TutorialRect" type="TextureRect" parent="Window/TutorialContainer" unique_id=686128218]
 custom_minimum_size = Vector2(1080, 720)
 layout_mode = 2
-texture = ExtResource("4_yxtn8")
+texture = ExtResource("3_nw0fx")
 expand_mode = 1
 stretch_mode = 4
 
@@ -126,9 +129,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = -202.0
+offset_top = -130.0
 offset_right = 160.0
-offset_bottom = -122.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
