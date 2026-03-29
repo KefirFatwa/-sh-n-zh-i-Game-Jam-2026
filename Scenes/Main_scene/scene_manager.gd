@@ -73,15 +73,18 @@ func _on_ended_level() -> void:
 	# Final regular
 	get_tree().change_scene_to_file("res://Scenes/Finales/final_bueno.tscn")
 	print("Cambiar a final regular.")
+	reset_money()
 	
 
 func _check_endings()->void:
 	if current_food <= 0 or GameManager.emotional_status  <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Finales/final_malo.tscn")
 		print("Cambiar a final malo.")
+		reset_money()
 	elif GameManager.current_dolphins >= target_dolphins:
 		get_tree().change_scene_to_file("res://Scenes/Finales/final_perfecto.tscn")
 		print("Cambiar a final perfecto.")
+		reset_money()
 
 
 func _process(delta: float) -> void:
@@ -160,7 +163,7 @@ func _spawn_food()->void:
 
 
 func _on_buy_dolphin_pressed() -> void:
-	if GameManager.global_money > price_per_dolphin:
+	if GameManager.global_money >= price_per_dolphin:
 		GameManager.global_money -= price_per_dolphin
 		spawn_dolphin()
 		GameManager.money_changed.emit()
@@ -174,3 +177,5 @@ func spawn_dolphin()->void:
 	#dolphin.position.y -= 200
 	dolphin_container.add_child(dolphin)
 	
+func reset_money() -> void:
+	GameManager.global_money = 0
