@@ -11,9 +11,9 @@ var max_food_container: int = 50
 var current_food_container :int = 0
 
 
-var pollo_cantidad :int =0
-var maruchan_cantidad :int =0
-var taco_cantidad :int =0
+var pollo_cantidad: int = 1
+var maruchan_cantidad: int = 1
+var taco_cantidad: int = 1
 
 signal pollo_actualizado(cant_pollo:int)
 signal maruchan_actualizado(cant_marucha:int)

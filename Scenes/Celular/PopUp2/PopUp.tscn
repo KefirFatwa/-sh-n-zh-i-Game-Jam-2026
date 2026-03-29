@@ -8,17 +8,20 @@
 [node name="PopUp" type="ColorRect" unique_id=2109965852]
 offset_left = -25.0
 offset_top = -60.0
-offset_right = 66.914474
-offset_bottom = 29.779648
+offset_right = 79.0
+offset_bottom = 44.0
 rotation = 0.2581622
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_oxf71")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=860809660]
-layout_mode = 0
-offset_right = 91.98378
-offset_bottom = 89.72812
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_4axah")
 texture_pressed = ExtResource("2_4axah")
 texture_hover = ExtResource("2_4axah")
@@ -32,8 +35,8 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -33.474876
 offset_top = 3.2570002
-offset_right = -1.064621
-offset_bottom = 35.257
+offset_right = 2.5251236
+offset_bottom = 39.257
 grow_horizontal = 0
 rotation = -0.37825978
 icon = ExtResource("2_sff6s")
