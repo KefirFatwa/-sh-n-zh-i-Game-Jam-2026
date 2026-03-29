@@ -406,7 +406,7 @@ scale = Vector2(2.2775047, 1)
 texture = ExtResource("3_cche8")
 
 [node name="Mesita" type="Sprite2D" parent="Background" unique_id=1183288452]
-position = Vector2(1070.9999, 944)
+position = Vector2(991.99994, 944)
 scale = Vector2(0.8268745, 0.6243144)
 texture = ExtResource("4_ddw3p")
 
@@ -415,25 +415,25 @@ position = Vector2(18.140747, 0)
 texture = ExtResource("8_wgeq8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Mesita" unique_id=780551454]
-position = Vector2(347.0901, -187.40558)
-scale = Vector2(3.8435626, 4.326423)
+position = Vector2(162.05614, -128.1406)
+scale = Vector2(4.98077, 5.6064963)
 texture = ExtResource("8_uxk0c")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Background/Mesita" unique_id=752535576]
-position = Vector2(134.24048, -123.33545)
-scale = Vector2(1, 0.99999994)
+position = Vector2(280.57477, -121.73352)
+scale = Vector2(0.9215152, 0.92151517)
 texture = ExtResource("11_mrejw")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Background/Mesita" unique_id=1245067886]
-position = Vector2(245.50293, -237.06)
+position = Vector2(434.16516, -305.93555)
 texture = ExtResource("10_x4vob")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Background/Mesita" unique_id=1302284611]
-position = Vector2(-437.793, -304.33383)
+position = Vector2(-407.55865, -296.32504)
 texture = ExtResource("12_7ph5q")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Background/Mesita" unique_id=425552940]
-position = Vector2(-293.87756, -105.71596)
+position = Vector2(-201.96518, -120.13177)
 texture = ExtResource("13_quqo7")
 
 [node name="Background_transistion2" type="Sprite2D" parent="Background" unique_id=2116591251]
@@ -813,11 +813,12 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 125.0
-offset_top = 77.0
-offset_right = 353.0
-offset_bottom = 468.0
+offset_left = 96.0
+offset_top = -1.0
+offset_right = 324.0
+offset_bottom = 390.0
 grow_vertical = 0
+scale = Vector2(0.9, 0.9)
 pivot_offset = Vector2(180, 75)
 texture_normal = ExtResource("15_ca1ee")
 texture_pressed = ExtResource("15_ca1ee")
@@ -830,11 +831,12 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 53.0
-offset_top = 589.0
-offset_right = 422.0
-offset_bottom = 891.0
+offset_left = 48.0
+offset_top = 381.00003
+offset_right = 417.0
+offset_bottom = 683.0
 grow_vertical = 0
+scale = Vector2(0.9, 0.9)
 pivot_offset = Vector2(175, 85)
 texture_normal = ExtResource("16_eu1g5")
 texture_pressed = ExtResource("16_eu1g5")
@@ -882,12 +884,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 845.0
-offset_top = 687.0
-offset_right = 1111.0
-offset_bottom = 1103.0
+offset_left = 90.0
+offset_top = 692.00006
+offset_right = 356.0
+offset_bottom = 1108.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.9, 0.9)
 texture_normal = ExtResource("35_t5pli")
 texture_pressed = ExtResource("35_t5pli")
 texture_hover = ExtResource("35_t5pli")
@@ -895,10 +898,11 @@ stretch_mode = 5
 
 [node name="FeedContainer" type="HBoxContainer" parent="UIElements/Interactables_buttons" unique_id=2066033150]
 layout_mode = 0
-offset_left = 866.0
-offset_top = 642.0
-offset_right = 1108.0
-offset_bottom = 742.0
+offset_left = 795.00006
+offset_top = 644.0
+offset_right = 1037.0
+offset_bottom = 744.0
+scale = Vector2(1.5, 1.5)
 
 [node name="Countfood" type="Label" parent="UIElements/Interactables_buttons/FeedContainer" unique_id=479908064]
 unique_name_in_owner = true
@@ -1016,16 +1020,30 @@ text = "Dinero"
 
 [node name="Buy_Dolphin_Container" type="Control" parent="UIElements/Interactables_buttons" unique_id=808647003]
 anchors_preset = 0
-offset_left = 1574.0
-offset_top = 610.0
-offset_right = 1881.0
-offset_bottom = 747.0
+offset_left = 1546.0
+offset_top = 585.0
+offset_right = 1853.0
+offset_bottom = 722.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container" unique_id=1845379138]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer" unique_id=1848361769]
+layout_mode = 2
+alignment = 1
+
+[node name="BuyDolphin" type="TextureButton" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2" unique_id=1758933247]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+texture_normal = ExtResource("41_1xjet")
+texture_pressed = ExtResource("41_1xjet")
+texture_hover = ExtResource("41_1xjet")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer" unique_id=900470809]
 layout_mode = 2
@@ -1043,20 +1061,6 @@ layout_mode = 2
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
 text = "Precio: 30"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer" unique_id=1848361769]
-layout_mode = 2
-alignment = 1
-
-[node name="BuyDolphin" type="TextureButton" parent="UIElements/Interactables_buttons/Buy_Dolphin_Container/VBoxContainer/HBoxContainer2" unique_id=1758933247]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 200)
-layout_mode = 2
-texture_normal = ExtResource("41_1xjet")
-texture_pressed = ExtResource("41_1xjet")
-texture_hover = ExtResource("41_1xjet")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="UIElements/Interactables_buttons" unique_id=706687275]
 layout_mode = 0
