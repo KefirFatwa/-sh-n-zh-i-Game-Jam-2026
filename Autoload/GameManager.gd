@@ -124,3 +124,8 @@ func add_shits(shits_in_tank: int)->void:
 func remove_shits(shit_cleaned)->void:
 	shits_numbers -= shit_cleaned
 	shit_count.emit(shits_numbers)
+
+
+#Dejo esto aca al final por si luego jode algo, pero es para resettear variables del juego cuando el jugador juega reiteradas veces
+func reset_game_data():
+	current_dolphins = 0
