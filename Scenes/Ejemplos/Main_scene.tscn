@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://bwq5u8o8w5wak" path="res://Assets/ComidaPacked_Door/timer.png" id="42_5wenp"]
 [ext_resource type="AudioStream" uid="uid://dwna64mq4vj8q" path="res://FX/Musica juego base fixed.mp3" id="45_t5pli"]
 [ext_resource type="Script" uid="uid://bvpi4cge20oom" path="res://Scenes/Ejemplos/audio_manager.gd" id="47_ltogy"]
-[ext_resource type="Script" path="res://Scenes/Ejemplos/alerts.gd" id="48_msgo5"]
+[ext_resource type="Script" uid="uid://q0ip42dg68f7" path="res://Scenes/Ejemplos/alerts.gd" id="48_msgo5"]
 [ext_resource type="Texture2D" uid="uid://djajkugqcnc12" path="res://Assets/Alerts/Sprite-0001.png" id="49_6dvfo"]
 [ext_resource type="Texture2D" uid="uid://chqwkmprv5vfe" path="res://Assets/Alerts/sad_alert.png" id="50_n4n23"]
 [ext_resource type="AudioStream" uid="uid://b3cxu1kj1eqcs" path="res://FX/sound_effects/General_sound_effects/drop_004.ogg" id="51_3kxlv"]
@@ -146,6 +146,48 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsrrq"]
 bg_color = Color(1, 0.6523258, 0.774378, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ph5q"]
+bg_color = Color(1, 0.54901963, 0.36078432, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quqo7"]
+bg_color = Color(0.99999875, 0.44045773, 0.1745525, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8yxq"]
+bg_color = Color(1, 0.623703, 0.47078615, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgeq8"]
+bg_color = Color(1, 0.54901963, 0.36078432, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4vob"]
+bg_color = Color(0.99999934, 0.47875708, 0.24780872, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrejw"]
+bg_color = Color(1, 0.61339027, 0.4558773, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -689,6 +731,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="UIElements/Cocina/PanelContainer" unique_id=577537094]
+layout_mode = 2
+color = Color(0.3882353, 0.60784316, 1, 1)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="UIElements/Cocina" unique_id=514244709]
 layout_mode = 1
 anchors_preset = 15
@@ -704,6 +750,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ph5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quqo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8yxq")
 text = "x0"
 icon = ExtResource("26_ar0cn")
 expand_icon = true
@@ -713,6 +762,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ph5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quqo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8yxq")
 text = "x0"
 icon = ExtResource("27_ltogy")
 expand_icon = true
@@ -722,6 +774,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(298.145, 189.915)
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ph5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quqo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8yxq")
 text = "x0"
 icon = ExtResource("28_sk2hc")
 expand_icon = true
@@ -734,14 +789,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -899.0
+offset_left = -916.0
 offset_top = -242.8899
-offset_right = -730.0
+offset_right = -747.0
 offset_bottom = -134.8899
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
-text = "Close"
+theme_override_styles/normal = SubResource("StyleBoxFlat_wgeq8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x4vob")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mrejw")
+text = "Cerrar"
 
 [node name="Sprite2D" type="Sprite2D" parent="UIElements/Cocina" unique_id=98572856]
 position = Vector2(850, 424)
@@ -940,20 +1000,20 @@ stretch_mode = 5
 
 [node name="MoneyCount" type="Label" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=118451988]
 layout_mode = 0
-offset_left = 113.0
-offset_top = 18.0
-offset_right = 270.0
-offset_bottom = 85.0
+offset_left = 42.0
+offset_top = 23.0
+offset_right = 230.0
+offset_bottom = 90.0
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
 text = "Hambre"
 
 [node name="MoneyCount2" type="Label" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=1719518070]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 142.0
-offset_right = 327.0
-offset_bottom = 209.0
+offset_left = 42.0
+offset_top = 143.0
+offset_right = 284.0
+offset_bottom = 210.0
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 48
 text = "Felicidad"
@@ -961,13 +1021,14 @@ text = "Felicidad"
 [node name="Player_food_progress" type="TextureProgressBar" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=815844959]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 320.0
+offset_left = 346.26456
 offset_top = 85.0
-offset_right = 494.0
-offset_bottom = 418.0
+offset_right = 520.2645
+offset_bottom = 515.45703
 rotation = 1.5707964
 scale = Vector2(0.37, 0.715)
-value = 100.0
+max_value = 200.0
+value = 200.0
 fill_mode = 3
 nine_patch_stretch = true
 stretch_margin_left = 174
@@ -979,10 +1040,10 @@ tint_under = Color(0, 0, 0, 1)
 [node name="Player_Happines_progress" type="TextureProgressBar" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=1203400431]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 321.0
+offset_left = 347.8008
 offset_top = 204.99998
-offset_right = 495.0
-offset_bottom = 538.0
+offset_right = 521.8008
+offset_bottom = 641.45435
 rotation = 1.5707964
 scale = Vector2(0.37, 0.715)
 value = 100.0
@@ -995,11 +1056,12 @@ texture_progress = ExtResource("29_vsrrq")
 tint_under = Color(0, 0, 0, 1)
 
 [node name="MoneyContainer" type="HBoxContainer" parent="UIElements/Interactables_buttons/StatusContainer" unique_id=13884965]
+layout_direction = 2
 layout_mode = 0
-offset_left = 50.0
+offset_left = 42.0
 offset_top = 295.0
-offset_right = 332.0
-offset_bottom = 361.0
+offset_right = 290.0
+offset_bottom = 362.0
 
 [node name="Icon_money" type="TextureRect" parent="UIElements/Interactables_buttons/StatusContainer/MoneyContainer" unique_id=865576417]
 custom_minimum_size = Vector2(80, 0)
@@ -1171,7 +1233,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 50
-text = "Ganaste 100 Monedas"
+text = "Ganaste 30 Monedas"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UIElements/Answers_Manager/Respuesta Correcta" unique_id=603116459]
@@ -1246,10 +1308,10 @@ libraries/ = SubResource("AnimationLibrary_mmev2")
 [node name="Alerts_status" type="Control" parent="UIElements" unique_id=1330058680]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1445.0
-offset_top = 34.0
-offset_right = 1926.0
-offset_bottom = 575.0
+offset_left = 1432.0
+offset_top = 32.0
+offset_right = 1913.0
+offset_bottom = 573.0
 mouse_filter = 2
 
 [node name="Sadness" type="TextureRect" parent="UIElements/Alerts_status" unique_id=218780834]

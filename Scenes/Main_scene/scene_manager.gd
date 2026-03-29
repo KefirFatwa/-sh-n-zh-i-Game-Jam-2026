@@ -16,12 +16,12 @@ class_name SceneManager
 @export var max_happiness:int= 100
 var current_happiness: int = 0
 
-@export var max_food :float = 100.0
+@export var max_food :float = 200.0
 var current_food :float = 0.0
 @export var food_decay_rate := 1.5
 
 @export var decay_per_zero_dolphin :float= 0.5
-@export var correct_quiz_money : int = 100
+@export var correct_quiz_money : int = 30
 @export var punishment_quiz_happines: int =5
 
 
@@ -42,7 +42,6 @@ var was_hungry := false
 var was_sad := false
 
 func _ready() -> void:
-	
 	
 	GameManager.money_changed.connect(current_money)
 	GameManager.dolphings_changed.connect(_on_updated_current_dolphins)

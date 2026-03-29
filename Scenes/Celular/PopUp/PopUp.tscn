@@ -6,10 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://d4l1yvyl6rbpw" path="res://FX/sound_effects/General_sound_effects/pluck_002.ogg" id="4_v6r8l"]
 
 [node name="PopUp" type="ColorRect" unique_id=2109965852]
-offset_left = -25.0
-offset_top = -60.0
-offset_right = 66.914474
-offset_bottom = 29.779648
+offset_left = -35.749954
+offset_top = -62.838573
+offset_right = 68.250046
+offset_bottom = 41.161427
 rotation = 0.2581622
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -21,8 +21,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.06930542
-offset_bottom = -0.05152893
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_2bnb8")
@@ -36,10 +34,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -33.474876
-offset_top = 3.2570002
-offset_right = -1.064621
-offset_bottom = 35.257
+offset_left = -38.160835
+offset_top = 5.1191835
+offset_right = -2.1608353
+offset_bottom = 41.119183
 grow_horizontal = 0
 rotation = -0.37825978
 icon = ExtResource("2_vp2px")

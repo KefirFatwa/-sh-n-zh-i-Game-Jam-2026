@@ -26,7 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://cqoyop4r5fpf1" path="res://FX/sound_effects/Delfines_effectos/Delfin sonido raro.mp3" id="23_xnwhb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvstq"]
-radius = 374.0
+radius = 550.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_va7nk"]
 radius = 73.109505
@@ -468,8 +468,9 @@ custom_minimum_size = Vector2(0, 10.76)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_gwa4w")
 theme_override_styles/fill = SubResource("StyleBoxFlat_d53us")
+max_value = 200.0
 step = 1.0
-value = 100.0
+value = 200.0
 show_percentage = false
 
 [node name="clean_tx" type="Label" parent="Status_UI/TextureRect/MarginContainer/VBoxContainer" unique_id=2055968727]

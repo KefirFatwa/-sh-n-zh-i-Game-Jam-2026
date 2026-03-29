@@ -11,18 +11,18 @@ var max_food_container: int = 50
 var current_food_container :int = 0
 
 
-var pollo_cantidad :int =0
-var maruchan_cantidad :int =0
-var taco_cantidad :int =0
+var pollo_cantidad: int = 1
+var maruchan_cantidad: int = 1
+var taco_cantidad: int = 1
 
 signal pollo_actualizado(cant_pollo:int)
 signal maruchan_actualizado(cant_marucha:int)
 signal taco_actualizado(cant_taco:int)
 signal dolphin_food_actualizado(cant_dolphin_food:int)
 
-var pollo_comido:int = 40
-var maruchan_comido :int = 20
-var tacos_comido :int = 30
+var pollo_comido:int = 100
+var maruchan_comido :int = 60
+var tacos_comido :int = 80
 
 var chicken_price = 30
 var noodles_price = 20
