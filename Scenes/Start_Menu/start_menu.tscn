@@ -291,9 +291,9 @@ metadata/_edit_lock_ = true
 [node name="Jugar" type="Button" parent="CanvasLayer/ButtonManager" unique_id=1415892801]
 layout_mode = 1
 offset_left = 256.0
-offset_top = 512.0
+offset_top = 552.0
 offset_right = 576.0
-offset_bottom = 592.0
+offset_bottom = 632.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
@@ -303,6 +303,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_v1pa2")
 text = "Jugar"
 
 [node name="Opciones" type="Button" parent="CanvasLayer/ButtonManager" unique_id=2075421276]
+visible = false
 layout_mode = 1
 offset_left = 256.0
 offset_top = 640.0
@@ -319,9 +320,9 @@ text = "Opciones	"
 [node name="Creditos" type="Button" parent="CanvasLayer/ButtonManager" unique_id=1233708643]
 layout_mode = 0
 offset_left = 256.0
-offset_top = 768.0
+offset_top = 712.0
 offset_right = 576.0
-offset_bottom = 848.0
+offset_bottom = 792.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
@@ -333,9 +334,9 @@ text = "Créditos"
 [node name="Salir" type="Button" parent="CanvasLayer/ButtonManager" unique_id=749227195]
 layout_mode = 1
 offset_left = 256.0
-offset_top = 896.0
+offset_top = 872.0
 offset_right = 576.0
-offset_bottom = 976.0
+offset_bottom = 952.0
 theme_override_colors/font_color = Color(0, 0.03137255, 0.44313726, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.03137255, 0.44313726, 1)
 theme_override_colors/font_hover_color = Color(0, 0.03137255, 0.44313726, 1)
