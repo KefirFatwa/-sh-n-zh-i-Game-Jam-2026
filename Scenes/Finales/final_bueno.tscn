@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dm6h3cwtjq4k4"]
 
-[ext_resource type="Texture2D" uid="uid://cg8c1cxod04td" path="res://Assets/Background/splashartplaceholder.png" id="1_o8g8h"]
+[ext_resource type="Texture2D" uid="uid://hbj3g4nsed5f" path="res://Assets/Finales/finalmedio/finalmedio.png" id="1_n38pp"]
+[ext_resource type="AudioStream" uid="uid://dg14myn2c3gc4" path="res://FX/FINALMALOREAL.ogg" id="2_rudm2"]
+[ext_resource type="PackedScene" uid="uid://7864mfjgdcfn" path="res://Scenes/Finales/texto_final_caja.tscn" id="3_rudm2"]
 
 [node name="FinalBueno" type="Node" unique_id=915366529]
 
@@ -10,6 +12,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_o8g8h")
+texture = ExtResource("1_n38pp")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=781137965]
+stream = ExtResource("2_rudm2")
+autoplay = true
+
+[node name="TextoFinalCaja" parent="." unique_id=1466937420 instance=ExtResource("3_rudm2")]
+
+[node name="TextoFinal" parent="TextoFinalCaja" index="0" unique_id=1531488046]
+text = "No lograste ser ningun mesias para los delfines, al menos sobrevives el dia... buen intento."
+
+[editable path="TextoFinalCaja"]

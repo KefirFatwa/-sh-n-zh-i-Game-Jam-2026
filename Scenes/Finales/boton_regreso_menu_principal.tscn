@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bm4lcmf3vq0v6"]
+
+[ext_resource type="Texture2D" uid="uid://buodxic7j4ctu" path="res://Assets/Buttons/botonx.png" id="1_60vbt"]
+[ext_resource type="Script" uid="uid://cb67lbbrcr51x" path="res://boton_regreso_menu_principal.gd" id="2_jw68m"]
+
+[node name="BotonRegresoMenuPrincipal" type="Button" unique_id=1644422930]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1735.6666
+offset_bottom = -898.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_60vbt")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_jw68m")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

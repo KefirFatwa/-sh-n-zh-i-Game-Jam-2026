@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c04bfg2tyrib0"
+path="res://.godot/imported/Bad end.mp3-6ec2a0e8babf1a7b3750a3a0f258c84d.mp3str"
+
+[deps]
+
+source_file="res://FX/Bad end.mp3"
+dest_files=["res://.godot/imported/Bad end.mp3-6ec2a0e8babf1a7b3750a3a0f258c84d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

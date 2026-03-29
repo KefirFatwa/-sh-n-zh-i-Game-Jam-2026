@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://7864mfjgdcfn"]
+
+[ext_resource type="PackedScene" uid="uid://bm4lcmf3vq0v6" path="res://Scenes/Finales/boton_regreso_menu_principal.tscn" id="1_5boj2"]
+[ext_resource type="Script" uid="uid://b4f17017l8wrt" path="res://Scenes/Finales/texto_final_caja.gd" id="1_t7t3f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6ajv"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="TextoFinalCaja" type="ColorRect" unique_id=1466937420]
+modulate = Color(1, 0.9764706, 0.50980395, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -650.0
+offset_top = -156.0
+offset_right = 650.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_t7t3f")
+
+[node name="TextoFinal" type="Label" parent="." unique_id=1531488046]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 9.0
+offset_right = 1194.0
+offset_bottom = 96.0
+text = "La poblacion de  delfines rosa ha llegado a un pico nunca antes visto, ya no temen la extincion gracias a ti. Latinoamerica te da las gracias. Congratulaciones. "
+label_settings = SubResource("LabelSettings_a6ajv")
+autowrap_mode = 2
+
+[node name="BotonRegresoMenuPrincipal" parent="." unique_id=1644422930 instance=ExtResource("1_5boj2")]
+layout_mode = 1
+offset_left = 1181.0
+offset_top = -15.0
+offset_right = 4.0
+offset_bottom = 8.0
